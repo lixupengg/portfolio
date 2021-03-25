@@ -1,0 +1,618 @@
+h2 {
+	color: rgb(58, 255, 205)
+}
+.pageContainer {
+	width: 100vw;
+	height : 100vh;
+	position: relative;
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  padding: 60px 0;
+  overflow: hidden;
+  background-color: rgb(50,50,50);
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  color: rgb(58, 255, 205);
+}
+
+.section-title h2::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 1px;
+  background: #ddd;
+  bottom: 1px;
+  left: calc(50% - 60px);
+}
+
+.section-title h2::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 3px;
+  /*background: rgb(58, 255, 205);*/
+  bottom: 0;
+  left: calc(50% - 20px);
+}
+
+.section-title p {
+  margin-bottom: 0;
+}
+/*--------------------------------------------------------------
+# Portfolio
+--------------------------------------------------------------*/
+
+.portfolio .portfolio-item {
+  margin-bottom: 30px;
+}
+
+.portfolio #portfolio-flters {
+  padding: 0;
+  margin: 0 auto 15px auto;
+  list-style: none;
+  text-align: center;
+  border-radius: 50px;
+  padding: 2px 15px;
+}
+
+.portfolio #portfolio-flters li {
+  cursor: pointer;
+  display: inline-block;
+  padding: 8px 16px 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0 3px 10px 3px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 4px;
+}
+
+.portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
+  background: #18d26e;
+}
+
+.portfolio #portfolio-flters li:last-child {
+  margin-right: 0;
+}
+
+.portfolio .portfolio-wrap {
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.portfolio .portfolio-wrap::before {
+  content: "";
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  top: 30px;
+  bottom: 30px;
+  transition: all ease-in-out 0.3s;
+  z-index: 2;
+  opacity: 0;
+}
+
+.portfolio .portfolio-wrap .portfolio-info {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 3;
+  transition: all ease-in-out 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio .portfolio-wrap .portfolio-info::before {
+  display: block;
+  content: "";
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: 35px;
+  left: 35px;
+  border-top: 3px solid #fff;
+  border-left: 3px solid #fff;
+  transition: all 0.5s ease 0s;
+  z-index: 9994;
+}
+
+.portfolio .portfolio-wrap .portfolio-info::after {
+  display: block;
+  content: "";
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  bottom: 35px;
+  right: 35px;
+  border-bottom: 3px solid #fff;
+  border-right: 3px solid #fff;
+  transition: all 0.5s ease 0s;
+  z-index: 9994;
+}
+
+
+.portfolio .portfolio-wrap .portfolio-info h4 {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.portfolio .portfolio-wrap .portfolio-info p {
+  color: #ffffff;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+}
+
+.portfolio .portfolio-wrap .portfolio-links {
+  text-align: center;
+  z-index: 4;
+}
+
+.portfolio .portfolio-wrap .portfolio-links a {
+  color: #fff;
+  margin: 0 2px;
+  font-size: 28px;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.portfolio .portfolio-wrap .portfolio-links h5 {
+  font-family: "Poppins", sans-serif;
+  line-height: 18px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgb(200,200,200);
+}
+
+.learnMoreButton {
+  margin-top: 10px;
+  border: solid white 1px;
+  padding: 2px;
+  font-weight: 600;
+  color: white;
+  font-family: Poppins, sans-serif;
+  font-size: 14px;
+  z-index: 9999;
+}
+
+.portfolio .portfolio-wrap .portfolio-info h6 {
+  font-family: Poppins, sans-serif;
+  color: white;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.portfolio .portfolio-wrap .portfolio-links div:hover {
+  color: rgb(30, 30, 30);
+  cursor: pointer;
+  background-color: rgb(200, 200, 200);
+}
+.learnMorebutton:hover {
+  color: red;
+  background-color: rgb(230, 230, 230);
+}
+
+.portfolio .portfolio-wrap .portfolio-links p {
+  font-weight: 600;
+}
+
+.portfolio .portfolio-wrap .portfolio-links a:hover {
+  color: #63eda3;
+}
+
+.portfolio .portfolio-wrap:hover::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 1;
+}
+
+.portfolio .portfolio-wrap:hover .portfolio-info {
+  opacity: 1;
+}
+
+.portfolio .portfolio-wrap:hover .portfolio-info::before {
+  top: 15px;
+  left: 15px;
+}
+
+.portfolio .portfolio-wrap:hover .portfolio-info::after {
+  bottom: 15px;
+  right: 15px;
+}
+
+/*POP UP BOXES*/
+.popupBox {
+  height: 80vh;
+  width: 80vw;
+  background-color: rgb(30,30,30, 0.95);
+}
+
+.popupBox h3 {
+  margin-left: 15px;
+  margin-top: 10vh;
+  margin-bottom: 5vh;
+  line-height: 18px;
+  font-size: min(48px, 4vw);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  color: rgb(233,233,233);
+
+}
+
+.popupBox h4 {
+  margin-top: 3vh;
+  margin-left: 15px;
+  line-height: 18px;
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  color: rgb(200,200,200);
+}
+
+.popupBox p {
+  margin-left: 15px;
+
+  line-height: 18px;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  color: rgb(233,233,233);
+}
+
+.textBox {
+  width: 40vw;
+    overflow-y :scroll;
+    height: 80vh;
+}
+
+.textBox::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.textBox {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.crossIcon {
+  color : rgb(240, 240, 240);
+  font-size: 2.5vw;
+  position: absolute;
+  right: 0;
+}
+
+.crossIcon:hover {
+  cursor: pointer;
+  color: rgb(200,200,200);
+}
+
+.caroBox {
+  margin-top: -10vh;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*--------------------------------------------------------------
+# Resume
+--------------------------------------------------------------*/
+.resume .resume-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: rgb(58, 255, 205);
+}
+
+.resume .resume-item {
+  padding: 0 0 20px 20px;
+  margin-top: -2px;
+  border-left: 2px solid rgb(58, 255, 205);
+  position: relative;
+}
+
+.resume .resume-item h4 {
+  line-height: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  color: rgb(233,233,233);
+  margin-bottom: 10px;
+}
+
+.resume .resume-item h5 {
+  font-size: 16px;
+  background: rgb(200,200,200);
+  padding: 5px 15px;
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: 10px;
+
+}
+
+.resume .resume-item ul {
+  padding-left: 20px;
+}
+
+.resume .resume-item ul li {
+  padding-bottom: 10px;
+  color: white;
+}
+
+.resume .resume-item:last-child {
+  padding-bottom: 0;
+}
+
+.resume .resume-item::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50px;
+  left: -9px;
+  top: 0;
+  background: #fff;
+  border: 2px solid #0563bb;
+}
+
+/*INTRO PAGE ------------------*/
+.introTextContainer {
+	display: flex;
+	flex-direction: column;
+	padding-left: 10vw;
+	padding-top: 15vh;
+}
+
+.detailsContainer {
+	display: flex;
+	flex-direction: column;
+	padding-left: 10vw;
+	padding-top: 3vw;
+}
+
+.xupengContainer {
+	/*margin-left: 33px;*/
+	position: relative;
+}
+
+.introFont {
+  font-family: Montserrat;
+  color: white;
+  font-size: min(8vw, 100px);
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 2vw;
+}
+
+.tagFont {
+	font-family: Lobster;
+	font-size: 25px;
+	color: rgb(150, 150, 150);
+
+	margin-top: auto;
+	margin-bottom: 0;
+	padding: 0;
+	opacity: 70%;
+}
+
+.green {
+	position: absolute;
+	bottom: 0;
+	left: max( -0.5vw ,-8px);
+	color: rgb(58, 255, 205);
+}
+
+.red {
+	color: rgb(243, 0, 68);
+	position: absolute;
+	bottom: 0;
+	left: 0px;
+}
+
+.scrolldownFont {
+	animation: shake 0.8s;
+	animation-iteration-count: infinite;
+	animation-delay: 1s;
+
+	font-family: Montserrat;
+	font-weight: 500;
+ 	color: white;
+ 	font-size: 20px;
+ 	transform: rotate(-270deg);
+}
+
+/*--------------------------------------------------------------
+# Contact 
+--------------------------------------------------------------*/
+.contact .info-box {
+  color: #444444;
+  padding: 20px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.contact .info-box i.logo {
+  font-size: 24px;
+  color: #18d26e;
+  border-radius: 50%;
+  padding: 14px;
+  float: left;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+
+.contact .info-box h3 {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 700;
+  margin: 10px 0 8px 68px;
+}
+
+.contact .info-box p {
+  padding: 0;
+  color: #fff;
+  line-height: 24px;
+  font-size: 14px;
+  margin: 0 0 0 68px;
+}
+
+.contact .info-box .social-links {
+  margin: 5px 0 0 68px;
+  display: flex;
+}
+
+.contact .info-box .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  color: #fff;
+  line-height: 1;
+  margin-right: 12px;
+  transition: 0.3s;
+}
+
+.contact .info-box .social-links a:hover {
+  color: #18d26e;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+  background: #rgb(255,255,255);
+  color: rgb(58, 255, 205);
+  font-size: 14px;
+  text-align: center;
+  padding: 30px 0;
+}
+
+#footer h3 {
+  font-size: 36px;
+  font-weight: 700;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+
+#footer p {
+  font-size: 15;
+  font-style: italic;
+  padding: 0;
+  margin: 0 0 40px 0;
+}
+
+#footer .social-links {
+  margin: 0 0 40px 0;
+}
+
+#footer .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background: #0563bb;
+  color: #fff;
+  line-height: 1;
+  padding: 8px 0;
+  margin-right: 4px;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+#footer .social-links a:hover {
+  background: #0678e3;
+  color: #fff;
+  text-decoration: none;
+}
+
+#footer .copyright {
+  margin: 0 0 5px 0;
+}
+
+#footer .credits {
+  font-size: 13px;
+}
+
+
+/*GENERAL --------------------*/
+.sentence {
+	display: flex;
+	flex-direction: row;
+}
+
+.left {
+	position: absolute;
+	left: -30px;
+	bottom: 80px;
+}
+
+.right {
+	position: absolute;
+	bottom: 80px;
+	right: -30px;
+}
+
+@keyframes shake {
+	  0% { transform: translate(0px, 0px) rotate(90deg); }
+	  6% { transform: translate(0px, 2px) rotate(90deg); }
+	  12% { transform: translate(0px, 4px) rotate(90deg); }
+	  18% { transform: translate(0px, 6px) rotate(90deg); }
+	  25% { transform: translate(0px, 8px) rotate(90deg); }
+	  32% { transform: translate(0px, 10px) rotate(90deg); }
+	  37% { transform: translate(0px, 12px) rotate(90deg); }
+	  45% { transform: translate(0px, 14px) rotate(90deg); }
+	  50% { transform: translate(0px, 15px) rotate(90deg); }
+	  56% { transform: translate(0px, 14px) rotate(90deg); }
+	  62% { transform: translate(0px, 12px) rotate(90deg); }
+	  68% { transform: translate(0px, 10px) rotate(90deg); }
+	  75% { transform: translate(0px, 8px) rotate(90deg); }
+	  83% { transform: translate(0px, 6px) rotate(90deg); }
+	  88% { transform: translate(0px, 4px) rotate(90deg); }
+	  94% { transform: translate(0px, 2px) rotate(90deg); }
+	  100% { transform: translate(0px, 0px) rotate(90deg); }
+}
+
+.animate__delay-1s {
+  --animate-delay: 0.8s;
+}

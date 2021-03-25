@@ -1,0 +1,22 @@
+.buttonContainer {
+  width: 200px;
+  height: 60px;
+  border: solid rgb(58, 255, 205) 0.5px;
+  color: rgb(58, 255, 205);
+  display: flex;
+  justify-content: center;
+  vertical-align: center;
+  align-content: center;
+}
+
+.buttonContainer:hover {
+  background-color: rgb(58, 255, 205);
+  color: black;
+  cursor: pointer;
+}
+
+.buttonContent {
+  margin: auto;
+  font-family: Montserrat;
+  font-size: 20px;
+}

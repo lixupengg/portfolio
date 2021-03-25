@@ -1,0 +1,17 @@
+
+.carouselContainer {
+	display: inline-flex;
+	height: 70%;
+}
+
+.carousel-wrapper{
+	display: inline-flex;
+}
+.caroPic {
+	object-fit: contain;
+}
+
+.picBox {
+	height: 60vh;
+	display: inline-flex;
+}

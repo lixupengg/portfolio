@@ -1,0 +1,23 @@
+.singleProjectContainer {
+	position: relative;
+	width: 20vw;
+	height: 33vh;
+	background-color: blue;
+	opacity: 70%;
+	cursor: pointer;
+}
+
+.singleProjectContainer:hover {
+	opacity: 100%;
+}
+
+
+.imagePicture {
+	object-fit: contain;
+	margin-left: 5vw;
+	margin-top: 5vh;
+	width: 10vw;
+	height: 23vh;
+	border: solid;
+	opacity: 90%;
+}

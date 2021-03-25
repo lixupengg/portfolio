@@ -1,27 +1,14 @@
-.container {
-  background-color: red;
-  display: block;
-  height: 100vh;
-  width: 100vw;
-  padding: 1vw;
-}
-
-.button {
-  background-color: peachpuff;
-  color: black;
-  font-family: sans-serif;
-
-  
-  margin: auto;
-  display : block;
-  height: 5vh;
-  width: 60vw;
-  margin-top: 1vh;
-}
-
-
 .App {
   text-align: center;
+}
+
+
+.appContainer {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(27,27,27);
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
 }
 
 .App-logo {
@@ -29,6 +16,10 @@
   pointer-events: none;
 }
 
+/*fonts */
+
+
+/*fonts*/
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -48,6 +39,19 @@
 
 .App-link {
   color: #61dafb;
+}
+
+p {
+  color: white;
+  font-family: Montserrat;
+  font-size: 20px;
+}
+
+h1 {
+  color: rgb(58, 255, 205);
+  font-family: coolvetica;
+  font-size: 80px;
+  font-weight: 400;
 }
 
 @keyframes App-logo-spin {
