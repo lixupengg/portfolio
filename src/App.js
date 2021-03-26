@@ -6,6 +6,7 @@ import Page from "./Pages/Page.jsx";
 import AboutMe from "./Pages/AboutMe.jsx";
 import Resume from "./Pages/Resume.jsx";
 import ContactMe from "./Pages/ContactMe.jsx"
+import Skills from "./Pages/Skills.jsx"
 import Footer from "./Pages/Footer.jsx"
 import Sidebar from "./Components/Sidebar.jsx";
 import Particle from "./Components/Particles.jsx";
@@ -19,8 +20,9 @@ class App extends Component{
           <Sidebar/>
           <Page/>
           <Particle/>
-          <Resume/>
           <AboutMe/>
+          <Resume/>
+          <Skills/>
           <ContactMe/>
           <Footer/>
         </div>;

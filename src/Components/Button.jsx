@@ -18,11 +18,11 @@ class Button extends Component{
 
   render() {
       return (
-      	<div class="buttonContainer">
+      	<a class="buttonContainer" href="#contact">
       		<div class ="buttonContent">
       			contact me!
       		</div>
-        </div>
+        </a>
 
        );
   }

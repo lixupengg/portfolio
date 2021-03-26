@@ -2,11 +2,10 @@ import React, { Component, Fragment } from "react";
 // -------------------------------------------------------------------------
 import SingleProject from '../Components/SingleProject.jsx'
 import Popup from "reactjs-popup";
-import trippyy from '../Assets/trippyy.PNG'
-import wsg from '../Assets/WSG.png'
-import scdf from '../Assets/scdf.png'
-import uniquirk from '../Assets/uniquirk.png'
-import blank from '../Assets/blank.png'
+import trippyy from '../Assets/trippyy-1.png'
+import trippyy1 from '../Assets/trippyy-2.png'
+import trippyy2 from '../Assets/trippyy-3.png'
+import trippyy3 from '../Assets/trippyy-4.png'
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import "./MyCarousel.css"
@@ -28,17 +27,13 @@ state = {
       		dynamicHeight = "true"
           showThumbs={false}
       	>
-                <div className="picBox">
-                    <img className="caroPic" src={wsg} />
-                </div>
-                <div className="picBox">
-                    <img className="caroPic" src={trippyy} />
-                </div>
-                <div className="picBox">
-                    <img className="caroPic" src={uniquirk} />                    
-                </div>
-            </Carousel>
-            </div>
+            {this.props.samples.map((sample) => 
+              <div className="picBox">
+                <img className="caroPic" src={sample}/>
+              </div>)
+            }
+        </Carousel>
+        </div>
             
       	);
   }

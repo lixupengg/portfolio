@@ -14,13 +14,13 @@ class Page extends Component{
             <p class="tagFont animate__animated animate__fadeInLeft"> {"<h1>"} </p>
 
             <div class="sentence animate__animated animate__fadeInLeft">
-	           <p class="introFont"> hi! </p>
+	           <p class="introFont"> Hi, </p>
             </div>
 
             <div class="sentence animate__animated animate__fadeInLeft animate__delay-1s">
-              <p class="introFont"> i'm </p>
+              <p class="introFont"> I'm </p>
               <div class="xupengContainer">
-  	           <p class="introFont"> Xupeng, </p>
+  	           <p class="introFont"> Xupeng </p>
                <p class="introFont green">X</p>
                <p class="introFont red">X</p>
               </div>

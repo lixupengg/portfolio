@@ -45,27 +45,29 @@ class Sidebar extends Component{
       return (
       	<div class="sidebarContainer animate__animated animate__fadeInRight">
       		<div class="iconContainer">
-      			{this.state.user ? <p class="iconText animate__animated animate__fadeInRight animate__faster"> about me </p> : null}
 	      		<img onMouseEnter ={this.showUser} onMouseLeave ={this.hideUser} class="icon" src={User}/>
 	      	</div>
 
-	      	<div class="iconContainer">
-	      		{this.state.projects ? <p class="iconText animate__animated animate__fadeInRight animate__faster"> my projects </p> : null }
+	      	<a class="iconContainer" href="#portfolio">
 	      		<img onMouseEnter ={this.showProjects} onMouseLeave ={this.hideProjects} class="icon" src={Projects}/>
-            <p className="iconOverlay"> WORKS </p>
-	      	</div>
+            <div className="iconOverlayBox">
+              <p className="iconOverlay"> WORKS </p>
+            </div>
+	      	</a>
 
-          <div class="iconContainer">
-            {this.state.projects ? <p class="iconText animate__animated animate__fadeInRight animate__faster"> my projects </p> : null }
+          <a class="iconContainer" href="#resume">
             <img onMouseEnter ={this.showProjects} onMouseLeave ={this.hideProjects} class="icon" src={Resume}/>
-            <p className="iconOverlay"> RESUME </p>
-          </div>
+            <div className="iconOverlayBox">
+              <p className="iconOverlay"> RESUME </p>
+            </div>
+          </a>
 
-	      	<div class="iconContainer">
-	      		{this.state.contact ? <p class="iconText animate__animated animate__fadeInRight animate__faster"> contact me </p> : null }
+	      	<a class="iconContainer" href="#contact">
 	      		<img onMouseEnter ={this.showContact} onMouseLeave ={this.hideContact} class="icon" src={Contact}/>
-            <p className="iconOverlay"> CONTACT </p>
-	      	</div>
+            <div className="iconOverlayBox">
+              <p className="iconOverlay"> CONTACT </p>
+            </div>
+	      	</a>
 
           <div class="iconContainer">
             <img class="icon record" src={Record}/>

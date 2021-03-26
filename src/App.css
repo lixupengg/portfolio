@@ -9,6 +9,7 @@
   background-color: rgb(27,27,27);
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 .App-logo {

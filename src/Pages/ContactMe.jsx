@@ -31,7 +31,7 @@ class ContactMe extends Component{
           <div class="info-box">
             <i class="logo bx bx-map"></i>
             <h3>My Address</h3>
-            <p>A108 Adam Street, New York, NY 535022</p>
+            <p>1 Hougang Ave 3, SG530001</p>
           </div>
         </div>
 
@@ -40,11 +40,10 @@ class ContactMe extends Component{
             <i class="logo bx bx-share-alt"></i>
             <h3>Social Profiles</h3>
             <div class="social-links">
-              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              <a href="https://www.linkedin.com/in/lixupeng" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              <a href="https://join.skype.com/invite/hq0mpXMf4il6" target="_blank"  class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="https://github.com/pongzers" target="_blank" class="google-plus"><i class="bx bxl-github"></i></a>
+              
             </div>
           </div>
         </div>
@@ -53,14 +52,14 @@ class ContactMe extends Component{
           <div class="info-box">
             <i class="logo bx bx-envelope"></i>
             <h3>Email Me</h3>
-            <p>contact@example.com</p>
+            <p>li.xupeng@u.nus.edu</p>
           </div>
         </div>
         <div class="col-md-6 mt-4 d-flex align-items-stretch">
           <div class="info-box">
             <i class="logo bx bx-phone-call"></i>
             <h3>Call Me</h3>
-            <p>+1 5589 55488 55</p>
+            <p>+65 93898691</p>
           </div>
         </div>
       </div>

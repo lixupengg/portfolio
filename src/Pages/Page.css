@@ -1,6 +1,7 @@
 h2 {
 	color: rgb(58, 255, 205)
 }
+
 .pageContainer {
 	width: 100vw;
 	height : 100vh;
@@ -56,6 +57,56 @@ section {
 .section-title p {
   margin-bottom: 0;
 }
+
+/*--------------------------------------------------------------
+# Skills
+--------------------------------------------------------------*/
+.skills h4 {
+  padding: 10px 0;
+  margin: auto;
+  text-align: center;
+  text-transform: uppercase;
+  display: block;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  color: rgb(230,230,230);
+}
+.skills .progress {
+  height: 50px;
+  display: block;
+  background: none;
+}
+
+.skills .progress .skill {
+  padding: 10px 0;
+  margin: 0 0 6px 0;
+  text-transform: uppercase;
+  display: block;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+.skills .progress .skill .val {
+  float: right;
+  font-style: normal;
+}
+
+.skills .progress-bar-wrap {
+  background: rgb(200,200,20  0);
+}
+
+.skills .progress-bar {
+  /*width: 10px;*/
+  height: 10px;
+  /*transition: .9s;*/
+  background-color: #0563bb;
+}
+
+.skills .progress-bar-green {
+  background-color: rgb(58, 255, 205);
+}
+
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
@@ -271,7 +322,7 @@ section {
   font-weight: 600;
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
-  color: rgb(233,233,233);
+  color: rgb(58, 255, 205);
 
 }
 
@@ -283,14 +334,14 @@ section {
   font-weight: 800;
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
-  color: rgb(200,200,200);
+  color: rgb(160,160,160);
 }
 
 .popupBox p {
   margin-left: 15px;
 
   line-height: 18px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   font-family: "Poppins", sans-serif;
   color: rgb(233,233,233);
@@ -415,10 +466,10 @@ section {
 }
 
 .introFont {
-  font-family: Montserrat;
+  font-family: Poppins;
   color: white;
   font-size: min(8vw, 100px);
-  font-weight: 400;
+  font-weight: 500;
   margin-top: 0;
   margin-bottom: 0;
   margin-right: 2vw;
@@ -579,6 +630,10 @@ section {
 .sentence {
 	display: flex;
 	flex-direction: row;
+}
+
+.sentence p {
+  margin-bottom: 0;
 }
 
 .left {

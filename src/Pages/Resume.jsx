@@ -17,7 +17,6 @@ class Resume extends Component{
 
 	        <div class="section-title">
 	          <h2 class="resume-title">Resume</h2>
-	          <p>Magnam.</p>
 	        </div>
 
 	        <div class="row">
