@@ -42,6 +42,13 @@ body {
 	align-items: center;
 }
 
+.userIcon {
+	height: min(70px, 7vh);
+	width: min(70px, 7vh);
+	object-fit: contain;
+	/*opacity: 85%;*/
+}
+
 .icon {
 	height: min(60px, 7vh);
 	width: min(60px, 7vh);

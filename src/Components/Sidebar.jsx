@@ -3,7 +3,7 @@ import React, { Component, Fragment } from "react";
 // -------------------------------------------------------------------------
 
 import './Sidebar.css';
-import User from '../Assets/user.png'
+import User from '../Assets/XP.png'
 import Contact from '../Assets/contact.png'
 import Projects from '../Assets/projects.png'
 import Record from '../Assets/record.png'
@@ -44,8 +44,8 @@ class Sidebar extends Component{
   render() {
       return (
       	<div class="sidebarContainer animate__animated animate__fadeInRight">
-      		<div class="iconContainer">
-	      		<img onMouseEnter ={this.showUser} onMouseLeave ={this.hideUser} class="icon" src={User}/>
+      		<div class="iconContainerWithoutHover">
+	      		<img onMouseEnter ={this.showUser} onMouseLeave ={this.hideUser} class="userIcon" src={User}/>
 	      	</div>
 
 	      	<a class="iconContainer" href="#portfolio">
