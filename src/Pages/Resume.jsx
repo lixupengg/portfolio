@@ -24,7 +24,7 @@ class Resume extends Component{
 	            <h3 class="resume-title">Summary</h3>
 	            <div class="resume-item pb-0">
 	              <h4>LI XUPENG</h4>
-	              <p><em>An astute thinker who is driven in catalysing improvements in current systems, while gaining insights from peers and seniors of different expertise. 
+	              <p><em>Always excited to start on new projects, an astute thinker who is driven in catalysing improvements in current systems, while gaining insights from peers and seniors of different expertise. 
 	              A current Computer Science major, deeply interested in further developing full stack skillsets. </em></p>
 	              <ul>
 	                <li>(+65) 93898691</li>
@@ -37,13 +37,12 @@ class Resume extends Component{
 	              <h4>Bachelor of Computing (Honours) in Computer Science</h4>
 	              <h5>Aug 2019 - Present</h5>
 	              <p><em>National University of Singapore</em></p>
-	              <p>boo</p>
+	              <p>Expected Graduation: May 2023</p>
 	            </div>
 	            <div class="resume-item">
 	              <h4>Singapore-Cambridge General Certificate of Education Advanced Level</h4>
 	              <h5>Jan 2015 - Dec 2016</h5>
 	              <p><em>Nanyang Junior College</em></p>
-	              <p>boo</p>
 	            </div>
 	          </div>
 	          <div class="col-lg-6">
@@ -54,7 +53,7 @@ class Resume extends Component{
 	              <p><em>National University of Singapore </em></p>
 	              <ul>
 	                <li>Teaching assistant for CS1101S Programming Methodology, a rigorous and thorough introduction to programming and programming methodology for NUS Computer Science students.</li>
-	                <li>Conducted tutorials and graded assignments for a class of 8 students</li>
+	                <li>Responsible for the conduct of tutorials and grading of assignments.</li>
 	              </ul>
 	            </div>
 	            <div class="resume-item">

@@ -44,7 +44,7 @@ state = {
 		        <p>My Works</p>
 		      </div>
 
-		      <Reveal effect="animate__animated animate__fadeInDown animate__faster">
+		      <Reveal effect="animate__animated animate__fadeInRight animate__faster">
 		      <div class="wrapForZoom">
 		      <div class="row portfolio-container">
 		        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
@@ -118,13 +118,13 @@ state = {
 		          </div>
 		        </div>
 
-		        <div class="col-lg-4 col-md-6 portfolio-item">
+		        <div class="d-none d-lg-block col-lg-4 col-md-6 portfolio-item">
 		          <div class="">
 		            <img src={blank} class="img-fluid" alt=""/>
 		          </div>
 		        </div>
 
-		        <div class="col-lg-4 col-md-6 portfolio-item">
+		        <div class="d-none d-lg-block col-lg-4 col-md-6 portfolio-item">
 		          <div class="">
 		            <img src={blank} class="img-fluid" alt=""/>
 		          </div>
@@ -152,7 +152,7 @@ state = {
 		        			<p> A travel web application using ReactJS, Redux, and Django that integrates algorithms to automatically suggest convenient and well-thought-out itineraries which are optimised in terms of geo-convenience, time, and costs based on user input.</p>
 		        			<p> An ongoing project, and aspiring to add more features as travel unfolds again. </p>
 		        			<p> Developed in the summer of 2019. </p>
-		        			<p> View the project {<a href="https://youtu.be/bDtzUbDFLvY" target="_blank"> here! </a>} </p>
+		        			<p> View the project demo {<a href="https://youtu.be/bDtzUbDFLvY" target="_blank"> here! </a>} </p>
 		        			<h4> STACK USED: </h4>
 		        			<p> ReactJS </p>
 		        			<p> Redux </p>

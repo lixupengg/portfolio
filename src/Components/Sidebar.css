@@ -16,12 +16,23 @@ body {
 	/*Manual positioning*/
 	position: fixed;
 	z-index: 2;
-	right: min(60px, 7vh);
+	/*right: min(60px, 7vh);*/
+	right: max(40px, 4vw);
 	/*margin-left: 88vw;*/
-	margin-top: 45vh;
+	margin-top: 40vh;
 }
 
 .iconContainer {
+	height: 8vh;
+	width: min(50px, 10vh);
+	margin-top: 2vh;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.iconContainerWithoutHover {
 	height: 8vh;
 	width: min(50px, 10vh);
 	margin-top: 2vh;
@@ -67,8 +78,6 @@ body {
 
 .iconContainer:hover {
 	cursor: pointer;
-	color: blue;
-	/*border-bottom: 3px solid rgb(231, 0, 53);*/
 }
 
 .iconContainer:hover .iconOverlayBox .iconOverlay{

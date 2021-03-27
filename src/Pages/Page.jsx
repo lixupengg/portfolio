@@ -28,7 +28,7 @@ class Page extends Component{
             </div>
 
             <div class="sentence animate__animated animate__fadeInLeft animate__delay-1s">
-              <p> an aspiring software engineer, currently a sophomore in NUS computer science </p>
+              <p> An aspiring software engineer, currently a sophomore in NUS computer science. </p>
             </div>
 	        </div>
 

@@ -16,13 +16,13 @@ class Skills extends Component{
 
         <div className="section-title">
           <h2>Skills</h2>
-          <p>A rough gauge of my skills.</p>
+          <p>These are rough indicators of my proficiency in the various web development tools, frameworks and programming languages.</p>
         </div>
 
         <div className="row skills-content">
         <Reveal effect="animate__animated animate__fadeInLeft animate__faster">
             <div className="col-lg-6">
-                <h4> Web Development Skills </h4>
+                <h4> Web Development Tools </h4>
                 <div className="progress">
                   <span className="skill">ReactJS <i className="val">85%</i></span>
                   <div className="progress-bar-wrap">
@@ -31,14 +31,28 @@ class Skills extends Component{
                 </div>
 
                 <div className="progress">
-                  <span className="skill">Django <i className="val">60%</i></span>
+                  <span className="skill">Redux <i className="val">80%</i></span>
                   <div className="progress-bar-wrap">
-                    <div style={{width: '50%'}} className="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div style={{width: '85%'}} className="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
 
                 <div className="progress">
-                  <span className="skill">HTML <i className="val">90%</i></span>
+                  <span className="skill">Django <i className="val">60%</i></span>
+                  <div className="progress-bar-wrap">
+                    <div style={{width: '60%'}} className="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+
+                <div className="progress">
+                  <span className="skill">Flask <i className="val">25%</i></span>
+                  <div className="progress-bar-wrap">
+                    <div style={{width: '25%'}} className="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+
+                <div className="progress">
+                  <span className="skill">HTML5 <i className="val">90%</i></span>
                   <div className="progress-bar-wrap">
                     <div style={{width: '90%'}} className="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
@@ -48,6 +62,13 @@ class Skills extends Component{
                   <span className="skill">CSS <i className="val">85%</i></span>
                   <div className="progress-bar-wrap">
                     <div style={{width: '85%'}} className="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+
+                <div className="progress">
+                  <span className="skill">Bootstrap <i className="val">50%</i></span>
+                  <div className="progress-bar-wrap">
+                    <div style={{width: '50%'}} className="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
             </div>

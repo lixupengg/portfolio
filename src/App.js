@@ -21,8 +21,8 @@ class App extends Component{
           <Page/>
           <Particle/>
           <AboutMe/>
-          <Resume/>
           <Skills/>
+          <Resume/>
           <ContactMe/>
           <Footer/>
         </div>;

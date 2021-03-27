@@ -69,7 +69,7 @@ class Sidebar extends Component{
             </div>
 	      	</a>
 
-          <div class="iconContainer">
+          <div class="iconContainerWithoutHover">
             <img class="icon record" src={Record}/>
           </div>
         </div>
