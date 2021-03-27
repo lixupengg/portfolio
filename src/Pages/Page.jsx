@@ -2,6 +2,7 @@
 import React, { Component, Fragment } from "react";
 // -------------------------------------------------------------------------
 
+import resume from "../lixupeng.pdf"
 import Button from "../Components/Button.jsx"
 
 import './Page.css';
@@ -34,7 +35,7 @@ class Page extends Component{
 
           <div class="detailsContainer">
             <div class="animate__animated animate__fadeIn animate__delay-1s">
-                <Button/>
+                <Button link={resume} buttonContent="Download Resume"/>
             </div>
           </div>
 

@@ -6,6 +6,7 @@ import './Button.css';
 import User from '../Assets/user.png'
 import Contact from '../Assets/contact.png'
 import Projects from '../Assets/projects.png'
+import resume from "../lixupeng.pdf"
 
 
 class Button extends Component{
@@ -18,9 +19,11 @@ class Button extends Component{
 
   render() {
       return (
-      	<a class="buttonContainer" href="#contact">
+      	<a class="buttonContainer" href={resume} target="_blank">
       		<div class ="buttonContent">
-      			contact me!
+            <i className ="bx bxs-download downloadIcon"/>
+            {"  "}
+      			Resume
       		</div>
         </a>
 
