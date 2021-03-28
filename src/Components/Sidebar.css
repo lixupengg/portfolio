@@ -22,13 +22,6 @@ body {
 	margin-top: 40vh;
 }
 
-@media only screen and (max-width: 500px) {
-  /* For mobile phones: */
-  .sidebarContainer {
-  	right: 10px;
-  }
-}
-
 .iconContainer {
 	height: 8vh;
 	width: min(50px, 10vh);
@@ -119,6 +112,19 @@ body {
 	animation: recordSpin 4s;
 	animation-iteration-count: infinite;
 	
+}
+
+@media only screen and (max-width: 500px) {
+/* For mobile phones: */
+	.sidebarContainer {
+		right: 25px;
+	}
+	.userIcon {
+		height: 70px;
+		width: 70px;
+		object-fit: contain;
+	/*opacity: 85%;*/
+	}
 }
 
 @keyframes recordSpin {

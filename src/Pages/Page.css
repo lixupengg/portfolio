@@ -1,3 +1,7 @@
+body {
+  overflow: hidden;
+}
+
 h2 {
 	color: rgb(58, 255, 205)
 }
@@ -13,6 +17,7 @@ h2 {
 --------------------------------------------------------------*/
 section {
   padding: 60px 0;
+  width: 100vw;
   overflow: hidden;
   background-color: rgb(50,50,50);
 }
@@ -407,6 +412,7 @@ section {
 
   .caroBox {
     width: 75vw;
+    height: 70vh;
   }
 }
 /*--------------------------------------------------------------
