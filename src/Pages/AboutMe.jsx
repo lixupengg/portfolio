@@ -142,8 +142,8 @@ state = {
 	        >	
 	        	<div className="popupBox">
 		        	<i className='bx bx-window-close crossIcon' onClick={() => this.setState({trippyyOpen: false})}></i>
-		        	<div className="row">
-		        		<div className="caroBox col-6">
+		        	<div className="popupRow">
+		        		<div className="caroBox">
 		        			<MyCarousel samples={trippyySamples}/>
 		        		</div>
 
@@ -169,8 +169,8 @@ state = {
 	        >	
 	        	<div className="popupBox">
 		        	<i className='bx bx-window-close crossIcon' onClick={() => this.setState({wsgOpen: false})}></i>
-		        	<div className="row">
-		        		<div className="caroBox col-6">
+		        	<div className="popupRow">
+		        		<div className="caroBox">
 		        			<MyCarousel samples={wsgSamples}/>
 		        		</div>
 
@@ -192,8 +192,8 @@ state = {
 	        >	
 	        	<div className="popupBox">
 		        	<i className='bx bx-window-close crossIcon' onClick={() => this.setState({uniquirkOpen: false})}></i>
-		        	<div className="row">
-		        		<div className="caroBox col-6">
+		        	<div className="popupRow">
+		        		<div className="caroBox">
 		        			<MyCarousel samples={uniquirkSamples}/>
 		        		</div>
 

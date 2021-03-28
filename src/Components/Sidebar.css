@@ -16,10 +16,17 @@ body {
 	/*Manual positioning*/
 	position: fixed;
 	z-index: 2;
-	/*right: min(60px, 7vh);*/
+	/*right: 5px;*/
 	right: max(40px, 4vw);
 	/*margin-left: 88vw;*/
 	margin-top: 40vh;
+}
+
+@media only screen and (max-width: 500px) {
+  /* For mobile phones: */
+  .sidebarContainer {
+  	right: 10px;
+  }
 }
 
 .iconContainer {
@@ -43,8 +50,8 @@ body {
 }
 
 .userIcon {
-	height: min(70px, 7vh);
-	width: min(70px, 7vh);
+	height: min(80px, 8vh);
+	width: min(80px, 8vh);
 	object-fit: contain;
 	/*opacity: 85%;*/
 }

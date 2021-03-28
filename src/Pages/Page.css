@@ -313,6 +313,11 @@ section {
   background-color: rgb(30,30,30, 0.95);
 }
 
+.popupRow { 
+  display: flex;
+  flex-direction: row;
+}
+
 .popupBox h3 {
   margin-left: 15px;
   margin-top: 10vh;
@@ -348,7 +353,8 @@ section {
 }
 
 .textBox {
-  width: 40vw;
+    /*background-color: red;*/
+    width: 40vw;
     overflow-y :scroll;
     height: 80vh;
 }
@@ -362,9 +368,10 @@ section {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
 .crossIcon {
   color : rgb(240, 240, 240);
-  font-size: 2.5vw;
+  font-size: max(30px,2.5vw);
   position: absolute;
   right: 0;
 }
@@ -376,11 +383,31 @@ section {
 
 .caroBox {
   margin-top: -10vh;
+  width: 40vw;
   height: 100vh;
 
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media only screen and (max-width: 500px) {
+  /* For mobile phones: */
+  .popupBox {
+    overflow-y: scroll;
+    overflow-x: none;
+  }
+  .popupRow {
+    flex-direction: column;
+  }
+  .textBox {
+    margin-top: -150px;
+    width: 75vw;
+  }
+
+  .caroBox {
+    width: 75vw;
+  }
 }
 /*--------------------------------------------------------------
 # Resume
