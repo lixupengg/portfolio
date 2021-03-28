@@ -327,7 +327,7 @@ section {
   margin-left: 15px;
   margin-top: 10vh;
   margin-bottom: 5vh;
-  line-height: 18px;
+  /*line-height: 18px;*/
   font-size: min(48px, 4vw);
   font-weight: 600;
   text-transform: uppercase;
@@ -339,9 +339,9 @@ section {
 .popupBox h4 {
   margin-top: 3vh;
   margin-left: 15px;
-  line-height: 18px;
-  font-size: 18px;
-  font-weight: 800;
+  
+  font-size: 16px;
+  font-weight: 600;
   text-transform: uppercase;
   font-family: "Poppins", sans-serif;
   color: rgb(160,160,160);
@@ -350,6 +350,16 @@ section {
 .popupBox p {
   margin-left: 15px;
 
+  line-height: 18px;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  color: rgb(233,233,233);
+}
+
+.popupBox li {
+  list-style-type: none;
+  margin-left: 15px;
   line-height: 18px;
   font-size: 16px;
   font-weight: 400;

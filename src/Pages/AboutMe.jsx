@@ -22,18 +22,22 @@ import uniquirk1 from '../Assets/uniquirk-1.jpg'
 import uniquirk2 from '../Assets/uniquirk-2.jpg'
 import uniquirk3 from '../Assets/uniquirk-3.jpg'
 
+import comingSoon from '../Assets/comingSoon.jpg'
+
 import Reveal from 'react-reveal/Reveal';
 import './Page.css';
 
 const trippyySamples = [trippyy4, trippyy2, trippyy1, trippyy3];
 const wsgSamples = [wsg1, wsg2]
 const uniquirkSamples = [uniquirk1, uniquirk2, uniquirk3]
+const scdfSamples = [comingSoon]
 class AboutMe extends Component{
 
 state = {
 	trippyyOpen: false,
 	wsgOpen: false,
 	uniquirkOpen: false,
+	scdfOpen: false,
 }
   render() {
       return (
@@ -93,7 +97,8 @@ state = {
 			              <div class="portfolio-links">
 			              	<h5> STACK USED: </h5>
 			              	<p> ReactJS </p>
-			              	<div className="learnMoreButton">
+			              	<p> FIREBASE </p>
+			              	<div className="learnMoreButton" onClick={() => this.setState({scdfOpen: true})}>
 			              		LEARN MORE
 			              	</div>
 			             </div>
@@ -154,9 +159,9 @@ state = {
 		        			<p> Developed in the summer of 2019. </p>
 		        			<p> View the project demo {<a href="https://youtu.be/bDtzUbDFLvY" target="_blank"> here! </a>} </p>
 		        			<h4> STACK USED: </h4>
-		        			<p> ReactJS </p>
-		        			<p> Redux </p>
-		        			<p> Django-REST </p>
+		        			<li> ReactJS </li>
+		        			<li> Redux </li>
+		        			<li> Django-REST </li>
 		        		</div>
 		        	</div>
 	        	</div>
@@ -179,7 +184,7 @@ state = {
 		        			<p> A HTML email newsletter created in collaboration with Workforce Singapore, to educate Singaporean businesses about new govermental initiatives</p>
 		        			<p> Developed mobile and desktop responsive HTML emails using HTML with inline CSS, to ensure compatibility across all email servers </p>
 		        			<h4> STACK USED: </h4>
-		        			<p> HTML (inline CSS) </p>
+		        			<li> HTML (inline CSS) </li>
 		        		</div>
 		        	</div>
 	        	</div>
@@ -203,8 +208,34 @@ state = {
 		        			<p> Past works include short games, aesthetic filters and "fortune-telling" filters.</p>
 		        			<p> Achieved outreach of ~20k impressions through Instagram filters. </p>
 		        			<h4> STACK USED: </h4>
-		        			<p> SPARK AR </p>
-		        			<p> JAVASCRIPT </p>
+		        			<li> SPARK AR </li>
+		        			<li> JAVASCRIPT </li>
+		        		</div>
+		        	</div>
+	        	</div>
+	        </Popup>
+
+		   	<Popup
+		        open={this.state.scdfOpen}
+		        closeOnDocumentClick
+		        onClose={() => this.setState({scdfOpen: false})}
+	        >	
+	        	<div className="popupBox">
+		        	<i className='bx bx-window-close crossIcon' onClick={() => this.setState({scdfOpen: false})}></i>
+		        	<div className="popupRow">
+		        		<div className="caroBox">
+		        			<MyCarousel samples={scdfSamples}/>
+		        		</div>
+
+		        		<div className="textBox">
+		        			<h3> Singapore Civil Defence Force (Save-A-Life Initiative) </h3>
+		        			<p> Developed a full stack campaign website for SCDF using to promote the launch of a new mobile
+application (myResponders) from the Save-A-Life initiative.</p>
+		        			<p> The website enabled Singaporeans to learn more about the initiative and take part in
+promotional contests related to the initiative.</p>
+		        			<h4> STACK USED: </h4>
+		        			<li> REACTJS </li>
+		        			<li> FIREBASE </li>
 		        		</div>
 		        	</div>
 	        	</div>

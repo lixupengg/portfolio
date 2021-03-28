@@ -52,20 +52,6 @@ class Skills extends Component{
                 </div>
 
                 <div className="progress">
-                  <span className="skill">HTML5 <i className="val">90%</i></span>
-                  <div className="progress-bar-wrap">
-                    <div style={{width: '90%'}} className="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-
-                <div className="progress">
-                  <span className="skill">CSS <i className="val">85%</i></span>
-                  <div className="progress-bar-wrap">
-                    <div style={{width: '85%'}} className="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-
-                <div className="progress">
                   <span className="skill">Bootstrap <i className="val">50%</i></span>
                   <div className="progress-bar-wrap">
                     <div style={{width: '50%'}} className="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
@@ -103,6 +89,20 @@ class Skills extends Component{
               <span className="skill">C <i className="val">60%</i></span>
               <div className="progress-bar-wrap">
                 <div style={{width: '60%'}} className="progress-bar progress-bar-green" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div className="progress">
+              <span className="skill">HTML5 <i className="val">90%</i></span>
+              <div className="progress-bar-wrap">
+                <div style={{width: '90%'}} className="progress-bar progress-bar-green" role="progressbar " aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div className="progress">
+              <span className="skill">CSS <i className="val">85%</i></span>
+              <div className="progress-bar-wrap">
+                <div style={{width: '85%'}} className="progress-bar progress-bar-green" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
           </div>
