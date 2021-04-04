@@ -52,6 +52,13 @@ class Skills extends Component{
                 </div>
 
                 <div className="progress">
+                  <span className="skill">PostgreSQL <i className="val">85%</i></span>
+                  <div className="progress-bar-wrap">
+                    <div style={{width: '85%'}} className="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+
+                <div className="progress">
                   <span className="skill">Bootstrap <i className="val">50%</i></span>
                   <div className="progress-bar-wrap">
                     <div style={{width: '50%'}} className="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
