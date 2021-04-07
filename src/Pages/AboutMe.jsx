@@ -22,7 +22,9 @@ import uniquirk1 from '../Assets/uniquirk-1.jpg'
 import uniquirk2 from '../Assets/uniquirk-2.jpg'
 import uniquirk3 from '../Assets/uniquirk-3.jpg'
 
-import comingSoon from '../Assets/comingSoon.jpg'
+import herodash1 from '../Assets/herodash1.jpeg'
+import herodash2 from '../Assets/herodash2.jpeg'
+import herodash3 from '../Assets/herodash3.jpeg'
 
 import Reveal from 'react-reveal/Reveal';
 import './Page.css';
@@ -30,7 +32,7 @@ import './Page.css';
 const trippyySamples = [trippyy4, trippyy2, trippyy1, trippyy3];
 const wsgSamples = [wsg1, wsg2]
 const uniquirkSamples = [uniquirk1, uniquirk2, uniquirk3]
-const scdfSamples = [comingSoon]
+const scdfSamples = [herodash1, herodash2, herodash3]
 class AboutMe extends Component{
 
 state = {
