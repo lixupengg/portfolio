@@ -460,6 +460,7 @@ section {
   display: inline-block;
   font-weight: 600;
   margin-bottom: 10px;
+  border-radius: 7px;
 
 }
 
@@ -469,7 +470,9 @@ section {
 
 .resume .resume-item ul li {
   padding-bottom: 10px;
-  color: white;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  list-style-type: none;
 }
 
 .resume .resume-item:last-child {

@@ -10,16 +10,15 @@ body {
 .sidebarContainer {
 	display: flex;
 	flex-direction: column;
-	height: 50vh;
-	background-color: none;
+	height: 400px;
 
 	/*Manual positioning*/
 	position: fixed;
 	z-index: 2;
 	/*right: 5px;*/
-	right: max(40px, 4vw);
+	right: 80px;
 	/*margin-left: 88vw;*/
-	margin-top: 40vh;
+	bottom: 100px;
 }
 
 .iconContainer {
@@ -43,18 +42,18 @@ body {
 }
 
 .userIcon {
-	height: min(80px, 8vh);
-	width: min(80px, 8vh);
+	height: 70px;
+	width: 70px;
 	object-fit: contain;
 	/*opacity: 85%;*/
 }
 
 .icon {
-	height: min(60px, 7vh);
-	width: min(60px, 7vh);
+	height: 60px;
+	width: 60px;
 	object-fit: contain;
 	filter: invert(100%);
-	opacity: 85%;
+	opacity: 0.85;
 }
 
 .iconOverlay {

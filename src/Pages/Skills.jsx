@@ -29,6 +29,12 @@ class Skills extends Component{
                     <div style={{width: '85%'}} className="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
+                <div className="progress">
+                  <span className="skill">NextJS <i className="val">70%</i></span>
+                  <div className="progress-bar-wrap">
+                    <div style={{width: '70%'}} className="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
 
                 <div className="progress">
                   <span className="skill">Redux <i className="val">80%</i></span>
@@ -45,16 +51,16 @@ class Skills extends Component{
                 </div>
 
                 <div className="progress">
-                  <span className="skill">Flask <i className="val">25%</i></span>
+                  <span className="skill">PostgreSQL <i className="val">85%</i></span>
                   <div className="progress-bar-wrap">
-                    <div style={{width: '25%'}} className="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div style={{width: '85%'}} className="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
 
                 <div className="progress">
-                  <span className="skill">PostgreSQL <i className="val">85%</i></span>
+                  <span className="skill">SASS <i className="val">80%</i></span>
                   <div className="progress-bar-wrap">
-                    <div style={{width: '85%'}} className="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div style={{width: '80%'}} className="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </div>
 
@@ -75,6 +81,13 @@ class Skills extends Component{
               <span className="skill">Javascript <i className="val">90%</i></span>
               <div className="progress-bar-wrap">
                 <div style={{width: '90%'}} className="progress-bar progress-bar-green" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <div className="progress">
+              <span className="skill">Typescript <i className="val">80%</i></span>
+              <div className="progress-bar-wrap">
+                <div style={{width: '80%'}} className="progress-bar progress-bar-green" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
 

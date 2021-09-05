@@ -33,6 +33,11 @@ class Resume extends Component{
 	            </div>
 
 	            <h3 class="resume-title">Education</h3>
+				<div class="resume-item">
+	              <h4>NOC Silicon Valley Batch 40, Entrepreneurial Studies</h4>
+	              <h5>Jul 2021 - Present</h5>
+	              <p><em>NUS Overseas Colleges</em></p>
+	            </div>
 	            <div class="resume-item">
 	              <h4>Bachelor of Computing (Honours) in Computer Science</h4>
 	              <h5>Aug 2019 - Present</h5>
@@ -48,8 +53,18 @@ class Resume extends Component{
 	          <div class="col-lg-6">
 	            <h3 class="resume-title">Experience</h3>
 	            <div class="resume-item">
+	              <h4>Full Stack Software Engineer Intern</h4>
+	              <h5>Jul 2021 - Present</h5>
+	              <p><em> Sellgo, Portland, Oregon </em></p>
+	              <ul>
+	                <li> Development of frontend interface for Sellgo Web Application (Amazon Analytics Dashboards), Chrome Extension (Amazon Product Analysis tool), and website.</li>
+	                <li> Development of backend REST APIs with a focus on Amazon product scrapping, payments, and user management related features.</li>
+					<li> Utilising ReactJS, NextJS, Typescript, Sass, Django </li>
+	              </ul>
+	            </div>
+	            <div class="resume-item">
 	              <h4>Teaching Assistant</h4>
-	              <h5>Jul 2020 - Present</h5>
+	              <h5>Jul 2020 - Jul 2021</h5>
 	              <p><em>National University of Singapore </em></p>
 	              <ul>
 	                <li>Teaching assistant for CS1101S Programming Methodology, a rigorous and thorough introduction to programming and programming methodology for NUS Computer Science students.</li>

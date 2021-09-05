@@ -41,7 +41,6 @@ class ContactMe extends Component{
             <h3>Social Profiles</h3>
             <div class="social-links">
               <a href="https://www.linkedin.com/in/lixupeng" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-              <a href="https://join.skype.com/invite/hq0mpXMf4il6" target="_blank"  class="google-plus"><i class="bx bxl-skype"></i></a>
               <a href="https://github.com/pongzers" target="_blank" class="google-plus"><i class="bx bxl-github"></i></a>
               
             </div>

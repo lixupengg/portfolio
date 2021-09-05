@@ -13,7 +13,6 @@ class Footer extends Component{
             <p>Thank you for reaching the end of my portfolio. Feel free to contact me to find out more!</p>
             <div class="social-links">
               <a href="https://www.linkedin.com/in/lixupeng" target="_blank" class="instagram"><i class="bx bxl-linkedin"></i></a>
-              <a href="https://join.skype.com/invite/hq0mpXMf4il6" target="_blank" class="google-plus"><i class="bx bxl-skype"></i></a>
               <a href="https://github.com/pongzers" target="_blank" class="linkedin"><i class="bx bxl-github"></i></a>
             </div>
           </div>
