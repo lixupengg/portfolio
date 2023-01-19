@@ -1,5 +1,5 @@
 {
-	"name": "qubo-frontend",
+	"name": "yan-frontend",
 	"version": "1.0.0",
 	"private": true,
 	"workspaces": ["apps/*", "features/*"],
