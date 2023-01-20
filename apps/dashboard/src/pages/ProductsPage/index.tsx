@@ -1,7 +1,7 @@
 /* eslint-disable react/state-in-constructor */
 // Basic Imports
-import React, {useEffect} from 'react';
-import axios from 'axios'
+import React, { useEffect } from 'react';
+import axios from 'axios';
 import { TabPanel } from 'react-tabs';
 import Table from '../../sharedComponents/Table';
 /* Styles */
@@ -16,10 +16,11 @@ import ModalAnimatedPopup from '../../components/ModalAnimatedPopup';
 import InputForm from '../../components/InputForm';
 import { PRODUCTS_TABLE } from '../../DATA/FAKE_DATA';
 
-axios.defaults.baseURL = 'https://cuboid-backend.herokuapp.com'
+axios.defaults.baseURL = 'https://cuboid-backend.herokuapp.com';
 const ProductsPage = () => {
 	const [isLoading, setIsLoading] = React.useState<boolean>(true);
-	const [createNewProduct, setCreateNewProduct] = React.useState<boolean>(false);
+	const [createNewProduct, setCreateNewProduct] =
+		React.useState<boolean>(false);
 	const [submitLoading, setSubmitLoading] = React.useState<boolean>(false);
 	const [productName, setProductName] = React.useState<string>('');
 	const [price, setPrice] = React.useState<string>('');
@@ -28,28 +29,40 @@ const ProductsPage = () => {
 	const [userData, setUserData] = React.useState<any>();
 	const getProducts = async () => {
 		setIsLoading(true);
-		await axios.get('/products').then(
-			(res) => {setUserData(res); console.log(userData)}).catch((err)=> {console.log(err)}
-		)
+		await axios
+			.get('/products')
+			.then((res) => {
+				setUserData(res);
+				console.log(userData);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
 		setIsLoading(false);
-	}
+	};
 	useEffect(() => {
 		getProducts();
-	  }, []);
-	
+	}, []);
+
 	const handleSubmit = async () => {
 		setSubmitLoading(true);
-		setCreateNewProduct(false)
-		setPrice('')
-		setProductName('')
-		setUnits('')
-		axios.get('/products').then(
-			(res) => {setUserData(res); console.log(userData)}).catch((err)=> {console.log(err)}
-		);
+		setCreateNewProduct(false);
+		setPrice('');
+		setProductName('');
+		setUnits('');
+		axios
+			.get('/products')
+			.then((res) => {
+				setUserData(res);
+				console.log(userData);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
 		setTimeout(() => {
-			setSubmitLoading(false)
-		}, 2000)
-	}
+			setSubmitLoading(false);
+		}, 2000);
+	};
 	const handleTabChange = (index: number) => {
 		setSelectedTabList(index);
 	};
@@ -94,7 +107,7 @@ const ProductsPage = () => {
 					tabsDisplayList={['All']}
 				>
 					<TabPanel>
-						<Table 
+						<Table
 							data={PRODUCTS_TABLE.data}
 							columns={PRODUCTS_TABLE.columns}
 						/>
@@ -108,9 +121,7 @@ const ProductsPage = () => {
 			>
 				<div className={styles.createNewProduct}>
 					<h2> Create New Product </h2>
-					<p>
-						Create a new product and add it to your inventory.
-					</p>
+					<p>Create a new product and add it to your inventory.</p>
 
 					<InputForm
 						className={styles.input}
@@ -128,8 +139,8 @@ const ProductsPage = () => {
 						label="Recurring Interval"
 						type="text"
 						name="units"
-						value={"Monthly"}
-						onChange={(e) => setUnits((e.target.value))}
+						value={'Monthly'}
+						onChange={(e) => setUnits(e.target.value)}
 					/>
 
 					<InputForm
@@ -141,7 +152,7 @@ const ProductsPage = () => {
 						value={price}
 						onChange={(e) => setPrice(e.target.value)}
 					/>
-				
+
 					<InputForm
 						className={styles.disabled}
 						id="currency"
@@ -151,7 +162,7 @@ const ProductsPage = () => {
 						value={'TCRO'}
 						onChange={(e) => console.log(e.target.value)}
 					/>
-					<br/>
+					<br />
 					<CTAButton
 						colorScheme="brand"
 						type="primary"

@@ -3,7 +3,6 @@
 import React, { useEffect } from 'react';
 import { TabPanel } from 'react-tabs';
 
-
 /* Styles */
 import axios from 'axios';
 import styles from './index.module.scss';
@@ -19,11 +18,17 @@ const OrdersPage = () => {
 	const [selectedTabList, setSelectedTabList] = React.useState<number>(0);
 	const [userData, setUserData] = React.useState<any>();
 	useEffect(() => {
-		axios.get('/merchants/3/orders').then(
-			(res) => {setUserData(res); console.log(userData)}).catch((err)=> {console.log(err)}
-		);
-		console.log(userData)
-	  }, []);
+		axios
+			.get('/merchants/3/orders')
+			.then((res) => {
+				setUserData(res);
+				console.log(userData);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+		console.log(userData);
+	}, []);
 	const handleTabChange = (index: number) => {
 		setSelectedTabList(index);
 	};
@@ -59,14 +64,11 @@ const OrdersPage = () => {
 					tabsDisplayList={['Active Subscriptions', 'Expired Subscriptions']}
 				>
 					<TabPanel>
-						<Table 
-							data={ORDERS_TABLE.data}
-							columns={ORDERS_TABLE.columns}
-						/>
+						<Table data={ORDERS_TABLE.data} columns={ORDERS_TABLE.columns} />
 					</TabPanel>
-					
+
 					<TabPanel>
-						<Table 
+						<Table
 							data={EXPIRED_ORDERS_TABLE.data}
 							columns={EXPIRED_ORDERS_TABLE.columns}
 						/>

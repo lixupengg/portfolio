@@ -11,13 +11,14 @@ const CustomersTable = (props: TableProps) => {
 	const { columns = [], data } = props;
 	let tableColumns: Column[] = columns;
 	if (columns?.length === 0) {
-		tableColumns = Object.keys(data?.[0]).map((key) => {
-			return {
-				name: key,
-				dataKey: key.replace(' ', '-'),
-				type: 'string'
-			};
-		}) || [];
+		tableColumns =
+			Object.keys(data?.[0]).map((key) => {
+				return {
+					name: key,
+					dataKey: key.replace(' ', '-'),
+					type: 'string'
+				};
+			}) || [];
 	}
 
 	return (
@@ -31,19 +32,14 @@ const CustomersTable = (props: TableProps) => {
 					console.log(data);
 				}}
 			>
-				{
-					tableColumns.map((col: Column) => {
+				{tableColumns.map((col: Column) => {
 					return (
-						<Table.Column
-							verticalAlign="middle"
-							align="left"
-							flexGrow={1}
-						>
+						<Table.Column verticalAlign="middle" align="left" flexGrow={1}>
 							<Table.HeaderCell>{col.name}</Table.HeaderCell>
 							<Table.Cell dataKey={col.dataKey} />
-						</Table.Column>);
-					})
-				}
+						</Table.Column>
+					);
+				})}
 			</Table>
 		</section>
 	);

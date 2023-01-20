@@ -5,6 +5,6 @@ import BaseRouter from './routes';
 // Import css to remove margin
 import './index.scss';
 
-const app = (<BaseRouter/>);
+const app = <BaseRouter />;
 
 ReactDOM.render(app, document.getElementById('root'));

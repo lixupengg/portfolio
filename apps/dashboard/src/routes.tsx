@@ -37,9 +37,9 @@ export const CustomRoute = (props: RouteProps) => {
 const BaseRouter: React.ReactNode = () => (
 	<Router history={history}>
 		<Switch>
-			<CustomRoute exact path='/' component={OrdersPage} />
-			<CustomRoute exact path='/customers' component={CustomersPage} />
-			<CustomRoute exact path='/products' component={ProductsPage} />
+			<CustomRoute exact path="/" component={OrdersPage} />
+			<CustomRoute exact path="/customers" component={CustomersPage} />
+			<CustomRoute exact path="/products" component={ProductsPage} />
 		</Switch>
 	</Router>
 );

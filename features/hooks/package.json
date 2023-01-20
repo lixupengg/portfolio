@@ -1,0 +1,33 @@
+{
+    "name": "@yan/hooks",
+    "version": "0.0.0",
+    "description": "hooks",
+    "keywords": [
+      "hooks"
+    ],
+    "author": "pongzers <you@example.com>",
+    "homepage": "https://github.com/yan-2/frontend#readme",
+    "license": "MIT",
+    "main": "lib/hooks.js",
+    "directories": {
+      "lib": "lib",
+      "test": "__tests__"
+    },
+    "files": [
+      "lib"
+    ],
+    "publishConfig": {
+      "registry": "https://registry.yarnpkg.com"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/yan-2/frontend.git"
+    },
+    "scripts": {
+      "test": "node ./__tests__/hooks.test.js"
+    },
+    "bugs": {
+      "url": "https://github.com/yan-2/frontend/issues"
+    }
+  }
+  

@@ -15,7 +15,7 @@ export interface RequestProps {
 	initialState?: RequestStatus;
 }
 
-function useRequest(props: RequestProps) {
+export function useRequest(props: RequestProps) {
 	const {
 		url,
 		method,
@@ -47,5 +47,3 @@ function useRequest(props: RequestProps) {
 
 	return { data, error, status };
 }
-
-export default useRequest;

@@ -33,7 +33,12 @@ const CustomersTable = (props: Props) => {
 					<Table.Cell dataKey="id" />
 				</Table.Column>
 
-				<Table.Column width={MEDIUM_WIDTH} verticalAlign="middle" align="left" flexGrow={1}>
+				<Table.Column
+					width={MEDIUM_WIDTH}
+					verticalAlign="middle"
+					align="left"
+					flexGrow={1}
+				>
 					<Table.HeaderCell>Wallet Address</Table.HeaderCell>
 					<Table.Cell dataKey="wallet_addr" />
 				</Table.Column>

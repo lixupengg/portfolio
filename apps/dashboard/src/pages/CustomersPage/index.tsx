@@ -3,8 +3,8 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
 import { TabPanel } from 'react-tabs';
+import useRequest from '@yan/hooks';
 import Table from '../../sharedComponents/Table';
-import useRequest from '../../sharedComponents/useRequest';
 import { CUSTOMERS_TABLE } from '../../DATA/FAKE_DATA';
 
 /* Styles */
@@ -26,23 +26,23 @@ const CustomersPage = () => {
 	});
 	return (
 		<>
-			<main className='page-container'>
+			<main className="page-container">
 				<PageHeader
-					title='Customers'
+					title="Customers"
 					breadcrumb={[{ content: 'Home', to: '/' }, { content: 'Customers' }]}
-					callToAction=''
+					callToAction=""
 				/>
 				<div className={styles.campaignPageHeaderRow}>
 					<h2 className={styles.pageTitle}> Customers </h2>
 					<div className={styles.buttonsRow}>
 						<CTAButton
-							colorScheme='brand'
-							type='secondary'
-							size='tiny'
-							to='/brand/campaigns/new'
+							colorScheme="brand"
+							type="secondary"
+							size="tiny"
+							to="/brand/campaigns/new"
 							disabled
 						>
-							<i className='bx bxs-download'></i>
+							<i className="bx bxs-download"></i>
 							Export
 						</CTAButton>
 					</div>
@@ -53,7 +53,7 @@ const CustomersPage = () => {
 					tabsDisplayList={['All']}
 				>
 					<TabPanel>
-						<Table 
+						<Table
 							data={CUSTOMERS_TABLE.data}
 							columns={CUSTOMERS_TABLE.columns}
 						/>

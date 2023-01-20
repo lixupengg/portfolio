@@ -2,7 +2,10 @@
 	"name": "yan-frontend",
 	"version": "1.0.0",
 	"private": true,
-	"workspaces": ["apps/*", "features/*"],
+	"workspaces": [
+		"apps/*",
+		"features/*"
+	],
 	"scripts": {
 		"prettier": "prettier --write --config ./.prettierrc.json \"**/*.{js,jsx,ts,tsx,scss,json}\"",
 		"eslint": "eslint --config ./.eslintrc.json \"**/*.{js,jsx,ts,tsx}\" --fix",
@@ -12,6 +15,7 @@
 	"dependencies": {
 		"axios": "^0.21.1",
 		"classnames": "^2.3.1",
+		"lerna": "^6.4.1",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2"
 	},

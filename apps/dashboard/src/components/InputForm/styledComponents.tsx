@@ -3,7 +3,7 @@ import { styled } from '@stitches/react';
 export const Input = styled('div', {
 	objectFit: 'contain',
 	div: {
-		fontWeight: '600',
+		fontWeight: '600'
 	},
 	input: {
 		marginBottom: '18px',
@@ -53,21 +53,21 @@ export const Input = styled('div', {
 				input: {
 					width: '20rem',
 					height: '4rem',
-					fontSize: '$content14',
+					fontSize: '$content14'
 				}
 			},
 			medium: {
 				input: {
 					width: '30rem',
 					height: '4rem',
-					fontSize: '$content14',
+					fontSize: '$content14'
 				}
 			},
 			large: {
 				input: {
 					width: '50rem',
 					height: '4rem',
-					fontSize: '$content18',
+					fontSize: '$content18'
 				}
 			}
 		}

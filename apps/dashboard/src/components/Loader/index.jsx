@@ -7,7 +7,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
  * @param {ReduxAction} Action1, Action1.
  */
 const Loader = () => {
-	return <CircularProgress color="primary" />;	
-}
+	return <CircularProgress color="primary" />;
+};
 
 export default Loader;

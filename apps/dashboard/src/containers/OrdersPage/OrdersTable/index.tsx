@@ -26,11 +26,7 @@ const OrdersTable = (props: Props) => {
 					console.log(data);
 				}}
 			>
-				<Table.Column
-					width={SMALL_WIDTH}
-					verticalAlign="middle"
-					align="center"
-				>
+				<Table.Column width={SMALL_WIDTH} verticalAlign="middle" align="center">
 					<Table.HeaderCell>Id</Table.HeaderCell>
 					<Table.Cell dataKey="id" />
 				</Table.Column>
@@ -39,23 +35,36 @@ const OrdersTable = (props: Props) => {
 					<Table.HeaderCell>Currency</Table.HeaderCell>
 					<Table.Cell dataKey="currency" />
 				</Table.Column>
-				<Table.Column width={MEDIUM_WIDTH} verticalAlign="middle" align="center">
+				<Table.Column
+					width={MEDIUM_WIDTH}
+					verticalAlign="middle"
+					align="center"
+				>
 					<Table.HeaderCell>Customer Wallet Address</Table.HeaderCell>
-					<Table.Cell dataKey="">{(rowData: any) => rowData.customer.wallet_addr}</Table.Cell>
+					<Table.Cell dataKey="">
+						{(rowData: any) => rowData.customer.wallet_addr}
+					</Table.Cell>
 				</Table.Column>
 				<Table.Column width={SMALL_WIDTH} verticalAlign="middle" align="center">
 					<Table.HeaderCell>Customer Id</Table.HeaderCell>
-					<Table.Cell dataKey="">{(rowData: any) => rowData.customer.id}</Table.Cell>
+					<Table.Cell dataKey="">
+						{(rowData: any) => rowData.customer.id}
+					</Table.Cell>
 				</Table.Column>
 				<Table.Column width={SMALL_WIDTH} verticalAlign="middle" align="center">
 					<Table.HeaderCell>Status</Table.HeaderCell>
-					<StatusCell dataKey='status' />
+					<StatusCell dataKey="status" />
 				</Table.Column>
 				<Table.Column width={SMALL_WIDTH} verticalAlign="middle" align="center">
 					<Table.HeaderCell>Amount</Table.HeaderCell>
 					<Table.Cell dataKey="amount" />
 				</Table.Column>
-				<Table.Column width={MEDIUM_WIDTH} verticalAlign="middle" align="left" flexGrow={1}>
+				<Table.Column
+					width={MEDIUM_WIDTH}
+					verticalAlign="middle"
+					align="left"
+					flexGrow={1}
+				>
 					<Table.HeaderCell>Created</Table.HeaderCell>
 					<Table.Cell dataKey="expiry" />
 				</Table.Column>

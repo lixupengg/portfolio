@@ -18,11 +18,26 @@ interface Props {
 }
 
 const CTAButton = (props: Props) => {
-	const { colorScheme, loading, type, size, children, onClick, to, disabled, className } = props;
+	const {
+		colorScheme,
+		loading,
+		type,
+		size,
+		children,
+		onClick,
+		to,
+		disabled,
+		className
+	} = props;
 
 	if (to) {
 		return (
-			<Button color={`${colorScheme}${type}`} disabled={disabled} size={size} className={className}>
+			<Button
+				color={`${colorScheme}${type}`}
+				disabled={disabled}
+				size={size}
+				className={className}
+			>
 				<Link style={{ textDecoration: 'none' }} to={to}>
 					{children}
 				</Link>
@@ -30,8 +45,18 @@ const CTAButton = (props: Props) => {
 		);
 	} else {
 		return (
-			<Button color={`${colorScheme}${type}`} size={size} onClick={onClick} className={className}>
-				{loading && <><Loader/>&nbsp;&nbsp;&nbsp;</>}
+			<Button
+				color={`${colorScheme}${type}`}
+				size={size}
+				onClick={onClick}
+				className={className}
+			>
+				{loading && (
+					<>
+						<Loader />
+						&nbsp;&nbsp;&nbsp;
+					</>
+				)}
 				{children}
 			</Button>
 		);
