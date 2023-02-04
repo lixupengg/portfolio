@@ -14,7 +14,7 @@ const PageHeader = (props: Props) => {
 
 	return (
 		<>
-			<title>Qubo - {title}</title>
+			<title>Qubo -{title}</title>
 
 			<div className="page-header">
 				<p> Qubo </p>

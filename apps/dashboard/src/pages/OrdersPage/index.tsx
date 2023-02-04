@@ -1,7 +1,6 @@
 /* eslint-disable react/state-in-constructor */
 // Basic Imports
 import React, { useEffect } from 'react';
-import { TabPanel } from 'react-tabs';
 
 /* Styles */
 import axios from 'axios';
@@ -12,7 +11,6 @@ import PageHeader from '../../components/PageHeader';
 import { ORDERS_TABLE, EXPIRED_ORDERS_TABLE } from '../../DATA/FAKE_DATA';
 import Table from '../../sharedComponents/Table';
 import CTAButton from '../../components/CTAButton';
-import TabsWrapper from '../../components/TabsWrapper';
 
 const OrdersPage = () => {
 	const [selectedTabList, setSelectedTabList] = React.useState<number>(0);
@@ -58,22 +56,10 @@ const OrdersPage = () => {
 						</CTAButton>
 					</div>
 				</div>
-				<TabsWrapper
-					handleTabChange={handleTabChange}
-					selectedTab={selectedTabList}
-					tabsDisplayList={['Active Subscriptions', 'Expired Subscriptions']}
-				>
-					<TabPanel>
-						<Table data={ORDERS_TABLE.data} columns={ORDERS_TABLE.columns} />
-					</TabPanel>
-
-					<TabPanel>
-						<Table
-							data={EXPIRED_ORDERS_TABLE.data}
-							columns={EXPIRED_ORDERS_TABLE.columns}
-						/>
-					</TabPanel>
-				</TabsWrapper>
+				<Table
+					data={EXPIRED_ORDERS_TABLE.data}
+					columns={EXPIRED_ORDERS_TABLE.columns}
+				/>
 			</main>
 		</>
 	);

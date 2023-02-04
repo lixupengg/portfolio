@@ -1,9 +1,6 @@
-/* eslint-disable react/state-in-constructor */
 // Basic Imports
 import React, { useEffect } from 'react';
-import axios from 'axios';
-import { TabPanel } from 'react-tabs';
-import useRequest from '@yan/hooks';
+import useRequest from '@eightminutes/hooks';
 import Table from '../../sharedComponents/Table';
 import { CUSTOMERS_TABLE } from '../../DATA/FAKE_DATA';
 
@@ -13,7 +10,6 @@ import styles from './index.module.scss';
 /* Components */
 import PageHeader from '../../components/PageHeader';
 import CTAButton from '../../components/CTAButton';
-import TabsWrapper from '../../components/TabsWrapper';
 
 const CustomersPage = () => {
 	const [selectedTabList, setSelectedTabList] = React.useState<number>(0);
@@ -47,18 +43,7 @@ const CustomersPage = () => {
 						</CTAButton>
 					</div>
 				</div>
-				<TabsWrapper
-					handleTabChange={handleTabChange}
-					selectedTab={selectedTabList}
-					tabsDisplayList={['All']}
-				>
-					<TabPanel>
-						<Table
-							data={CUSTOMERS_TABLE.data}
-							columns={CUSTOMERS_TABLE.columns}
-						/>
-					</TabPanel>
-				</TabsWrapper>
+				<Table data={CUSTOMERS_TABLE.data} columns={CUSTOMERS_TABLE.columns} />
 			</main>
 		</>
 	);

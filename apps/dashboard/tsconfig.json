@@ -1,10 +1,7 @@
 {
-  "extends": "../../tsconfig.json",
-  "compilerOptions": {
-    "noFallthroughCasesInSwitch": true,
-    "jsx": "react-jsx",
-    "paths": {
-      "@features/hooks": ["../../features/hooks/"]
-    }
-  }
+	"extends": "../../tsconfig.json",
+	"compilerOptions": {
+		"noFallthroughCasesInSwitch": true,
+		"jsx": "react-jsx"
+	}
 }

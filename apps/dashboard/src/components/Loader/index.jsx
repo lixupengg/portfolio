@@ -1,5 +1,4 @@
 import React from 'react';
-import CircularProgress from '@material-ui/core/CircularProgress';
 
 /** Container, renders home page.
  * @memberof Container
@@ -7,7 +6,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
  * @param {ReduxAction} Action1, Action1.
  */
 const Loader = () => {
-	return <CircularProgress color="primary" />;
+	return <div>Loader</div>;
 };
 
 export default Loader;

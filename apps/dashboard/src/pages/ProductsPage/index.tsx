@@ -2,7 +2,6 @@
 // Basic Imports
 import React, { useEffect } from 'react';
 import axios from 'axios';
-import { TabPanel } from 'react-tabs';
 import Table from '../../sharedComponents/Table';
 /* Styles */
 import styles from './index.module.scss';
@@ -11,7 +10,6 @@ import styles from './index.module.scss';
 import PageHeader from '../../components/PageHeader';
 import ProductsTable from '../../containers/ProductsPage/ProductsTable';
 import CTAButton from '../../components/CTAButton';
-import TabsWrapper from '../../components/TabsWrapper';
 import ModalAnimatedPopup from '../../components/ModalAnimatedPopup';
 import InputForm from '../../components/InputForm';
 import { PRODUCTS_TABLE } from '../../DATA/FAKE_DATA';
@@ -101,18 +99,7 @@ const ProductsPage = () => {
 						</CTAButton>
 					</div>
 				</div>
-				<TabsWrapper
-					handleTabChange={handleTabChange}
-					selectedTab={selectedTabList}
-					tabsDisplayList={['All']}
-				>
-					<TabPanel>
-						<Table
-							data={PRODUCTS_TABLE.data}
-							columns={PRODUCTS_TABLE.columns}
-						/>
-					</TabPanel>
-				</TabsWrapper>
+				<Table data={PRODUCTS_TABLE.data} columns={PRODUCTS_TABLE.columns} />
 			</main>
 
 			<ModalAnimatedPopup

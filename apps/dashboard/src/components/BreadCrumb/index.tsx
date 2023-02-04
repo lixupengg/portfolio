@@ -15,7 +15,7 @@ export default function BreadCrumb(props: Props) {
 			key: section.content,
 			content:
 				section.content === 'Home' ? (
-					<i className={`bx bx-home-alt`} />
+					<i className={'bx bx-home-alt'} />
 				) : (
 					section.content
 				),
