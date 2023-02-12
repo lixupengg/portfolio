@@ -1,1 +1,12 @@
 export { default as Table } from './Table';
+export { default as Layout } from './Layout';
+export { default as BreadCrumb } from './BreadCrumb';
+export { default as Nav } from './Nav';
+export { default as SectionHeader } from './SectionHeader';
+export { default as Section } from './Section';
+export { default as SaveEditOptions } from './SaveEditOptions';
+export { default as RocketEmojiBackground } from './RocketEmojiBackground';
+export { default as ColouredLabel } from './ColouredLabel';
+export { default as CompareMetric } from './CompareMetric';
+export { default as FutureMetric } from './FutureMetric';
+export { default as NewsSourceMetric } from './NewsSourceMetric';

@@ -1,9 +1,9 @@
 import React from 'react';
 
 /* Components */
+import { SaveEditOptions } from '@stonksfi/components';
 import Icon from '../Icon';
 import Input from '../InputForm';
-import SaveEditOptions from '../SaveEditOptions';
 
 /* Types */
 import { CreatorFeedback } from '../../interfaces/CreatorTable';

@@ -1,3 +1,89 @@
+@import './colors.scss';
+
+/* Fonts */
+@font-face {
+	font-family: 'Roobert';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../assets/fonts/RoobertRegular.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Roobert';
+	font-style: italic;
+	font-weight: 400;
+	src: url('../assets/fonts/RoobertRegularItalic.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Roobert';
+	font-style: normal;
+	font-weight: 300;
+	src: url('../assets/fonts/RoobertLight.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Roobert';
+	font-style: italic;
+	font-weight: 300;
+	src: url('../assets/fonts/RoobertLightItalic.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Roobert';
+	font-style: normal;
+	font-weight: 500;
+	src: url('../assets/fonts/RoobertMedium.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Roobert';
+	font-style: italic;
+	font-weight: 500;
+	src: url('../assets/fonts/RoobertMediumItalic.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Roobert';
+	font-style: normal;
+	font-weight: 600;
+	src: url('../assets/fonts/RoobertSemiBold.woff') format('woff');
+}
+@font-face {
+	font-family: 'Roobert';
+	font-style: italic;
+	font-weight: 600;
+	src: url('../assets/fonts/RoobertSemiBoldItalic.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Roobert';
+	font-style: normal;
+	font-weight: 700;
+	src: url('../assets/fonts/RoobertBold.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Roobert';
+	font-style: italic;
+	font-weight: 700;
+	src: url('../assets/fonts/RoobertBoldItalic.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Roobert';
+	font-style: normal;
+	font-weight: 900;
+	src: url('../assets/fonts/RoobertHeavy.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Roobert';
+	font-style: italic;
+	font-weight: 900;
+	src: url('../assets/fonts/RoobertHeavyItalic.woff') format('woff');
+}
+
 *,
 *::after,
 *::before {
@@ -11,18 +97,10 @@ html {
 }
 
 body {
-	background: hsl(155 30% 98.8%) !important;
 	box-sizing: border-box;
-	font-family: 'Open Sans', sans-serif;
 	width: 100%;
 	height: 100%;
 	overflow-x: hidden !important;
-}
-
-table {
-	font-family: 'Open Sans', sans-serif !important;
-	border-collapse: collapse;
-	width: 100%;
 }
 
 a {
@@ -31,9 +109,10 @@ a {
 }
 
 p {
-	color: hsl(155 24% 9%);
 	font-size: 14px;
-	line-height: 20px;
+	font-weight: 400;
+	color: $primaryColor12;
+	margin: 0;
 }
 
 h1 {
@@ -70,7 +149,7 @@ h2,
 h3,
 h4,
 h5 {
-	font-family: 'Poppins', sans-serif;
+	font-family: 'Roobert', sans-serif;
 }
 
 ul,
@@ -81,7 +160,7 @@ li {
 input,
 label,
 textarea {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Roobert', sans-serif;
 }
 
 button {
@@ -89,7 +168,7 @@ button {
 	margin: 0;
 	background: none;
 	border: none;
-	font-family: 'Poppins', sans-serif !important;
+	font-family: 'Roobert', sans-serif !important;
 
 	&:focus {
 		outline: none;

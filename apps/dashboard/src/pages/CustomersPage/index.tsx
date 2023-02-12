@@ -1,14 +1,12 @@
 // Basic Imports
 import React, { useEffect } from 'react';
-import useRequest from '@eightminutes/hooks';
+import useRequest from '@stonksfi/hooks';
 import Table from '../../sharedComponents/Table';
-import { CUSTOMERS_TABLE } from '../../DATA/FAKE_DATA';
 
 /* Styles */
 import styles from './index.module.scss';
 
 /* Components */
-import PageHeader from '../../components/PageHeader';
 import CTAButton from '../../components/CTAButton';
 
 const CustomersPage = () => {
@@ -23,11 +21,6 @@ const CustomersPage = () => {
 	return (
 		<>
 			<main className="page-container">
-				<PageHeader
-					title="Customers"
-					breadcrumb={[{ content: 'Home', to: '/' }, { content: 'Customers' }]}
-					callToAction=""
-				/>
 				<div className={styles.campaignPageHeaderRow}>
 					<h2 className={styles.pageTitle}> Customers </h2>
 					<div className={styles.buttonsRow}>
@@ -43,7 +36,7 @@ const CustomersPage = () => {
 						</CTAButton>
 					</div>
 				</div>
-				<Table data={CUSTOMERS_TABLE.data} columns={CUSTOMERS_TABLE.columns} />
+				<Table data={[]} columns={[]} />
 			</main>
 		</>
 	);

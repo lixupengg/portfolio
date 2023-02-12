@@ -1,16 +1,53 @@
 import { createStitches, styled } from '@stitches/react';
-import { sage, yellow, teal } from '@radix-ui/colors';
+import { sage, cyan, orange, blue } from '@radix-ui/colors';
+import { Theme } from '@stonksfi/types/theme';
 
-export const { theme } = createStitches({
+export const themeObj: { theme: Theme } = {
 	theme: {
 		colors: {
-			...yellow,
-			...teal,
-			...sage,
+			/* Primary colors */
+			primaryColor1: cyan.cyan1,
+			primaryColor2: cyan.cyan2,
+			primaryColor3: cyan.cyan3,
+			primaryColor4: cyan.cyan4,
+			primaryColor5: cyan.cyan5,
+			primaryColor6: cyan.cyan6,
+			primaryColor7: cyan.cyan7,
+			primaryColor8: cyan.cyan8,
+			primaryColor9: cyan.cyan9,
+			primaryColor10: cyan.cyan10,
+			primaryColor11: cyan.cyan11,
+			primaryColor12: cyan.cyan12,
+
+			/* Secondary colors */
+			secondaryColor1: orange.orange1,
+			secondaryColor2: orange.orange2,
+			secondaryColor3: orange.orange3,
+			secondaryColor4: orange.orange4,
+			secondaryColor5: orange.orange5,
+			secondaryColor6: orange.orange6,
+			secondaryColor7: orange.orange7,
+			secondaryColor8: orange.orange8,
+			secondaryColor9: orange.orange9,
+			secondaryColor10: orange.orange10,
+			secondaryColor11: orange.orange11,
+			secondaryColor12: orange.orange12,
+
+			/* Grey colors */
+			grey1: sage.sage1,
+			grey2: sage.sage2,
+			grey3: sage.sage3,
+			grey4: sage.sage4,
+			grey5: sage.sage5,
+			grey6: sage.sage6,
+			grey7: sage.sage7,
+			grey8: sage.sage8,
+			grey9: sage.sage9,
+			grey10: sage.sage10,
+			grey11: sage.sage11,
+			grey12: sage.sage12,
 
 			/* Systems colors */
-			accentBlue: '#349af8',
-			accentOrange: '#fc7900',
 			systemOrange: '#f4aa74',
 			systemRed: '#eb675e',
 			systemGreen: '#5dc560',
@@ -18,7 +55,7 @@ export const { theme } = createStitches({
 			systemCream: '#fff2ee'
 		},
 		space: {
-			minute: '5px',
+			veryTiny: '5px',
 			tiny: '10px',
 			small: '18px',
 			medium: '30px',
@@ -44,7 +81,8 @@ export const { theme } = createStitches({
 		},
 		fonts: {
 			poppins: 'Poppins, sans-serif',
-			openSans: 'Open Sans, sans-serif'
+			openSans: 'Open Sans, sans-serif',
+			roobert: 'Roobert, sans-serif'
 		},
 
 		fontWeights: {
@@ -67,6 +105,13 @@ export const { theme } = createStitches({
 		},
 		borderWidths: {},
 		borderStyles: {},
+		borderRadius: {
+			verySmall: '5px',
+			small: '10px',
+			medium: '15px',
+			big: '20px',
+			large: '25px'
+		},
 		radii: {},
 		shadows: {
 			small: '0 0 4px rgba(0, 0, 0, .125)',
@@ -80,38 +125,19 @@ export const { theme } = createStitches({
 			slow: 'all .4s ease-in-out'
 		}
 	}
-});
+};
+
+export const { theme } = createStitches(themeObj as any);
 
 export const Layout = styled('main', {
-	background: '$sage1',
-	maxWidth: '170rem',
-	minHeight: '100%',
+	background: '$primaryColor1',
+	height: '100vh',
 	margin: '0 auto',
-	padding: '6rem 4rem',
-	paddingBottom: '10rem',
-
-	// Media queries
-	'@media (max-width: 768px)': {
-		width: '90%'
-	},
-
-	variants: {
-		hideNavBar: {
-			true: {
-				paddingTop: '0'
-			},
-			false: {
-				paddingTop: '9rem'
-			}
-		}
-	}
+	boxSizing: 'border-box',
+	fontFamily: 'Roobert',
+	fontSize: '$content16',
+	color: '$primaryColor12',
 });
 
-//   const darkTheme = theme({
-//     colors: {
-//       ...grayDark,
-//       ...blueDark,
-//       ...redDark,
-//       ...greenDark,
-//     },
-//   });
+export const COLORS = themeObj.theme.colors;
+export const SPACES = themeObj.theme.space;

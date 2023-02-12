@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
-import RightArrow from '../../Assets/rightArrow.svg';
-import LeftArrow from '../../Assets/leftArrow.svg';
+// import RightArrow from '../../Assets/rightArrow.svg';
+// import LeftArrow from '../../Assets/leftArrow.svg';
 
 /* Styling */
 import styles from './index.module.scss';
@@ -32,7 +32,7 @@ const Carousel: React.FC<Props> = (props) => {
 			<div className={`${styles.mainContentWrapper} ${className}`}>
 				{startIndex !== 0 ? (
 					<button className={styles.arrowButton} onClick={handleDecrementIndex}>
-						<img src={LeftArrow} alt="right arrow" />
+						{/* <img src={LeftArrow} alt="right arrow" /> */}
 					</button>
 				) : (
 					<div />
@@ -48,7 +48,7 @@ const Carousel: React.FC<Props> = (props) => {
 				</div>
 				{endIndex !== items.length - 1 ? (
 					<button className={styles.arrowButton} onClick={handleIncrementIndex}>
-						<img src={RightArrow} alt="right arrow" />
+						{/* <img src={RightArrow} alt="right arrow" /> */}
 					</button>
 				) : (
 					<div />
