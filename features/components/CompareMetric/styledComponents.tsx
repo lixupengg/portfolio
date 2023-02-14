@@ -3,7 +3,14 @@ import { styled } from '@stitches/react';
 export const StyledMetricNumberContainer = styled('div', {
 	display: 'flex',
 	flexDirection: 'row',
-	alignContent: 'center',
+	alignItems: 'flex-start',
+	variants: {
+		borderBottom: {
+			true: {
+				borderBottom: '1px solid $grey7',
+			},
+		},
+	}
 });
 
 export const StyledMetricNumber = styled('div', {
@@ -27,7 +34,8 @@ export const StyledMetricNumber = styled('div', {
 });
 
 export const StyledMetricHistory = styled('div', {
-	marginLeft: '$small',
+	marginTop: '$small',
+	marginLeft: '$tiny',
 	display: 'flex',
 	flexDirection: 'column',
 	alignContent: 'center',

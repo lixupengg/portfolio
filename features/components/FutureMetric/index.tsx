@@ -1,11 +1,13 @@
 import React, { ReactNode } from 'react';
 import { GoArrowDown, GoArrowUp } from 'react-icons/go';
 import { FORMAT_TYPE, MetricData, MetricDisplaySetting } from '@stonksfi/types';
+import { OverflowText } from '@stonksfi/components';
 import { format } from '@stonksfi/constants';
 
 /* Styles */
 import {
 	StyledUpcomingChange,
+	StyledCompareMetric
 } from './styledComponents';
 import ColouredLabel from '../ColouredLabel';
 
@@ -26,23 +28,25 @@ const CompareMetric = (props: CompareMetricProps) => {
 	}
 	
 	return (
-		<>
+		<StyledCompareMetric>
 			<ColouredLabel
 				label="Upcoming Changes"
 				type="secondary"
 			/>
 			<StyledUpcomingChange type={metricUpdate}>
-				{format(data.new.value, metric.formatType)}
-				{
-					metricUpdate === 'red' 
-					? <GoArrowDown size={"20px"}/>
-					: metricUpdate === 'green'
-					? <GoArrowUp size={"20px"}/>
-					: ' '
-				}
-				on {format(data.new.effectiveTime, FORMAT_TYPE.DATE)}
+					{format(data.new.value, metric.formatType)}
+					{
+						metricUpdate === 'red' 
+						? <GoArrowDown size={"14px"}/>
+						: metricUpdate === 'green'
+						? <GoArrowUp size={"14px"}/>
+						: ''
+					}
+				<OverflowText>
+					&nbsp;on {format(data.new.effectiveTime, FORMAT_TYPE.DATE)}
+				</OverflowText>
 			</StyledUpcomingChange>
-		</>
+		</StyledCompareMetric>
 	);
 };
 

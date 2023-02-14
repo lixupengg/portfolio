@@ -1,0 +1,5 @@
+export enum METRIC_CARD_VIEW {
+    DEFAULT = 'DEFAULT',
+    CHART = 'CHART',
+    CARD_CHART = 'CARD_CHART',
+}

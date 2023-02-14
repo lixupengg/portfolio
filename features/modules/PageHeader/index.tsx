@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { FaUserSecret } from 'react-icons/fa';
 import { Nav } from '@stonksfi/components';
-import { StyledPageHeader } from './style';
+import { StyledPageHeader, StyledPageHeaderLeft } from './style';
 
 interface Props {
 	title?: string;
@@ -16,10 +16,12 @@ const PageHeader = (props: Props) => {
 			<title>stonks.fi -{title}</title>
 
 			<StyledPageHeader>
-				<h1> stonks.fi </h1>
+				<StyledPageHeaderLeft>
+					<h1> stonks.fi </h1>
+					<Nav />
+				</StyledPageHeaderLeft>
 				<FaUserSecret size="24px"/>
 			</StyledPageHeader>
-            <Nav />
 		</>
 	);
 };

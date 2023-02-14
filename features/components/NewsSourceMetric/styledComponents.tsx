@@ -1,5 +1,11 @@
 import { styled } from '@stitches/react';
 
+export const StyledNewsSourceMetric = styled('div', {
+	marginTop: '$small',
+	display: 'flex',
+	flexDirection: 'column',
+});
+
 export const StyledUpcomingChange = styled('p', {
 	display: 'flex',
 	alignItems: 'center',

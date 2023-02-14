@@ -14,13 +14,13 @@ const Nav = () => {
 				selected={history.location.pathname === '/dashboard'}
 				onClick={() => handleChangePage('/dashboard')}
 			>
-				Dashboard
+				<span>Dashboard</span>
 			</StyledNavButton>
 			<StyledNavButton
 				selected={history.location.pathname === '/'}
 				onClick={() => handleChangePage('/')}
 			>
-				News Feed
+				<span>News Feed</span>
 			</StyledNavButton>
 		</StyledNav>
 	);

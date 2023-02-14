@@ -8,6 +8,7 @@ import {
 	DashboardMeta,
 	MetricCard
 } from '@stonksfi/modules';
+import { METRIC_CARD_VIEW } from '@stonksfi/modules/MetricCard/types';
 import { convertPxToNumber } from '@stonksfi/utils';
 import { fakeData } from '../../../DATA/fake';
 import { themeObj } from '../../../styles/styling';
@@ -43,7 +44,7 @@ export const mainConfig: ModuleDisplaySetting[] = [
 					{
 						name: 'header',
 						kind: ModuleKind.ELEMENT,
-						render: <MetricCard config={fakeData[0]} />,
+						render: <MetricCard {...fakeData[0]} />,
 						width: 300,
 						height: 300,
 						minWidth: 300,
@@ -52,7 +53,7 @@ export const mainConfig: ModuleDisplaySetting[] = [
 					{
 						name: 'header',
 						kind: ModuleKind.ELEMENT,
-						render: <MetricCard config={fakeData[0]} />,
+						render: <MetricCard {...fakeData[0]} viewMode={METRIC_CARD_VIEW.CHART}/>,
 						width: 300,
 						height: 300,
 						minWidth: 300,
@@ -61,7 +62,7 @@ export const mainConfig: ModuleDisplaySetting[] = [
 					{
 						name: 'header',
 						kind: ModuleKind.ELEMENT,
-						render: <MetricCard config={fakeData[0]} />,
+						render: <MetricCard {...fakeData[0]} />,
 						width: 300,
 						height: 300,
 						minWidth: 300,
@@ -70,7 +71,7 @@ export const mainConfig: ModuleDisplaySetting[] = [
 					{
 						name: 'header',
 						kind: ModuleKind.ELEMENT,
-						render: <MetricCard config={fakeData[0]} />,
+						render: <MetricCard {...fakeData[0]} />,
 						width: 300,
 						height: 300,
 						minWidth: 300,
@@ -79,7 +80,7 @@ export const mainConfig: ModuleDisplaySetting[] = [
 					{
 						name: 'header',
 						kind: ModuleKind.ELEMENT,
-						render: <MetricCard config={fakeData[0]} />,
+						render: <MetricCard {...fakeData[0]} />,
 						width: 300,
 						height: 300,
 						minWidth: 300,
@@ -88,7 +89,7 @@ export const mainConfig: ModuleDisplaySetting[] = [
 					{
 						name: 'header',
 						kind: ModuleKind.ELEMENT,
-						render: <MetricCard config={fakeData[0]} />,
+						render: <MetricCard {...fakeData[0]} />,
 						width: 300,
 						height: 300,
 						minWidth: 300,
@@ -97,7 +98,7 @@ export const mainConfig: ModuleDisplaySetting[] = [
 					{
 						name: 'header',
 						kind: ModuleKind.ELEMENT,
-						render: <MetricCard config={fakeData[0]} />,
+						render: <MetricCard {...fakeData[0]} />,
 						width: 300,
 						height: 300,
 						minWidth: 300,
@@ -106,7 +107,7 @@ export const mainConfig: ModuleDisplaySetting[] = [
 					{
 						name: 'header',
 						kind: ModuleKind.ELEMENT,
-						render: <MetricCard config={fakeData[0]} />,
+						render: <MetricCard {...fakeData[0]} />,
 						width: 300,
 						height: 300,
 						minWidth: 300,
@@ -115,7 +116,7 @@ export const mainConfig: ModuleDisplaySetting[] = [
 					{
 						name: 'header',
 						kind: ModuleKind.ELEMENT,
-						render: <MetricCard config={fakeData[0]} />,
+						render: <MetricCard {...fakeData[1]} viewMode={METRIC_CARD_VIEW.CARD_CHART} />,
 						width: 600,
 						height: 300,
 						minWidth: 300,
@@ -124,7 +125,7 @@ export const mainConfig: ModuleDisplaySetting[] = [
 					{
 						name: 'header',
 						kind: ModuleKind.ELEMENT,
-						render: <MetricCard config={fakeData[0]} />,
+						render: <MetricCard {...fakeData[0]} />,
 						width: 300,
 						height: 300,
 						minWidth: 300,

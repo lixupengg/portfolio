@@ -10,3 +10,5 @@ export { default as ColouredLabel } from './ColouredLabel';
 export { default as CompareMetric } from './CompareMetric';
 export { default as FutureMetric } from './FutureMetric';
 export { default as NewsSourceMetric } from './NewsSourceMetric';
+export { default as LineChart } from './LineChart';
+export { default as OverflowText } from './OverflowText';

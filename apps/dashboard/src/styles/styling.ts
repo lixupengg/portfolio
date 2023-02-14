@@ -122,7 +122,7 @@ export const themeObj: { theme: Theme } = {
 		transitions: {
 			default: 'all .2s ease-in-out',
 			fast: 'all .1s ease-in-out',
-			slow: 'all .4s ease-in-out'
+			slow: 'all .4s	 ease-in-out'
 		}
 	}
 };
@@ -136,7 +136,7 @@ export const Layout = styled('main', {
 	boxSizing: 'border-box',
 	fontFamily: 'Roobert',
 	fontSize: '$content16',
-	color: '$primaryColor12',
+	color: '$primaryColor12'
 });
 
 export const COLORS = themeObj.theme.colors;

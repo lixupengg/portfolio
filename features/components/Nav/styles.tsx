@@ -3,20 +3,30 @@ import { styled } from '@stitches/react';
 export const StyledNav = styled('div', {
 	alignItems: 'center',
 	justifyContent: 'center',
-	paddingLeft: 'calc($large - $small)',
-	paddingTop: '$small',
+	marginTop: '$tiny',
 });
 
 export const StyledNavButton = styled('button', {
 	background: 'transparent',
+	padding: '3px $tiny',
+	marginRight: '$small',
+	letterSpacing: '0.5px',
+	fontSize: '$content14',
 	fontWeight: '$semibold',
-	padding: '0 $tiny',
-	borderRadius: '100px',
+	'span': {
+		borderBottom: '1px solid $grey9',
+		padding: '3px 0',
+	},
 	variants: {
 		selected: {
 			true: {
 				color: '$primaryColor1',
-				background: '$primaryColor9',
+				background: '$grey12',
+				border: '1px solid $grey12',
+
+				'span': {
+					border: 'none',
+				}
 			},
 		},
 	},
