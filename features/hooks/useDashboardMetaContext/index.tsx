@@ -1,14 +1,14 @@
-import { ModuleDisplaySetting } from '@stonksfi/components/Layout/types';
+import { MetricCardProps } from '@stonksfi/modules/MetricCard';
 import React, { useContext, createContext, useState } from 'react';
 
-interface DashboardMetaContextValues {
-	dashboardConfig: ModuleDisplaySetting[];
-	setDashboardConfig: (config: ModuleDisplaySetting[]) => void;
+interface DashboardMetaContext {
+	dashboardConfig: MetricCardProps[];
+	setDashboardConfig: (config: MetricCardProps[]) => void;
 	isEditingConfig: boolean;
 	setIsEditingConfig: (isEditingConfig: boolean) => void;
 }
 
-const Context = createContext<DashboardMetaContextValues>({
+const Context = createContext<DashboardMetaContext>({
 	dashboardConfig: [],
 	setDashboardConfig: () => {},
 	isEditingConfig: false,
@@ -18,7 +18,7 @@ const Context = createContext<DashboardMetaContextValues>({
 export const useDashboardMetaContext = () => useContext(Context);
 
 export const DashboardMetaContextProvider = ({children, initialDashboardConfig}: any) => {
-	const [dashboardConfig, setDashboardConfig] = useState<ModuleDisplaySetting[]>(initialDashboardConfig);
+	const [dashboardConfig, setDashboardConfig] = useState<MetricCardProps[]>(initialDashboardConfig);
 	const [isEditingConfig, setIsEditingConfig] = useState<boolean>(false);
   
 	return (

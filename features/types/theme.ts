@@ -43,6 +43,7 @@ export type colors = {
     systemGreen: string;
     systemBlue: string;
     systemCream: string;
+    white: string;
 }
 
 export type space = {
@@ -87,11 +88,21 @@ export type shadows = {
     large: string;
 }
 
+export type sizes = {
+    cardWidth: string;
+    bigCardWidth: string;
+    cardHeight: string;
+    bigCardHeight: string;
+    buttonMinWidth: string;
+    buttonMinHeight: string;
+}
+
 export interface Theme {
     colors: colors;
     space: space;
     fontSizes: fontSizes;
     fontWeights: fontWeights;
     shadows: shadows;
+    sizes: sizes;
     [otherOptions: string]: unknown;
 };

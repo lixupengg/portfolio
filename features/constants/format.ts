@@ -21,11 +21,11 @@ export const format = (value: any, formatType: FORMAT_TYPE | undefined) => {
             return new Date(value * 1000).toLocaleString(
                 'en-US', { year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric',
                     minute: 'numeric', second: 'numeric', hour12: true });
-        case FORMAT_TYPE.PRETTY_INTEGER:
+        case FORMAT_TYPE.PRETTY_NUMBER:
             return value.toLocaleString('en-US', { notation: 'compact' });
-        case FORMAT_TYPE.INTEGER:
+        case FORMAT_TYPE.NUMBER:
             return value.toLocaleString('en-US', { maximumFractionDigits: 0 });
-        case FORMAT_TYPE.INTEGER_TWO_DECIMAL:
+        case FORMAT_TYPE.NUMBER_TWO_DECIMAL:
             return value.toLocaleString('en-US', { maximumFractionDigits: 2 });
         case FORMAT_TYPE.PERCENT:
             return value.toLocaleString('en-US', { style: 'percent', maximumFractionDigits: 2 });

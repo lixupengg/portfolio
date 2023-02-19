@@ -1,9 +1,9 @@
 import { styled } from '@stitches/react';
 
-export const StyledPageHeader = styled('div', {
+export const StyledRow = styled('div', {
+	marginTop: '$small',
+	padding: '0 $large',
+	display: 'flex',
+	justifyContent: 'flex-end',
 	alignItems: 'center',
-	justifyContent: 'center',
-	background: '$primaryColor1',
-	boxShadow: '$large',
-	paddingLeft: '$large',
 });

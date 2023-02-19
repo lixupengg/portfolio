@@ -12,3 +12,6 @@ export { default as FutureMetric } from './FutureMetric';
 export { default as NewsSourceMetric } from './NewsSourceMetric';
 export { default as LineChart } from './LineChart';
 export { default as OverflowText } from './OverflowText';
+export { default as Button } from './Button';
+export { default as Dropzone } from './Dropzone';
+export { default as DraggableDiv } from './DraggableDiv';

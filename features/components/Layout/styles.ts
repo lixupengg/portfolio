@@ -7,9 +7,5 @@ export const StyledFlexContainer = styled('div', {
 });
 
 export const StyledFlexElement = styled('div', {
-
-	// Write media query
-	// '@media (max-width: 900px)': {
-	// 	width: '70% !important'
-	// }
+	position: 'relative',
 });

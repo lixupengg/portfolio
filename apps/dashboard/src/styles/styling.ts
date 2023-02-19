@@ -52,7 +52,8 @@ export const themeObj: { theme: Theme } = {
 			systemRed: '#eb675e',
 			systemGreen: '#5dc560',
 			systemBlue: '#5381db',
-			systemCream: '#fff2ee'
+			systemCream: '#fff2ee',
+			white: '#ffffff'
 		},
 		space: {
 			veryTiny: '5px',
@@ -60,7 +61,7 @@ export const themeObj: { theme: Theme } = {
 			small: '18px',
 			medium: '30px',
 			big: '40px',
-			large: '60px'
+			large: '60px',
 		},
 		fontSizes: {
 			title54: '54px',
@@ -100,19 +101,23 @@ export const themeObj: { theme: Theme } = {
 			lineheight20: '20px'
 		},
 		letterSpacings: {},
-		sizes: {
-			minHeight: '100vh'
-		},
 		borderWidths: {},
 		borderStyles: {},
-		borderRadius: {
-			verySmall: '5px',
+		radii: {
+			tiny: '5px',
 			small: '10px',
-			medium: '15px',
-			big: '20px',
-			large: '25px'
+			medium: '18px',
+			big: '30px',
+			large: '60px'
 		},
-		radii: {},
+		sizes: {
+			cardWidth: '300px',
+			bigCardWidth: '618px', // 300px * 2 + $small
+			cardHeight: '300px',
+			bigCardHeight: '300px',
+			buttonMinWidth: '60px',
+			buttonMinHeight: '40px'
+		},
 		shadows: {
 			small: '0 0 4px rgba(0, 0, 0, .125)',
 			medium: '0 0 12px rgba(0, 0, 0, .125)',

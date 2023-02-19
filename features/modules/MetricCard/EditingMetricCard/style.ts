@@ -1,59 +1,50 @@
-import { styled, keyframes } from '@stitches/react';
+import { styled, css } from '@stitches/react';
 
-const shakeAnimation = keyframes({
-	'0%': { transform: 'rotate(0deg)' },
-	'25%': { transform: 'rotate(0.5deg)' },
-	'50%': { transform: 'rotate(0deg)' },
-	'75%': { transform: 'rotate(-0.5deg)' },
-	'100%': { transform: 'rotate(0deg)' },
-});
-
-const shakeAnimation2 = keyframes({
-	'0%': { transform: 'rotate(0deg)' },
-	'25%': { transform: 'rotate(-0.5deg)' },
-	'50%': { transform: 'rotate(0deg)' },
-	'75%': { transform: 'rotate(0.5deg)' },
-	'100%': { transform: 'rotate(0deg)' },
-});
-
-export const StyledMetricCard = styled('div', {
-	border: '2px dashed $grey9',
+export const StyledMetricCardOverlay = styled('div', {
+	position: 'absolute',
+	top: 0,
+	left: 0,
+	background: 'rgba(255, 255, 255, 0.25)',
+	backdropFilter: 'blur(10px)',
 	width: '100%',
 	height: '100%',
 	boxShadow: '$small',
-	borderRadius: '$large',
+	borderRadius: '$small',
 	display: 'flex',
 	flexDirection: 'column',
 	justifyContent: 'center',
 	alignItems: 'center',
-	padding: '$medium',
-	animation: `${shakeAnimation} 0.6s ease-in-out infinite`,
-	transformOrigin: '30% 5%',
-
-	'nth-child(2n)': {
-		transformOrigin: '50% 10%',
-		animation: `${shakeAnimation2} 0.6s ease-in-out infinite`,
-		animationDirection: 'alternate',
-	}
-
+	padding: '$medium'
 });
 
 export const StyledMetricName = styled('div', {
-	fontSize: '$subtitle32',
-	fontWeight: '$light',
+	padding: '$veryTiny $small',
+	width: 'max-content',
+	fontSize: '$content16',
+	fontWeight: '$medium',
+	borderRadius: '$small',
 	color: '$primaryColor12',
-	textTransform: 'uppercase',
-	// Italic
-	fontStyle: 'italic',
+	border: '1px solid $primaryColor12',
+	marginBottom: '$tiny',
 });
 
-export const StyledRow = styled('div', {
-	display: 'flex',
-	justifyContent: 'space-between',
+export const DeleteButtonCss = css({
+	position: 'absolute',
+	top: '-$small',
+	right: '-$small',
+	color: '$grey9 !important',
+});
+
+export const StyledContentOverlay = styled('div', {
+	// Gradient background from opacity 1 to 0
+	padding: '0 $small',
+	background: `linear-gradient(180deg,
+		rgba(255, 255, 255, 0) 0%,
+		rgba(255, 255, 255, 1) 20%,
+		rgba(255, 255, 255, 1) 100%)`,
+	paddingTop: '10%',
+	position: 'absolute',
 	width: '100%',
-});
-
-export const StyledColumn = styled('div', {
-	width: '30%',
-	height: '100%'
+	height: '50%',
+	bottom: '0',
 });

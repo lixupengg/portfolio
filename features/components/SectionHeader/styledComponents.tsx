@@ -7,7 +7,7 @@ export const StyledSectionHeader = styled('div', {
 	justifyContent: 'space-between',
 	borderBottom: '1px solid $grey6',
 	lineHeight: '20px',
-	fontSize: '$content16',
+	fontSize: '$content14',
 	color: '$primaryColor12',
 	marginTop: '$medium',
 	paddingBottom: '$tiny',
