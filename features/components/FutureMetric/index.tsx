@@ -12,16 +12,16 @@ import {
 import ColouredLabel from '../ColouredLabel';
 
 interface CompareMetricProps {
-	data: MetricData;
+	data: MetricData | undefined;
 	metric: MetricDisplaySetting;
 }
 
 const CompareMetric = (props: CompareMetricProps) => {
 	const { data, metric } = props;
 	let metricUpdate: 'black' | 'green' | 'red';
-	if (data.new.value > data.current.value) {
+	if (data?.new.value > data?.current.value) {
 		metricUpdate = 'green';
-	} else if (data.new.value < data.current.value) {
+	} else if (data?.new.value < data?.current.value) {
 		metricUpdate = 'red';
 	} else {
 		metricUpdate = 'black';
@@ -34,7 +34,7 @@ const CompareMetric = (props: CompareMetricProps) => {
 				type="secondary"
 			/>
 			<StyledUpcomingChange type={metricUpdate}>
-					{format(data.new.value, metric.formatType)}
+					{format(data?.new.value, metric.formatType)}
 					{
 						metricUpdate === 'red' 
 						? <GoArrowDown size={"14px"}/>
@@ -43,7 +43,7 @@ const CompareMetric = (props: CompareMetricProps) => {
 						: ''
 					}
 				<OverflowText>
-					&nbsp;on {format(data.new.effectiveTime, FORMAT_TYPE.DATE)}
+					&nbsp;on {format(data?.new.effectiveTime, FORMAT_TYPE.DATE)}
 				</OverflowText>
 			</StyledUpcomingChange>
 		</StyledCompareMetric>

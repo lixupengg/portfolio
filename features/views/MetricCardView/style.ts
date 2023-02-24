@@ -91,6 +91,9 @@ export const StyledMetricName = styled('div', {
 	fontSize: '$content16',
 	fontWeight: '$bold',
 	color: '$primaryColor11',
+	display: 'flex',
+	justifyContent: 'space-between',
+	// background: '$primaryColor8',
 });
 
 export const StyledRow = styled('div', {

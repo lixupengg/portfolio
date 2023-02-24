@@ -1,8 +1,7 @@
 import React, { ReactNode } from 'react';
 import { LineChart, CompareMetric, FutureMetric, NewsSourceMetric } from '@stonksfi/components';
 import { DraggableDivState } from '@stonksfi/components/DraggableDiv/types';
-import { MetricData, MetricDisplaySetting } from '@stonksfi/types';
-import { METRIC_CARD_VIEW } from './types';
+import { MetricData, MetricDisplaySetting, METRIC_CARD_VIEW } from '@stonksfi/types';
 import { ModuleConfig } from '../types';
 import { 
     StyledMetricCard, 
@@ -16,17 +15,17 @@ import EditingMetricCard from './EditingMetricCard';
 
 export interface MetricCardProps extends ModuleConfig {
     metric: MetricDisplaySetting;
-    data: MetricData;
-    viewMode?: METRIC_CARD_VIEW;
+    data?: MetricData | undefined;
     isEditing?: boolean;
     draggableDivState?: DraggableDivState;
 }
 
 const MetricCard = React.forwardRef((props: MetricCardProps, ref?: any) => {
-	const { data, metric, viewMode = METRIC_CARD_VIEW.DEFAULT, isEditing } = props;
+	const { data, metric, isEditing } = props;
     const backupRef = ref ?? React.createRef();
 
-    const [metricViewMode, setMetricViewMode] = React.useState<METRIC_CARD_VIEW>(viewMode);
+    const [metricViewMode, setMetricViewMode] = React.useState<METRIC_CARD_VIEW>(
+        metric.viewMode ?? METRIC_CARD_VIEW.DEFAULT);
     const chartRef = React.useRef(null);
 
     const testData = [
@@ -50,7 +49,7 @@ const MetricCard = React.forwardRef((props: MetricCardProps, ref?: any) => {
             normalMetricCard = (
                     <>
                         <StyledMetricName>
-                            {metric.name}
+                            {metric.name} VIEW:
                         </StyledMetricName>
                         <CompareMetric metric={metric} data={data} borderBottom/>
                         <StyledLineChartWrapper ref={chartRef}>
@@ -104,7 +103,7 @@ const MetricCard = React.forwardRef((props: MetricCardProps, ref?: any) => {
 
         return (
             <StyledMetricCardWrapper
-                viewMode={viewMode}
+                viewMode={metricViewMode}
                 isEditing={isEditing}
             >
                 <StyledMetricCard isEditing={isEditing} ref={backupRef}>

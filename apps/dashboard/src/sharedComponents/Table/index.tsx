@@ -4,7 +4,7 @@ import { Table } from 'rsuite';
 /* Styles */
 import styles from './index.module.scss';
 import './tableReset.scss';
-import 'rsuite/dist/styles/rsuite-default.css';
+// import 'rsuite/dist/styles/rsuite-default.css';
 import { TableProps, Column } from './types';
 
 const CustomersTable = (props: TableProps) => {

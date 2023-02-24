@@ -12,7 +12,7 @@ import {
 import ColouredLabel from '../ColouredLabel';
 
 interface CompareMetricProps {
-	data: MetricData;
+	data: MetricData | undefined;
 	metric: MetricDisplaySetting;
 	borderBottom?: boolean;
 }
@@ -20,9 +20,9 @@ interface CompareMetricProps {
 const CompareMetric = (props: CompareMetricProps) => {
 	const { data, metric, borderBottom } = props;
 	let metricColor: 'black' | 'green' | 'red';
-	if (data.current.value > data.old.value) {
+	if (data?.current.value > data?.old.value) {
 		metricColor = 'green';
-	} else if (data.current.value < data.old.value) {
+	} else if (data?.current.value < data?.old.value) {
 		metricColor = 'red';
 	} else {
 		metricColor = 'black';
@@ -31,14 +31,14 @@ const CompareMetric = (props: CompareMetricProps) => {
 	return (
 		<StyledMetricNumberContainer borderBottom={borderBottom}>
 			<StyledMetricNumber type={metricColor}>
-				{format(data.current.value, metric.formatType)}
+				{format(data?.current.value, metric.formatType)}
 			</StyledMetricNumber>
 			<StyledMetricHistory>
 				<ColouredLabel
 					label="PREVIOUS"
 					type="primary"
 				/>
-				<p>{format(data.old.value, metric.formatType)}</p>
+				<p>{format(data?.old.value, metric.formatType)}</p>
 			</StyledMetricHistory>
 		</StyledMetricNumberContainer>
 	);

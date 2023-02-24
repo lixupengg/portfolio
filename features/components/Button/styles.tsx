@@ -71,12 +71,14 @@ export const StyledButton = styled('button', {
 				color: '$primaryColor11',
 				border: '1px solid $primaryColor7',
 				'&:hover': {
-					background: '$primaryColor8',
-					color: '$white',
+					background: '$white',
+					color: '$primaryColor12',
+					border: '1px solid $primaryColor12',
 				},
 				'&:active': {
-					background: '$primaryColor8',
-					color: '$white',
+					background: '$white',
+					color: '$primaryColor12',
+					border: '1px solid $primaryColor12',
 				},
 			},
 			'outlineSecondary': {
@@ -90,6 +92,20 @@ export const StyledButton = styled('button', {
 				'&:active': {
 					background: '$secondaryColor8',
 					color: '$white',
+				},
+			},
+			'white': {
+				background: '$white',
+				color: '$grey11',
+				fontWeight: '$bold',
+				border: '1px solid $grey7',
+				'&:hover': {
+					background: '$white',
+					border: '1px solid $grey8',
+				},
+				'&:active': {
+					background: '$white',
+					border: '1px solid $grey9',
 				},
 			},
 			'link': {

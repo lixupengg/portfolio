@@ -19,9 +19,10 @@
 		"highcharts-react-official": "^3.1.0",
 		"lerna": "^6.4.1",
 		"react": "^18.2.0",
-		"react-dom": "^17.0.2",
+		"react-dom": "^18.2.0",
 		"react-icons": "^4.7.1",
-		"react-scripts": "^5.0.1"
+		"react-scripts": "^4.0.3",
+		"rsuite": "^5.27.0"
 	},
 	"devDependencies": {
 		"@types/react": "^17.0.2",

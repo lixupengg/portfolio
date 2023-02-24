@@ -11,13 +11,21 @@ export enum RequestStatus {
 export interface RequestProps {
 	url: string;
 	method: 'get' | 'post' | 'put' | 'delete';
+	params?: any;
 	initialData?: any;
 	initialState?: RequestStatus;
+}
+
+export interface RequestResponse<T> {
+	data: T;
+	error: string;
+	status: RequestStatus;
 }
 
 export function useRequest(props: RequestProps) {
 	const {
 		url,
+		params = {},
 		method,
 		initialData = [],
 		initialState = RequestStatus.IDLE
@@ -31,7 +39,8 @@ export function useRequest(props: RequestProps) {
 		try {
 			const response = await axios({
 				url,
-				method
+				method,
+				params
 			});
 			setData(response.data);
 			setStatus(RequestStatus.SUCCESS);

@@ -6,4 +6,8 @@ export const StyledRow = styled('div', {
 	display: 'flex',
 	justifyContent: 'flex-end',
 	alignItems: 'center',
+
+	'> button': {
+		marginLeft: '$small',
+	}
 });

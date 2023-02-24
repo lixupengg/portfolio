@@ -2,16 +2,9 @@ import {
 	ModuleDisplaySetting,
 	ModuleKind
 } from '@stonksfi/components/Layout/types';
-import {
-	TestModule,
-	PageHeader,
-	DashboardMeta,
-	MetricCard,
-	MetricCardList
-} from '@stonksfi/modules';
-import { METRIC_CARD_VIEW } from '@stonksfi/modules/MetricCard/types';
+import { PageHeader, DashboardMeta, MetricCardList } from '@stonksfi/modules';
 import { convertPxToNumber } from '@stonksfi/utils';
-import { fakeData } from '../../../DATA/fake';
+import { metricCardListConfig } from './metricCardListConfig';
 import { themeObj } from '../../../styles/styling';
 
 const { theme } = themeObj;
@@ -40,8 +33,8 @@ export const mainConfig: ModuleDisplaySetting[] = [
 				paddingLeft: convertPxToNumber(theme.space.medium),
 				paddingTop: convertPxToNumber(theme.space.medium),
 				kind: ModuleKind.ELEMENT,
-				render: <MetricCardList />
-			},
+				render: <MetricCardList {...metricCardListConfig} />
+			}
 		]
 	}
 ];

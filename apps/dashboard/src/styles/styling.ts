@@ -19,6 +19,32 @@ export const themeObj: { theme: Theme } = {
 			primaryColor11: cyan.cyan11,
 			primaryColor12: cyan.cyan12,
 
+			// primaryColor1: '#fbfdff',
+			// primaryColor2: '#f5faff',
+			// primaryColor3: '#edf6ff',
+			// primaryColor4: '#e1f0ff',
+			// primaryColor5: '#cee7fe',
+			// primaryColor6: '#b7d9f8',
+			// primaryColor7: '#96c7f2',
+			// primaryColor8: '#5eb0ef',
+			// primaryColor9: '#0091ff',
+			// primaryColor10: '#0081f1',
+			// primaryColor11: '#006adc',
+			// primaryColor12: '#00254d',
+
+			// primaryColor1: '#0f1720',
+			// primaryColor2: '#0f1b2d',
+			// primaryColor3: '#10243e',
+			// primaryColor4: '#102a4c',
+			// primaryColor5: '#0f3058',
+			// primaryColor6: '#0d3868',
+			// primaryColor7: '#0a4481',
+			// primaryColor8: '#0954a5',
+			// primaryColor9: '#0091ff',
+			// primaryColor10: '#369eff',
+			// primaryColor11: '#52a9ff',
+			// primaryColor12: '#eaf6ff',
+
 			/* Secondary colors */
 			secondaryColor1: orange.orange1,
 			secondaryColor2: orange.orange2,
@@ -61,7 +87,7 @@ export const themeObj: { theme: Theme } = {
 			small: '18px',
 			medium: '30px',
 			big: '40px',
-			large: '60px',
+			large: '60px'
 		},
 		fontSizes: {
 			title54: '54px',
@@ -83,6 +109,7 @@ export const themeObj: { theme: Theme } = {
 		fonts: {
 			poppins: 'Poppins, sans-serif',
 			openSans: 'Open Sans, sans-serif',
+			// roobert: 'Roobert, sans-serif'
 			roobert: 'Roobert, sans-serif'
 		},
 

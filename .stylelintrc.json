@@ -3,6 +3,6 @@
 	"rules": {
 		"value-keyword-case": "lower",
 		"no-descending-specificity": null,
-		"at-rule-allowed-list": ["mixin", "media", "import", "use", "include", "font-face"]
+		"at-rule-allowed-list": ["mixin", "media", "import", "use", "include", "font-face", "keyframes", "supports", "-webkit-keyframes"]
 	}
 }

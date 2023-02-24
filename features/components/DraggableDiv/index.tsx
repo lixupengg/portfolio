@@ -19,7 +19,7 @@ const DraggableDiv = (props: DraggableDivProps) => {
   }))
 
   const isItemBeingDragged = (
-    existingIsDragging && existingDraggedItem.metric.metricId === item.metric.metricId
+    existingIsDragging && existingDraggedItem?.id === item?.id
   ) || isDragging;
 
   const draggableDivState: DraggableDivState = {

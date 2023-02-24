@@ -5,7 +5,7 @@ export const StyledMetricCardOverlay = styled('div', {
 	top: 0,
 	left: 0,
 	background: 'rgba(255, 255, 255, 0.25)',
-	backdropFilter: 'blur(10px)',
+	backdropFilter: 'blur(5px)',
 	width: '100%',
 	height: '100%',
 	boxShadow: '$small',
@@ -18,26 +18,25 @@ export const StyledMetricCardOverlay = styled('div', {
 });
 
 export const StyledMetricName = styled('div', {
-	padding: '$veryTiny $small',
 	width: 'max-content',
-	fontSize: '$content16',
-	fontWeight: '$medium',
+	fontSize: '$subtitle24',
+	fontWeight: '$semibold',
 	borderRadius: '$small',
 	color: '$primaryColor12',
-	border: '1px solid $primaryColor12',
 	marginBottom: '$tiny',
 });
 
 export const DeleteButtonCss = css({
 	position: 'absolute',
 	top: '-$small',
-	right: '-$small',
-	color: '$grey9 !important',
+	right: '-25px',
+	color: '$grey8 !important',
 });
 
 export const StyledContentOverlay = styled('div', {
 	// Gradient background from opacity 1 to 0
 	padding: '0 $small',
+	color: '$primaryColor11',
 	background: `linear-gradient(180deg,
 		rgba(255, 255, 255, 0) 0%,
 		rgba(255, 255, 255, 1) 20%,
@@ -45,6 +44,6 @@ export const StyledContentOverlay = styled('div', {
 	paddingTop: '10%',
 	position: 'absolute',
 	width: '100%',
-	height: '50%',
+	height: '45%',
 	bottom: '0',
 });

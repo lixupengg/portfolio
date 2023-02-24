@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "rsuite": "^4.10.2"
+    "rsuite": "^5.27.0"
   },
   "scripts": {
     "start": "react-scripts start",

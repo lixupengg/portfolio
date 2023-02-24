@@ -6,7 +6,7 @@ import { StyledButton } from './styles';
 interface ButtonProps {
 	children: ReactNode;
 	type?: 'primary' | 'secondary' | 'primaryStrong'| 'secondaryStrong' 
-		| 'outline' | 'outlineSecondary' | 'link' | 'icon';
+		| 'outline' | 'outlineSecondary' | 'white' | 'link' | 'icon';
 	iconSize?: number;
 	onClick?: () => void;
 	className?: string;
