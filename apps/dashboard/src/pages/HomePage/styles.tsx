@@ -27,7 +27,8 @@ export const StyledStonks = styled('span', {
 	display: 'flex',
 	fontStyle: 'italic',
 	padding: '0 $veryTiny',
-	background: '$primaryColor11',
+	background: '$secondaryColor9',
+    // background: '$primaryColor11',
 	fontSize: '$content16',
 	fontWeight: '$extrabold'
 });

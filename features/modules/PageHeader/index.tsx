@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useAuth0 } from "@auth0/auth0-react";
+import { useUserContext } from '@stonksfi/hooks';
 import { MdLogout } from 'react-icons/md';
 import { Button, Nav } from '@stonksfi/components';
 import { StyledPageHeader, StyledPageHeaderLeft } from './style';
@@ -11,10 +11,8 @@ interface Props {
 
 const PageHeader = (props: Props) => {
 	const { title, callToAction } = props;
-	const { loginWithRedirect, logout } = useAuth0();
-	const { user, isAuthenticated, isLoading } = useAuth0();
-	console.log(user);
-
+	const { logout, isAuthenticated, accessToken } = useUserContext();
+	console.log(accessToken, "access");
 	return (
 		<>
 			<title>stonks.fi -{title}</title>

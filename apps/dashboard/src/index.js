@@ -18,7 +18,8 @@ const app = (
 		domain="dev-j5rnqli2ch728y7j.us.auth0.com"
 		clientId="3YSRCXBYqG5kcTumedLqXVfeUgX5faUQ"
 		authorizationParams={{
-			redirect_uri: window.location.origin
+			redirect_uri: window.location.origin,
+			audience: 'http://api.stonks.fi'
 		}}
 	>
 		<UserContextProvider>

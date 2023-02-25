@@ -11,7 +11,7 @@ import { StyledHomePageWrapper, StyledRow, StyledStonks } from './styles';
 const HomePage = () => {
 	const { loginWithRedirect, isAuthenticated, isLoading } = useUserContext();
 	if (isLoading) {
-		return <Loader type='background'/>;
+		return <Loader type="background" />;
 	} else if (isAuthenticated) {
 		return <DashboardPage />;
 	} else {
@@ -20,7 +20,7 @@ const HomePage = () => {
 				<h1>stonks.fi</h1>
 				<p>
 					{' '}
-					Welcome to&nbsp;
+					Welcome to&nbsp;&nbsp;
 					<StyledStonks>stonks</StyledStonks>
 					&nbsp;
 					<IoIosRocket />{' '}

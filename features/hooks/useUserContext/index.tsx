@@ -7,6 +7,7 @@ interface UserContext {
     user: any;
     isAuthenticated: boolean;
     isLoading: boolean;
+    accessToken: string;
 }
 
 const Context = createContext<UserContext>({
@@ -15,12 +16,23 @@ const Context = createContext<UserContext>({
     user: {},
     isAuthenticated: false,
     isLoading: false,
+    accessToken: "",
 });
 
 export const useUserContext = () => useContext(Context);
 
 export const UserContextProvider = ({children}: any) => {
-    const { loginWithRedirect, logout, user, isAuthenticated, isLoading } = useAuth0();
+    const { loginWithRedirect, logout, user, isAuthenticated, isLoading, getAccessTokenSilently } = useAuth0();
+    const [accessToken, setAccessToken] = React.useState<string>('');
+    React.useEffect(() => {
+        const getAccessToken = async () => {
+            const token = await getAccessTokenSilently();
+            setAccessToken(token);
+        }
+        if (isAuthenticated) {
+            getAccessToken();
+        }
+    }, [getAccessTokenSilently, isLoading, isAuthenticated]);
 
 	return (
 	  <Context.Provider value={{
@@ -29,6 +41,7 @@ export const UserContextProvider = ({children}: any) => {
         user,
         isAuthenticated,
         isLoading,
+        accessToken
 	  }}>
 		{children}
 	  </Context.Provider>
