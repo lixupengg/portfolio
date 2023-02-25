@@ -23,7 +23,7 @@ const MetricListDataProvider = (props: MetricListDataProviderProps) => {
       ...metricDataRequest,
       params: {
         ...metricDataRequest.params,
-        metricIds: dashboardConfig.map((metric) => metric.id),
+        metricIds: dashboardConfig?.map((metric) => metric.id),
       },
     });
   /* ======================================== MOCK DATA ======================================== */

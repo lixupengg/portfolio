@@ -31,20 +31,20 @@ export const DashboardMetaContextProvider = ({children}: any) => {
 	// jk user info shld b auto added to request headers
 
 	/* Grab dashboard config from backend */
-	const metricDisplaySettingsRequest = {
-		url: '/api/metricDisplaySettings',
-		method: 'get' as const,
-		params: {
-			userId,
-		},
-	};
-	const metricDisplaySettings = useRequest({...metricDisplaySettingsRequest});
+	// const metricDisplaySettingsRequest = {
+	// 	url: '/api/metricDisplaySettings',
+	// 	method: 'get' as const,
+	// 	params: {
+	// 		userId,
+	// 	},
+	// };
+	// const metricDisplaySettings = useRequest({...metricDisplaySettingsRequest});
 
-	React.useEffect(() => {
-		if (metricDisplaySettings.status === 'success') {
-			setDashboardConfig(metricDisplaySettings.data);
-		}
-	}, [metricDisplaySettings.status]);
+	// React.useEffect(() => {
+	// 	if (metricDisplaySettings.status === 'success') {
+	// 		setDashboardConfig(metricDisplaySettings.data);
+	// 	}
+	// }, [metricDisplaySettings.status]);
 
 	return (
 	  <Context.Provider value={{

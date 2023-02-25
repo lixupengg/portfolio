@@ -4,7 +4,6 @@ import { Route, Router, Switch } from 'react-router-dom';
 import { history } from '@stonksfi/utils';
 
 /* Pages */
-import CustomersPage from './pages/CustomersPage';
 import DashboardPage from './pages/DashboardPage';
 
 /* Styling */

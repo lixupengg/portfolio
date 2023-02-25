@@ -29,10 +29,7 @@ module.exports = {
 				webpackConfig,
 				loaderByName('babel-loader')
 			);
-			console.log('HEHEHHEHEHEHEHHEHE');
 			if (isFound) {
-				console.log('------------------------------------------------');
-				console.log(absolutePath);
 				const include = Array.isArray(match.loader.include)
 					? match.loader.include
 					: [match.loader.include];
