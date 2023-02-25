@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 
 /* Styles */
-import { StyledRocketEmojiBackground } from './styledComponents';
+import { StyledRocketEmojiBackground } from './styles';
 
 const RocketEmojiBackground = () => {
 	return (

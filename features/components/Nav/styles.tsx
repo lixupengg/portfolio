@@ -3,7 +3,6 @@ import { styled } from '@stitches/react';
 export const StyledNav = styled('div', {
 	alignItems: 'center',
 	justifyContent: 'center',
-	marginTop: '$tiny',
 });
 
 export const StyledNavButton = styled('button', {

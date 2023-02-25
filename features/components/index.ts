@@ -16,3 +16,4 @@ export { default as Button } from './Button';
 export { default as Dropzone } from './Dropzone';
 export { default as DraggableDiv } from './DraggableDiv';
 export { default as Modal } from './Modal';
+export { default as Loader } from './Loader';

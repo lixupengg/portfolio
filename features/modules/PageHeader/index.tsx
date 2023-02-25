@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { FaUserSecret } from 'react-icons/fa';
-import { Nav } from '@stonksfi/components';
+import { useAuth0 } from "@auth0/auth0-react";
+import { MdLogout } from 'react-icons/md';
+import { Button, Nav } from '@stonksfi/components';
 import { StyledPageHeader, StyledPageHeaderLeft } from './style';
 
 interface Props {
@@ -10,6 +11,9 @@ interface Props {
 
 const PageHeader = (props: Props) => {
 	const { title, callToAction } = props;
+	const { loginWithRedirect, logout } = useAuth0();
+	const { user, isAuthenticated, isLoading } = useAuth0();
+	console.log(user);
 
 	return (
 		<>
@@ -20,7 +24,12 @@ const PageHeader = (props: Props) => {
 					<h1> stonks.fi </h1>
 					<Nav />
 				</StyledPageHeaderLeft>
-				<FaUserSecret size="24px"/>
+				{isAuthenticated ? 
+					<Button type='black' onClick={() => logout()}>
+						<MdLogout/>&nbsp;Logout
+					</Button>
+					: null
+				}
 			</StyledPageHeader>
 		</>
 	);

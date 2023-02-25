@@ -5,6 +5,7 @@ import { history } from '@stonksfi/utils';
 
 /* Pages */
 import DashboardPage from './pages/DashboardPage';
+import HomePage from './pages/HomePage';
 
 /* Styling */
 import { theme, Layout } from './styles/styling';
@@ -35,7 +36,7 @@ const BaseRouter: React.ReactNode = () => (
 	<Router history={history}>
 		<Switch>
 			<CustomRoute exact path="/dashboard" component={DashboardPage} />
-			<CustomRoute exact path="/" component={DashboardPage} />
+			<CustomRoute exact path="/" component={HomePage} />
 		</Switch>
 	</Router>
 );

@@ -1,9 +1,11 @@
 // Base imports
 import ReactDOM from 'react-dom';
+import { Auth0Provider } from '@auth0/auth0-react';
 import { METRICS_LIST } from '@stonksfi/constants';
 import {
 	DashboardMetaContextProvider,
-	DndContextProvider
+	DndContextProvider,
+	UserContextProvider
 } from '@stonksfi/hooks';
 import BaseRouter from './routes';
 import { fakeData } from './DATA/fake';
@@ -12,11 +14,21 @@ import 'rsuite/dist/rsuite.min.css';
 import './index.scss';
 
 const app = (
-	<DashboardMetaContextProvider initialDashboardConfig={METRICS_LIST}>
-		<DndContextProvider>
-			<BaseRouter />
-		</DndContextProvider>
-	</DashboardMetaContextProvider>
+	<Auth0Provider
+		domain="dev-j5rnqli2ch728y7j.us.auth0.com"
+		clientId="3YSRCXBYqG5kcTumedLqXVfeUgX5faUQ"
+		authorizationParams={{
+			redirect_uri: window.location.origin
+		}}
+	>
+		<UserContextProvider>
+			<DashboardMetaContextProvider initialDashboardConfig={METRICS_LIST}>
+				<DndContextProvider>
+					<BaseRouter />
+				</DndContextProvider>
+			</DashboardMetaContextProvider>
+		</UserContextProvider>
+	</Auth0Provider>
 );
 
 ReactDOM.render(app, document.getElementById('root'));

@@ -79,7 +79,8 @@ export const themeObj: { theme: Theme } = {
 			systemGreen: '#5dc560',
 			systemBlue: '#5381db',
 			systemCream: '#fff2ee',
-			white: '#ffffff'
+			white: '#ffffff',
+			black: '#000000'
 		},
 		space: {
 			veryTiny: '5px',

@@ -108,6 +108,21 @@ export const StyledButton = styled('button', {
 					border: '1px solid $grey9',
 				},
 			},
+			'black': {
+				background: '$primaryColor12',
+				color: '$primaryColor1',
+				'&:hover': {
+					background: '$primaryColor12',
+					opacity: '0.9',
+				},
+				'&:active': {
+					background: '$primaryColor12',
+					opacity: '0.9',
+				},
+				'svg': {
+					color: '$primaryColor1',
+				}
+			},
 			'link': {
 				background: 'transparent',
 				color: '$primaryColor11',

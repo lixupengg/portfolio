@@ -44,6 +44,7 @@ export type colors = {
     systemBlue: string;
     systemCream: string;
     white: string;
+    black: string;
 }
 
 export type space = {

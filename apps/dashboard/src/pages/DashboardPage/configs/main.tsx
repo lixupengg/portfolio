@@ -32,6 +32,7 @@ export const mainConfig: ModuleDisplaySetting[] = [
 				fillWidth: true,
 				paddingLeft: convertPxToNumber(theme.space.medium),
 				paddingTop: convertPxToNumber(theme.space.medium),
+				paddingBottom: convertPxToNumber(theme.space.large),
 				kind: ModuleKind.ELEMENT,
 				render: <MetricCardList {...metricCardListConfig} />
 			}

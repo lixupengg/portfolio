@@ -18,5 +18,6 @@ export const StyledPageHeaderLeft = styled('div', {
 
 	'h1': {
 		marginRight: '$large',
+		marginBottom: '$tiny',
 	}
 })
