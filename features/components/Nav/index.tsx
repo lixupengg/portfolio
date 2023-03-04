@@ -11,16 +11,16 @@ const Nav = () => {
 	return (
 		<StyledNav>
 			<StyledNavButton
-				selected={history.location.pathname === '/dashboard'}
-				onClick={() => handleChangePage('/dashboard')}
+				selected={history.location.pathname === '/'}
+				onClick={() => handleChangePage('/')}
 			>
 				<span>Dashboard</span>
 			</StyledNavButton>
 			<StyledNavButton
-				selected={history.location.pathname === '/'}
-				onClick={() => handleChangePage('/')}
+				selected={history.location.pathname === '/strategy'}
+				onClick={() => handleChangePage('/strategy')}
 			>
-				<span>News Feed</span>
+				<span>Explore</span>
 			</StyledNavButton>
 		</StyledNav>
 	);

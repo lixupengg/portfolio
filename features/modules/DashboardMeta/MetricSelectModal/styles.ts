@@ -15,7 +15,7 @@ export const StyledMetricCardOption = styled('div', {
 	transform: 'scale(0.8)',
 	transformOrigin: 'top left',
 	width: 'calc($cardWidth * 0.8)',
-	height: 'calc($cardHeight * 0.8)',
+	height: 'calc(($cardHeight * 0.8) / 2)',
 });
 
 export const StyledMetricCardOptionBorderWrapper = styled('div', {

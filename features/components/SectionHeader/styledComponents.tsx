@@ -9,9 +9,8 @@ export const StyledSectionHeader = styled('div', {
 	lineHeight: '20px',
 	fontSize: '$content14',
 	color: '$primaryColor12',
-	marginTop: '$medium',
 	paddingBottom: '$tiny',
-	paddingLeft: '$large',
+	paddingLeft: '$medium',
 
 	i: {
 		marginRight: '10px'

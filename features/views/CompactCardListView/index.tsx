@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { MetricData, MetricDisplaySetting, METRIC_CARD_VIEW } from '@stonksfi/types';
+import { MetricData, MetricDisplaySetting } from '@stonksfi/types';
 import { Dropzone, DraggableDiv } from '@stonksfi/components';
 import { DRAG_AND_DROP_TYPE } from '@stonksfi/constants';
 import { RequestResponse } from '@stonksfi/hooks/useRequest';
@@ -12,11 +12,10 @@ export interface MetricCardListViewProps {
 	updateDashboardConfig: (metricList: MetricDisplaySetting[]) => void;
 	metricResponseData: RequestResponse<MetricData[]>;
 	isEditingConfig: boolean;
-	isCompact?: boolean;
 }
 
 const MetricCardListView = (props: MetricCardListViewProps) => {
-	const { dashboardConfig, updateDashboardConfig, isEditingConfig, metricResponseData, isCompact } = props;
+	const { dashboardConfig, updateDashboardConfig, isEditingConfig, metricResponseData } = props;
 	const handleIsOver = (dropzoneItem: MetricDisplaySetting, sourceItem: MetricDisplaySetting) => {
 		if (dropzoneItem.id === sourceItem.id) {
 			return;
@@ -47,19 +46,15 @@ const MetricCardListView = (props: MetricCardListViewProps) => {
 						<DraggableDiv
 							type={DRAG_AND_DROP_TYPE.METRIC_CARD} 
 							item={metric}
-							disabled={!isEditingConfig || isCompact}
+							disabled={!isEditingConfig}
 						>
 							<MetricCard
 								name={metric.name}
 								data={metricResponseData.data?.find(
 									(metricData: MetricData) => metricData.metricId === metric.id) || undefined
 								}
-								metric={{
-									...metric,
-									viewMode: isCompact ? METRIC_CARD_VIEW.SMALL : metric.viewMode,
-								}}
-								/* Only enable editing view mode when not in compact mode */
-								isEditing={isEditingConfig && !isCompact} 
+								metric={metric}
+								isEditing={isEditingConfig} 
 							/>
 						</DraggableDiv>
 					</Dropzone>

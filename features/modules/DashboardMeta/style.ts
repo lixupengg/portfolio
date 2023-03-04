@@ -11,3 +11,12 @@ export const StyledRow = styled('div', {
 		marginLeft: '$small',
 	}
 });
+
+export const StyledTabHeader = styled('div', {
+	marginTop: '$small',
+	display: 'flex',
+	width: '100%',
+	paddingLeft: '$large',
+	paddingBottom: '$tiny',
+	borderBottom: '$grey6 1px solid',
+})

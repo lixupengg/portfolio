@@ -42,7 +42,7 @@ export const themeObj: { theme: Theme } = {
 			// primaryColor8: '#0954a5',
 			// primaryColor9: '#0091ff',
 			// primaryColor10: '#369eff',
-			// primaryColor11: '#52a9ff',
+			// primaryColor11: '#52a9ff',const cyan = {
 			// primaryColor12: '#eaf6ff',
 
 			/* Secondary colors */
@@ -80,7 +80,12 @@ export const themeObj: { theme: Theme } = {
 			systemBlue: '#5381db',
 			systemCream: '#fff2ee',
 			white: '#ffffff',
-			black: '#000000'
+			black: '#000000',
+
+			gradientZero: '#a960ee',
+			gradientOne: '#ff333d',
+			gradientTwo: '#90e0ff',
+			gradientThree: '#ffcb57'
 		},
 		space: {
 			veryTiny: '5px',

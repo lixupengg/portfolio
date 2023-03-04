@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { AiOutlinePlusCircle, AiFillCheckCircle } from 'react-icons/ai'
 import { SectionHeader, Button, Modal, Section } from '@stonksfi/components';
-import { METRICS_LIST } from '@stonksfi/constants';
+import { CATEGORIES, METRICS_LIST } from '@stonksfi/constants';
 import { MetricCardView } from '@stonksfi/views';
-import { MetricDisplaySetting } from '@stonksfi/types';
+import { MetricDisplaySetting, METRIC_CARD_VIEW } from '@stonksfi/types';
 import { 
 	StyledMetricsList, 
 	StyledMetricCardOption, 
@@ -52,44 +52,42 @@ const MetricSelectModal = (props: MetricSelectModalProps) => {
 				title={"Add Metrics"}
 				size='lg'
 			>
-				<Section label="Macro" isDropdown>
-				<StyledMetricsList>
-					{/* Metric list should be replaced by all metrics from BE */}
-
-					{METRICS_LIST.map((metric: MetricDisplaySetting) => {
-						const isMetricSelected = selectedMetrics.find(
-							(selectedMetric: MetricDisplaySetting) => selectedMetric.id === metric.id);
-						return (
-							<StyledMetricCardOptionBorderWrapper 
-								onClick={() => handleSelectMetric(metric)}
-								lastSelected={lastSelectedMetricId === metric.id}
-							>
-									{/* <div style={{width: '800px', border:'1px solid black', height: '60px'}}>
-										{metric.name}
-									</div> */}
-								{isMetricSelected ? 
-									<AiFillCheckCircle className={IconCss({selected: true})}/>
-								: 
-									<AiOutlinePlusCircle className={IconCss({selected: false})}/>
-								}
-								<StyledMetricCardOption>
-									<MetricCardView
-										name={metric.name}
-										key={metric.id}
-										metric={metric}
-										// isSelected={
-										// 	dashboardConfig.some(
-										// 		(config: MetricDisplaySetting) => 
-										// config.metricName === metric.metricName)
-										// }
-									/>
-								</StyledMetricCardOption>
-							</StyledMetricCardOptionBorderWrapper>
-						);
+				{ CATEGORIES.map((category: string) => {
+					return (
+						<Section label={category} isDropdown>
+							<StyledMetricsList>
+								{/* Metric list should be replaced by all metrics from BE */}
+								{METRICS_LIST.filter((metric:MetricDisplaySetting) => metric.category === category)
+									.map((metric: MetricDisplaySetting) => {
+										const isMetricSelected = selectedMetrics.find(
+											(selectedMetric: MetricDisplaySetting) => selectedMetric.id === metric.id);
+										return (
+											<StyledMetricCardOptionBorderWrapper 
+												onClick={() => handleSelectMetric(metric)}
+												lastSelected={lastSelectedMetricId === metric.id}
+											>
+												{isMetricSelected ? 
+													<AiFillCheckCircle className={IconCss({selected: true})}/>
+												: 
+													<AiOutlinePlusCircle className={IconCss({selected: false})}/>
+												}
+												<StyledMetricCardOption>
+													<MetricCardView
+														name={metric.name}
+														key={metric.id}
+														metric={{
+															...metric,
+															viewMode: METRIC_CARD_VIEW.SMALL
+														}}
+													/>
+												</StyledMetricCardOption>
+											</StyledMetricCardOptionBorderWrapper>
+										);
+								})}
+							</StyledMetricsList>
+						</Section>);
 					})
-					}
-				</StyledMetricsList>
-				</Section>
+				}
 			</Modal>
 	);
 };

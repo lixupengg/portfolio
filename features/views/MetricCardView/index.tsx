@@ -45,11 +45,22 @@ const MetricCard = React.forwardRef((props: MetricCardProps, ref?: any) => {
 
     let normalMetricCard;
     switch (metricViewMode) {
+        case METRIC_CARD_VIEW.SMALL:
+            normalMetricCard = (
+                <>
+                <StyledMetricName>
+                    {metric.name}
+                </StyledMetricName>
+                <CompareMetric metric={metric} data={data}/>
+            </>
+        );
+        break;
+
         case METRIC_CARD_VIEW.CHART:
             normalMetricCard = (
                     <>
                         <StyledMetricName>
-                            {metric.name} VIEW:
+                            {metric.name}
                         </StyledMetricName>
                         <CompareMetric metric={metric} data={data} borderBottom/>
                         <StyledLineChartWrapper ref={chartRef}>

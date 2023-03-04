@@ -4,7 +4,7 @@ import { AiOutlinePlus } from 'react-icons/ai';
 import { SectionHeader, Button, Modal } from '@stonksfi/components';
 import { useDashboardMetaContext } from '@stonksfi/hooks';
 import MetricSelectModal from './MetricSelectModal';
-import { StyledRow } from './style';
+import { StyledRow, StyledTabHeader } from './style';
 
 interface Props {}
 
@@ -13,11 +13,10 @@ const DashboardMeta = (props?: Props) => {
 	const [isModalOpen, setIsModalOpen] = React.useState(false);
 	const handleClose = () => setIsModalOpen(false);
 	return (
-		<>	<div style={{display: 'flex'}}>
-			<SectionHeader
-				label={'US Equities'}
-			/>
-			</div>
+		<>	
+			<StyledTabHeader>
+				<p> US Equities</p>
+			</StyledTabHeader>
 			<StyledRow>
 				<Button type='white' onClick={() => setIsModalOpen(true)}>
 					<AiOutlinePlus/>&nbsp;&nbsp;Add Metrics

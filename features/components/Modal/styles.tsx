@@ -9,6 +9,7 @@ export const StyledTitle = styled('h2', {
 	color: '$primaryColor12',
 	borderBottom: '1px solid $grey7',
 	marginBottom: '$small !important',
+	paddingLeft: '$small',
 });
 
 export const StyledButtonRow = styled('div', {

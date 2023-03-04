@@ -6,13 +6,14 @@ import { ModuleConfig } from '../types';
 
 export interface MetricCardListProps extends ModuleConfig {
 	metricDataRequest: RequestProps;
+	isCompact?: boolean;
 }
 
 const MetricCardList = (props: MetricCardListProps) => {
-	const { metricDataRequest } = props;
+	const { metricDataRequest, isCompact } = props;
 	return (
 		<MetricListDataProvider metricDataRequest={metricDataRequest} isMock>
-			<MetricCardListView />
+			<MetricCardListView isCompact={isCompact}/>
 		</MetricListDataProvider>
 	);
 };

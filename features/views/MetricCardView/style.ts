@@ -35,6 +35,10 @@ export const StyledMetricCardWrapper = styled('div', {
 				height: '$cardHeight',
 				width: '$bigCardWidth' // To compensate for one col gap between 2 300px cards
 			},
+			'SMALL': {
+				width: '$cardWidth',
+				height: 'calc($cardHeight / 2)',
+			}
 		},
 
 		'isEditing': {

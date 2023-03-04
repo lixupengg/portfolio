@@ -13,7 +13,7 @@ import { ModuleConfig } from '../../types';
 
 export interface MetricCardProps extends ModuleConfig {
     metric: MetricDisplaySetting;
-    data: MetricData | undefined;
+    data?: MetricData | undefined;
     viewMode?: METRIC_CARD_VIEW;
     isEditing?: boolean;
     draggableDivState?: DraggableDivState;

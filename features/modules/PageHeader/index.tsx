@@ -12,7 +12,6 @@ interface Props {
 const PageHeader = (props: Props) => {
 	const { title, callToAction } = props;
 	const { logout, isAuthenticated, accessToken } = useUserContext();
-	console.log(accessToken, "access");
 	return (
 		<>
 			<title>stonks.fi -{title}</title>

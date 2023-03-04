@@ -45,6 +45,8 @@ export type colors = {
     systemCream: string;
     white: string;
     black: string;
+
+    [otherOptions: string]: string;
 }
 
 export type space = {
