@@ -54,7 +54,7 @@ const MetricSelectModal = (props: MetricSelectModalProps) => {
 			>
 				{ CATEGORIES.map((category: string) => {
 					return (
-						<Section label={category} isDropdown>
+						<Section label={category} isDropdown key={category}>
 							<StyledMetricsList>
 								{/* Metric list should be replaced by all metrics from BE */}
 								{METRICS_LIST.filter((metric:MetricDisplaySetting) => metric.category === category)
@@ -65,6 +65,7 @@ const MetricSelectModal = (props: MetricSelectModalProps) => {
 											<StyledMetricCardOptionBorderWrapper 
 												onClick={() => handleSelectMetric(metric)}
 												lastSelected={lastSelectedMetricId === metric.id}
+												key={metric.id}
 											>
 												{isMetricSelected ? 
 													<AiFillCheckCircle className={IconCss({selected: true})}/>

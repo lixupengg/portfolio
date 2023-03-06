@@ -26,7 +26,7 @@ const NewsSourceMetric = (props: NewsSourceMetricProps) => {
 				type="white"
 			/> : null}
 				{data?.new?.sources?.slice(0, limitNewsSources).map((source: NewsSource) => (
-					<StyledUpcomingChange>
+					<StyledUpcomingChange key={source.newsId}>
 						<BsNewspaper/><OverflowText>&nbsp;{source.title}</OverflowText>
 					</StyledUpcomingChange>
 				))}

@@ -49,6 +49,7 @@
 	},
 	"resolutions": {
 		"@types/react": "^17.0.2",
-		"qubo-frontend": "workspace:*"
+		"qubo-frontend": "workspace:*",
+		"react-error-overlay": "6.0.9"
 	}
 }

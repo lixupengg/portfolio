@@ -38,7 +38,7 @@ const CompareMetric = (props: CompareMetricProps) => {
 					label="PREVIOUS"
 					type="primary"
 				/>
-				<p>{format(data?.old.value, metric.formatType)}</p>
+				<div>{format(data?.old.value, metric.formatType)}</div>
 			</StyledMetricHistory>
 		</StyledMetricNumberContainer>
 	);

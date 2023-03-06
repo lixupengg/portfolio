@@ -1,6 +1,6 @@
 import { styled } from '@stitches/react';
 
-export const StyledOverflowText = styled('div', {
+export const StyledOverflowText = styled('span', {
 	overflow: 'hidden',
 	textOverflow: 'ellipsis',
 	whiteSpace: 'nowrap',

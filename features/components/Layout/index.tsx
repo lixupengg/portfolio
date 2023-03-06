@@ -25,7 +25,8 @@ const Layout = (props: Props) => {
         return settings.map((setting: ModuleDisplaySetting) => {
             if (setting.kind === 'container') {
                 return (
-                    <StyledFlexContainer 
+                    <StyledFlexContainer
+                        key={setting.name}
                         style={{
                             flexDirection: setting.direction || "row",
                             minHeight: determineWidthHeight(setting, 'height'),
@@ -46,6 +47,7 @@ const Layout = (props: Props) => {
             } else {
                 return (
                     <StyledFlexElement
+                        key={setting.name}
                         style={{
                             width: determineWidthHeight(setting, 'width'),
                             // Max width is added additionally in the event of resize, 

@@ -39,6 +39,7 @@ const MetricCardListView = (props: MetricCardListViewProps) => {
 			{dashboardConfig.map((metric: MetricDisplaySetting) => {
 				return (
 					<Dropzone
+						key={metric.id}
 						type={DRAG_AND_DROP_TYPE.METRIC_CARD}
 						dropzoneItem={metric}
 						isOverClassName={IsOverCss()}
@@ -47,7 +48,7 @@ const MetricCardListView = (props: MetricCardListViewProps) => {
 						<DraggableDiv
 							type={DRAG_AND_DROP_TYPE.METRIC_CARD} 
 							item={metric}
-							disabled={!isEditingConfig || isCompact}
+							disabled={!isEditingConfig}
 						>
 							<MetricCard
 								name={metric.name}
@@ -59,7 +60,7 @@ const MetricCardListView = (props: MetricCardListViewProps) => {
 									viewMode: isCompact ? METRIC_CARD_VIEW.SMALL : metric.viewMode,
 								}}
 								/* Only enable editing view mode when not in compact mode */
-								isEditing={isEditingConfig && !isCompact} 
+								isEditing={isEditingConfig} 
 							/>
 						</DraggableDiv>
 					</Dropzone>

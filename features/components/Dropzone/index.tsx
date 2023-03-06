@@ -1,4 +1,5 @@
 import React, { ReactNode, useRef } from 'react';
+import { debounce } from 'lodash';
 import { useDrop } from 'react-dnd'
 
 interface DropZoneProps {
@@ -25,9 +26,11 @@ const Dropzone = (props: DropZoneProps) => {
         draggedItem: monitor.getItem(),
       })
     }))
+
+    const debouncedHandleIsOver = debounce(handleIsOver, 10);
     React.useEffect(() => {
       if (isOver) {
-        handleIsOver(dropzoneItem, draggedItem);
+        debouncedHandleIsOver(dropzoneItem, draggedItem);
       }
     }, [isOver]);
 

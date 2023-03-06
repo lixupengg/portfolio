@@ -20,12 +20,12 @@ export const mainConfig: ModuleDisplaySetting[] = [
 			{
 				name: 'PAGE_HEADER',
 				kind: ModuleKind.ELEMENT,
-				render: <PageHeader title={'Yan Yan'} />,
+				render: <PageHeader title={'Yan Yan'} />
 			},
 			{
 				name: 'DASHBOARD_META',
 				kind: ModuleKind.ELEMENT,
-				render: <DashboardMeta />,
+				render: <DashboardMeta />
 			},
 			{
 				name: 'METRIC_CARD_LIST',

@@ -6,5 +6,5 @@ export const metricCardListConfig: MetricCardListProps = {
 		url: 'https://stonksfi-backend.herokuapp.com/metrics',
 		method: 'get' as const
 	},
-	isCompact: true,
+	isCompact: true
 };
