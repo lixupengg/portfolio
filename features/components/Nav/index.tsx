@@ -17,10 +17,10 @@ const Nav = () => {
 				<span>Dashboard</span>
 			</StyledNavButton>
 			<StyledNavButton
-				selected={history.location.pathname === '/strategy'}
-				onClick={() => handleChangePage('/strategy')}
+				selected={history.location.pathname === '/playground'}
+				onClick={() => handleChangePage('/playground')}
 			>
-				<span>Explore</span>
+				<span>Playground</span>
 			</StyledNavButton>
 		</StyledNav>
 	);

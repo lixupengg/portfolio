@@ -14,22 +14,23 @@ export const mainConfig: ModuleDisplaySetting[] = [
 		name: 'main',
 		direction: 'column',
 		kind: ModuleKind.CONTAINER,
+		fillHeight: true,
 		children: [
 			{
 				name: 'PAGE_HEADER',
-				fillWidth: true,
 				kind: ModuleKind.ELEMENT,
-				render: <PageHeader title={'Yan Yan'} />
+				render: <PageHeader title={'Yan Yan'} />,
+				height: 100,
 			},
 			{
 				name: 'DASHBOARD_META',
-				fillWidth: true,
 				kind: ModuleKind.ELEMENT,
-				render: <DashboardMeta />
+				render: <DashboardMeta />,
+				height: 120,
 			},
 			{
 				name: 'METRIC_CARD_LIST',
-				fillWidth: true,
+				fillHeight: true,
 				paddingLeft: convertPxToNumber(theme.space.medium),
 				paddingTop: convertPxToNumber(theme.space.medium),
 				paddingBottom: convertPxToNumber(theme.space.large),

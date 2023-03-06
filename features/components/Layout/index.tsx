@@ -29,7 +29,7 @@ const Layout = (props: Props) => {
                         key={setting.name}
                         style={{
                             flexDirection: setting.direction || "row",
-                            minHeight: determineWidthHeight(setting, 'height'),
+                            height: determineWidthHeight(setting, 'height'),
                             maxWidth: determineWidthHeight(setting, 'width'),
                             paddingTop: `${setting.paddingTop || 0}px`,
                             paddingRight: `${setting.paddingRight || 0}px`,

@@ -37,7 +37,8 @@ export const StyledMetricCardWrapper = styled('div', {
 			},
 			'SMALL': {
 				width: '$cardWidth',
-				height: 'calc($cardHeight / 2)',
+				minWidth: '0',
+				height: 'calc(($cardHeight / 2))',
 			}
 		},
 

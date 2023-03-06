@@ -4,7 +4,7 @@ import {
 } from '@stonksfi/components/Layout/types';
 import { PageHeader, DashboardMeta, MetricCardList } from '@stonksfi/modules';
 import { convertPxToNumber } from '@stonksfi/utils';
-import { StockChartView } from '@stonksfi/views';
+import { StockChartView, BacktestPortfolioView } from '@stonksfi/views';
 import { metricCardListConfig } from './metricCardListConfig';
 import { themeObj } from '../../../styles/styling';
 
@@ -20,11 +20,13 @@ export const mainConfig: ModuleDisplaySetting[] = [
 			{
 				name: 'PAGE_HEADER',
 				kind: ModuleKind.ELEMENT,
+				height: 100,
 				render: <PageHeader title={'Yan Yan'} />
 			},
 			{
 				name: 'DASHBOARD_META',
 				kind: ModuleKind.ELEMENT,
+				height: 120,
 				render: <DashboardMeta />
 			},
 			{
@@ -32,23 +34,35 @@ export const mainConfig: ModuleDisplaySetting[] = [
 				direction: 'row',
 				kind: ModuleKind.CONTAINER,
 				fillHeight: true,
-				fillWidth: true,
 				children: [
 					{
-						name: 'METRIC_CARD_LIST',
+						name: 'PORTFOLIO_AND_METRICS',
+						direction: 'column',
+						kind: ModuleKind.CONTAINER,
 						width: 600,
-						fillHeight: true,
-						paddingLeft: convertPxToNumber(theme.space.medium),
-						paddingTop: convertPxToNumber(theme.space.medium),
-						paddingBottom: convertPxToNumber(theme.space.large),
-						kind: ModuleKind.ELEMENT,
-						render: <MetricCardList {...metricCardListConfig} />
+						children: [
+							{
+								name: 'BACKTEST_PORTFOLIO_VIEW',
+								kind: ModuleKind.ELEMENT,
+								paddingLeft: convertPxToNumber(theme.space.medium),
+								paddingRight: convertPxToNumber(theme.space.medium),
+								height: 200,
+								render: <BacktestPortfolioView />,
+							},
+							{
+								name: 'METRIC_CARD_LIST',
+								paddingLeft: convertPxToNumber(theme.space.medium),
+								paddingTop: convertPxToNumber(theme.space.medium),
+								kind: ModuleKind.ELEMENT,
+								render: <MetricCardList {...metricCardListConfig} />
+							},
+						]
 					},
 					{
-						name: 'METRIC_CARD_LIST',
+						name: 'STOCK_CHART',
 						fillWidth: true,
 						paddingLeft: convertPxToNumber(theme.space.medium),
-						paddingTop: convertPxToNumber(theme.space.medium),
+						// paddingTop: convertPxToNumber(theme.space.medium),
 						paddingBottom: convertPxToNumber(theme.space.large),
 						kind: ModuleKind.ELEMENT,
 						render: <StockChartView />

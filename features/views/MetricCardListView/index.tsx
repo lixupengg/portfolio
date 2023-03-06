@@ -35,7 +35,10 @@ const MetricCardListView = (props: MetricCardListViewProps) => {
 
 	// Hash dashboard config, force rerender if dashboard config changes
 	return (
-		<StyledMetricCardList key={JSON.stringify(dashboardConfig)}>
+		<StyledMetricCardList 
+			key={JSON.stringify(dashboardConfig)}
+			isCompact={isCompact}
+		>
 			{dashboardConfig.map((metric: MetricDisplaySetting) => {
 				return (
 					<Dropzone

@@ -37,7 +37,7 @@ const BaseRouter: React.ReactNode = () => (
 	<Router history={history}>
 		<Switch>
 			<CustomRoute exact path="/dashboard" component={DashboardPage} />
-			<CustomRoute exact path="/strategy" component={StrategyPage} />
+			<CustomRoute exact path="/playground" component={StrategyPage} />
 			<CustomRoute exact path="/" component={HomePage} />
 		</Switch>
 	</Router>

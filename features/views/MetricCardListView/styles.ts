@@ -6,6 +6,18 @@ export const StyledMetricCardList = styled('div', {
 	width: '100%',
 	columnGap: '$small',
 	rowGap: '$small',
+
+	variants: {
+		'isCompact': {
+			true: {
+				// Scale to 0.5
+				transform: 'scale(0.8)',
+				transformOrigin: 'top left',
+				width: '120%',
+			}
+
+		}
+	}
 });
 
 export const rotateAnimation = keyframes({
