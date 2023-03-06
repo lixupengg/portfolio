@@ -6,6 +6,11 @@ import { data } from './dummy';
 
 const generateChartOptions = (data: any) => {
   return {
+    chart: {
+      type: 'candlestick',
+      backgroundColor: 'transparent',
+      animation: false,
+    },
     rangeSelector: {
       selected: 1
     },

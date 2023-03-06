@@ -20,13 +20,13 @@ export const mainConfig: ModuleDisplaySetting[] = [
 				name: 'PAGE_HEADER',
 				kind: ModuleKind.ELEMENT,
 				render: <PageHeader title={'Yan Yan'} />,
-				height: 100,
+				height: 100
 			},
 			{
 				name: 'DASHBOARD_META',
 				kind: ModuleKind.ELEMENT,
 				render: <DashboardMeta />,
-				height: 120,
+				height: 120
 			},
 			{
 				name: 'METRIC_CARD_LIST',
