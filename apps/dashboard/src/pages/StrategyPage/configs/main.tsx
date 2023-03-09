@@ -26,7 +26,7 @@ export const mainConfig: ModuleDisplaySetting[] = [
 			{
 				name: 'DASHBOARD_META',
 				kind: ModuleKind.ELEMENT,
-				height: 120,
+				height: 150,
 				render: <DashboardMeta />
 			},
 			{
@@ -46,13 +46,13 @@ export const mainConfig: ModuleDisplaySetting[] = [
 								kind: ModuleKind.ELEMENT,
 								paddingLeft: convertPxToNumber(theme.space.medium),
 								paddingRight: convertPxToNumber(theme.space.medium),
-								height: 200,
+								paddingBottom: convertPxToNumber(theme.space.medium),
+								height: 500,
 								render: <BacktestPortfolioView />
 							},
 							{
 								name: 'METRIC_CARD_LIST',
 								paddingLeft: convertPxToNumber(theme.space.medium),
-								paddingTop: convertPxToNumber(theme.space.medium),
 								kind: ModuleKind.ELEMENT,
 								render: <MetricCardList {...metricCardListConfig} />
 							}

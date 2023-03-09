@@ -26,7 +26,7 @@ export const mainConfig: ModuleDisplaySetting[] = [
 				name: 'DASHBOARD_META',
 				kind: ModuleKind.ELEMENT,
 				render: <DashboardMeta />,
-				height: 120
+				height: 150
 			},
 			{
 				name: 'METRIC_CARD_LIST',
