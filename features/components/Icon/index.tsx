@@ -1,28 +1,32 @@
 import React from 'react';
+import { AiFillQuestionCircle } from 'react-icons/ai';
 
 /* Styles */
-import { StyledIconButton } from './styledComponents';
+import { StyledIcon } from './style';
+import { IconProps } from './types';
 
-interface Props {
-	iconName: string;
-	hasBackground?: boolean;
-	changeColorOnHover?: boolean;
-	className?: string;
-	onClick?: () => void;
-}
+const Icon = (props: IconProps) => {
+	const { icon, color = 'primary', size = 'small', className, onClick, hasBackground, changeColorOnHover } = props;
+	
+	let iconElement;
+	switch (icon) {
+		case 'questionMark':
+			iconElement = <AiFillQuestionCircle/>;
+			break;
+		default:
+			iconElement = <AiFillQuestionCircle/>;
+			break;
+	}
 
-const Icon = (props: Props) => {
-	const { iconName, className, onClick, hasBackground, changeColorOnHover } =
-		props;
 	return (
-		<StyledIconButton
+		<StyledIcon
 			className={className}
+			color={color}
+			size={size}
 			onClick={onClick}
-			hasBackground={hasBackground}
-			changeColorOnHover={changeColorOnHover}
 		>
-			<i className={`${iconName}`} />
-		</StyledIconButton>
+			{iconElement}
+		</StyledIcon>
 	);
 };
 

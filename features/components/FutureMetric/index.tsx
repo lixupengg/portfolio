@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import { GoArrowDown, GoArrowUp } from 'react-icons/go';
 import { FORMAT_TYPE, MetricData, MetricDisplaySetting } from '@stonksfi/types';
 import { OverflowText } from '@stonksfi/components';
-import { format } from '@stonksfi/constants';
+import { format, JoyrideClassNames } from '@stonksfi/constants';
 
 /* Styles */
 import {
@@ -28,7 +28,7 @@ const CompareMetric = (props: CompareMetricProps) => {
 	}
 	
 	return (
-		<StyledCompareMetric>
+		<StyledCompareMetric className={JoyrideClassNames.METRIC_CARD_UPCOMING}>
 			<ColouredLabel
 				label="Upcoming Changes"
 				type="secondary"

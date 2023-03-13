@@ -20,24 +20,30 @@ export const StyledMetricCardWrapper = styled('div', {
 	// Transition width
 	position: 'relative',
 	transition: '0.3s ease-in-out',
-	minWidth: '300px',
 	variants: {
 		'viewMode': {
 			'DEFAULT': {
+				minWidth: '$cardWidth',
 				width: '$cardWidth',
 				height: '$cardHeight',
 			},
 			'CHART': {
+				minWidth: '$cardWidth',
 				width: '$cardWidth',
 				height: '$cardHeight',
 			},
 			'CARD_CHART': {
+				minWidth: '$cardWidth',
 				height: '$cardHeight',
 				width: '$bigCardWidth' // To compensate for one col gap between 2 300px cards
 			},
 			'SMALL': {
-				width: '$cardWidth',
-				height: 'calc(($cardHeight / 2))',
+				width: 'calc($cardWidth * 0.7)',
+				height: 'calc(($cardHeight / 2) * 0.8)',
+				'> div > *': {
+					transform: "scale(0.7)",
+					transformOrigin: "top left",
+				}
 			}
 		},
 
@@ -67,7 +73,6 @@ export const StyledMetricCard = styled('div', {
 			true: {
 				cursor: 'grab',
 				userSelect: 'none',
-				// border: '2px dashed $grey9',
 				animation: `${shakeAnimation} 0.6s ease-in-out infinite`,
 				transformOrigin: '30% 5%',
 				'nth-child(2n)': {
@@ -96,8 +101,7 @@ export const StyledMetricName = styled('div', {
 	fontWeight: '$bold',
 	color: '$primaryColor11',
 	display: 'flex',
-	justifyContent: 'space-between',
-	// background: '$primaryColor8',
+	alignItems: 'center',
 });
 
 export const StyledRow = styled('div', {

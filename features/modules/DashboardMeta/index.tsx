@@ -3,6 +3,7 @@ import { IoMdSettings } from 'react-icons/io';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { SectionHeader, Button, Modal } from '@stonksfi/components';
 import { useDashboardMetaContext } from '@stonksfi/hooks';
+import { JoyrideClassNames } from '@stonksfi/constants';
 import MetricSelectModal from './MetricSelectModal';
 import { StyledRow, StyledTabHeader } from './style';
 
@@ -18,7 +19,11 @@ const DashboardMeta = (props?: Props) => {
 				<p> US Equities</p>
 			</StyledTabHeader>
 			<StyledRow>
-				<Button type='white' onClick={() => setIsModalOpen(true)}>
+				<Button 
+					type='white' 
+					onClick={() => setIsModalOpen(true)}
+					className={JoyrideClassNames.DASHBOARD_ACTIONABLES}
+				>
 					<AiOutlinePlus/>&nbsp;&nbsp;Add Metrics
 				</Button>
 				{

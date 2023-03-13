@@ -4,6 +4,7 @@ import { MetricData, MetricDisplaySetting, NewsSource } from '@stonksfi/types';
 import { OverflowText } from '@stonksfi/components';
 
 /* Styles */
+import { JoyrideClassNames } from '@stonksfi/constants';
 import {
 	StyledUpcomingChange,
 	StyledNewsSourceMetric
@@ -20,7 +21,7 @@ const NewsSourceMetric = (props: NewsSourceMetricProps) => {
 	const { data, metric, limitNewsSources } = props;
 
 	return (
-		<StyledNewsSourceMetric>
+		<StyledNewsSourceMetric className={JoyrideClassNames.METRIC_CARD_DATA_SOURCES}>
 			{data ? <ColouredLabel
 				label="Read More"
 				type="white"

@@ -1,7 +1,7 @@
 import { styled, css } from '@stitches/react';
 
 export const StyledMetricsList = styled('div', {
-	paddingTop: '$small',
+	padding: '$small $tiny',
 	display: 'flex',
 	flexWrap: 'wrap',
 	justifyContent: 'flex-start',
@@ -10,13 +10,6 @@ export const StyledMetricsList = styled('div', {
 	columnGap: '$small',
 });
 
-export const StyledMetricCardOption = styled('div', {
-	display: 'flex',
-	transform: 'scale(0.8)',
-	transformOrigin: 'top left',
-	width: 'calc($cardWidth * 0.8)',
-	height: 'calc(($cardHeight * 0.8) / 2)',
-});
 
 export const StyledMetricCardOptionBorderWrapper = styled('div', {
 	position: 'relative',
@@ -31,6 +24,18 @@ export const StyledMetricCardOptionBorderWrapper = styled('div', {
 			},
 		}
 	},
+});
+
+export const SectionCss = css({
+	// If even child, red bg
+	'&:nth-child(even)': {
+		'& > div': {
+			// Access second div in section
+			'&:nth-child(2)': {
+				background: '$primaryColor2'
+			}
+		}
+	}
 });
 
 export const IconCss = css({

@@ -11,9 +11,9 @@ export const StyledMetricCardList = styled('div', {
 		'isCompact': {
 			true: {
 				// Scale to 0.5
-				transform: 'scale(0.8)',
-				transformOrigin: 'top left',
-				width: '120%',
+				// transform: 'scale(0.8)',
+				// transformOrigin: 'top left',
+				// width: '120%',
 			}
 
 		}

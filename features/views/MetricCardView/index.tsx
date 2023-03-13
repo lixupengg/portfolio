@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { LineChart, CompareMetric, FutureMetric, NewsSourceMetric } from '@stonksfi/components';
+import { LineChart, CompareMetric, FutureMetric, NewsSourceMetric, IconTooltip } from '@stonksfi/components';
 import { DraggableDivState } from '@stonksfi/components/DraggableDiv/types';
 import { MetricData, MetricDisplaySetting, METRIC_CARD_VIEW } from '@stonksfi/types';
 import { ModuleConfig } from '../types';
@@ -12,6 +12,7 @@ import {
     StyledMetricCardWrapper
  } from './style';
 import EditingMetricCard from './EditingMetricCard';
+import { JoyrideClassNames } from '@stonksfi/constants';
 
 export interface MetricCardProps extends ModuleConfig {
     metric: MetricDisplaySetting;
@@ -23,6 +24,7 @@ export interface MetricCardProps extends ModuleConfig {
 const MetricCard = React.forwardRef((props: MetricCardProps, ref?: any) => {
 	const { data, metric, isEditing } = props;
     const backupRef = ref ?? React.createRef();
+    const showEditingMetricCard = isEditing && metric.viewMode !== METRIC_CARD_VIEW.SMALL;
 
     const [metricViewMode, setMetricViewMode] = React.useState<METRIC_CARD_VIEW>(
         metric.viewMode ?? METRIC_CARD_VIEW.DEFAULT);
@@ -101,8 +103,13 @@ const MetricCard = React.forwardRef((props: MetricCardProps, ref?: any) => {
         default: // METRIC_CARD_VIEW.DEFAULT
             normalMetricCard = (
                 <>
-                    <StyledMetricName>
+                    <StyledMetricName className={JoyrideClassNames.METRIC_CARD_TITLE}>
                         {metric.name}
+                        &nbsp;
+                        <IconTooltip 
+                            icon="questionMark" 
+                            content={metric.description}
+                        />
                     </StyledMetricName>
                     <CompareMetric metric={metric} data={data} borderBottom/>
                     <FutureMetric metric={metric} data={data}/>
@@ -115,11 +122,12 @@ const MetricCard = React.forwardRef((props: MetricCardProps, ref?: any) => {
         return (
             <StyledMetricCardWrapper
                 viewMode={metricViewMode}
-                isEditing={isEditing}
+                isEditing={showEditingMetricCard}
+                className={JoyrideClassNames.METRIC_CARD}
             >
-                <StyledMetricCard isEditing={isEditing} ref={backupRef}>
+                <StyledMetricCard isEditing={showEditingMetricCard} ref={backupRef}>
                     {normalMetricCard}
-                    {isEditing ? <EditingMetricCard {...props}/> : null}
+                    {showEditingMetricCard ? <EditingMetricCard {...props}/> : null}
                 </StyledMetricCard>
             </StyledMetricCardWrapper>
         )

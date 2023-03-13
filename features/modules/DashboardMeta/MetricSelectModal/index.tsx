@@ -6,7 +6,7 @@ import { MetricCardView } from '@stonksfi/views';
 import { MetricDisplaySetting, METRIC_CARD_VIEW } from '@stonksfi/types';
 import { 
 	StyledMetricsList, 
-	StyledMetricCardOption, 
+	SectionCss, 
 	StyledMetricCardOptionBorderWrapper,
 	IconCss
 } from './styles';
@@ -54,7 +54,12 @@ const MetricSelectModal = (props: MetricSelectModalProps) => {
 			>
 				{ CATEGORIES.map((category: string) => {
 					return (
-						<Section label={category} isDropdown key={category}>
+						<Section 
+							label={category} 
+							isDropdown 
+							key={category}
+							className={SectionCss()}
+						>
 							<StyledMetricsList>
 								{/* Metric list should be replaced by all metrics from BE */}
 								{METRICS_LIST.filter((metric:MetricDisplaySetting) => metric.category === category)
@@ -72,7 +77,6 @@ const MetricSelectModal = (props: MetricSelectModalProps) => {
 												: 
 													<AiOutlinePlusCircle className={IconCss({selected: false})}/>
 												}
-												<StyledMetricCardOption>
 													<MetricCardView
 														name={metric.name}
 														key={metric.id}
@@ -81,7 +85,6 @@ const MetricSelectModal = (props: MetricSelectModalProps) => {
 															viewMode: METRIC_CARD_VIEW.SMALL
 														}}
 													/>
-												</StyledMetricCardOption>
 											</StyledMetricCardOptionBorderWrapper>
 										);
 								})}

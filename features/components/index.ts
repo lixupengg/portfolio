@@ -18,3 +18,7 @@ export { default as DraggableDiv } from './DraggableDiv';
 export { default as Modal } from './Modal';
 export { default as Loader } from './Loader';
 export { default as StockChart } from './StockChart';
+export { default as Tooltip } from './Tooltip';
+export { default as Icon } from './Icon';
+export { default as IconTooltip } from './IconTooltip';
+export { default as Joyride } from './Joyride';
