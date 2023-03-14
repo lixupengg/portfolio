@@ -21,6 +21,7 @@ const MyJoyride = () => {
             shows you a glimpse of the market conditions today.`,
             spotlightPadding: 10,
             disableBeacon: true,
+            placement: 'right',
             // disableScrolling: true,
         },
         {
@@ -30,22 +31,28 @@ const MyJoyride = () => {
             curious to learn more about the metric, feel free to use our tooltips.`,
             spotlightPadding: 10,
             disableBeacon: true,
+            placement: 'right',
         },
         {
             target: `.${JoyrideClassNames.METRIC_CARD_UPCOMING}`,
             title: 'Upcoming Changes',
             content: `Here you can view the upcoming changes to the metric.`,
+            placement: 'right',
+            disableBeacon: true,
         },
         {
             target: `.${JoyrideClassNames.METRIC_CARD_DATA_SOURCES}`,
             title: 'News Sources',
             content: `If you want to find out more about the metric,
             you can click on the "Read More" button to view the news sources.`,
+            placement: 'right',
+            disableBeacon: true,
         },
         {
             target: `.${JoyrideClassNames.DASHBOARD_ACTIONABLES}`,
             title: 'Customisable',
             content: `When you are ready to customise your own dashboard, you can choose your own metrics here.`,
+            disableBeacon: true,
         }
     ]);
 
@@ -57,7 +64,7 @@ const MyJoyride = () => {
             showProgress
             showSkipButton
             run
-            disableScrolling
+            scrollOffset={500}
             // callback={(data: CallBackProps) => {
             //     const { action, index, type } = data;
 

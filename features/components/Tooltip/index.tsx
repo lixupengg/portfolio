@@ -10,7 +10,7 @@ interface TooltipProps {
     content: string;
 }
 
-const DefaultPopover = React.forwardRef(({ content, title, ...props }: any, ref) => {
+const DefaultPopover = React.forwardRef(({ content, title, ...props }: any, ref: any) => {
     return (
       <Popover 
         ref={ref} 

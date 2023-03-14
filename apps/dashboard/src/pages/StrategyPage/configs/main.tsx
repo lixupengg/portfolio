@@ -47,12 +47,13 @@ export const mainConfig: ModuleDisplaySetting[] = [
 								paddingLeft: convertPxToNumber(theme.space.medium),
 								paddingRight: convertPxToNumber(theme.space.medium),
 								paddingBottom: convertPxToNumber(theme.space.medium),
-								height: 500,
+								height: 250,
 								render: <BacktestPortfolioView />
 							},
 							{
 								name: 'METRIC_CARD_LIST',
 								paddingLeft: convertPxToNumber(theme.space.medium),
+								fillHeight: true,
 								kind: ModuleKind.ELEMENT,
 								render: <MetricCardList {...metricCardListConfig} />
 							}

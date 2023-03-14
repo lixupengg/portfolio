@@ -7,6 +7,21 @@ export enum METRIC_CARD_VIEW {
     SMALL = 'SMALL',
 }
 
+export const METRIC_CARD_VIEW_DROPDOWN_LIST = [
+    {
+        label: 'Compact',
+        value: METRIC_CARD_VIEW.DEFAULT,
+    },
+    {
+        label: 'Chart',
+        value: METRIC_CARD_VIEW.CHART,
+    },
+    {
+        label: 'Expanded',
+        value: METRIC_CARD_VIEW.CARD_CHART,
+    },
+];
+
 export type MetricDisplaySetting = {
     id: number;
     name: string;

@@ -96,14 +96,6 @@ export const StyledDragOverlay = styled('div', {
 	pointerEvents: 'none',
 });
 
-export const StyledMetricName = styled('div', {
-	fontSize: '$content16',
-	fontWeight: '$bold',
-	color: '$primaryColor11',
-	display: 'flex',
-	alignItems: 'center',
-});
-
 export const StyledRow = styled('div', {
 	display: 'flex',
 	justifyContent: 'space-between',

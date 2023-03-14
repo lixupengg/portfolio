@@ -37,6 +37,7 @@ const Layout = (props: Props) => {
                             paddingLeft: `${setting.paddingLeft || 0}px`,
                             rowGap: `${setting.rowGap || 0}px`,
                             flexGrow: `${setting.fillHeight || setting.fillWidth ? 5 : '0 1 auto'}`,
+                            flexShrink: `${setting.fillHeight || setting.fillWidth ? 1 : 0}`,
                         }}
                     >
                         {setting.children?.map((child: ModuleDisplaySetting) => {
@@ -63,7 +64,8 @@ const Layout = (props: Props) => {
                             rowGap: `${setting.rowGap || 0}px`,
                             // This is added to allow element to shrink when resizing before wrapping
                             flex: `${setting.allowResize ? 1 : '0 1 auto'}`,
-                            flexGrow: `${setting.fillHeight || setting.fillWidth ? 5 : '0 1 auto'}`
+                            flexGrow: `${setting.fillHeight || setting.fillWidth ? 5 : '0 1 auto'}`,
+                            flexShrink: `${setting.fillHeight || setting.fillWidth ? 1 : 0}`,
                         }}
                     >
                         {setting.render}

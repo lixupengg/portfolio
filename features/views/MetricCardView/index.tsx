@@ -1,28 +1,35 @@
 import React, { ReactNode } from 'react';
-import { LineChart, CompareMetric, FutureMetric, NewsSourceMetric, IconTooltip } from '@stonksfi/components';
+import {
+    LineChart,
+    CompareMetric, 
+    FutureMetric, 
+    NewsSourceMetric, 
+    Dropdown, 
+    MetricTitle 
+} from '@stonksfi/components';
 import { DraggableDivState } from '@stonksfi/components/DraggableDiv/types';
-import { MetricData, MetricDisplaySetting, METRIC_CARD_VIEW } from '@stonksfi/types';
+import { MetricData, MetricDisplaySetting, METRIC_CARD_VIEW, METRIC_CARD_VIEW_DROPDOWN_LIST } from '@stonksfi/types';
+import { JoyrideClassNames } from '@stonksfi/constants';
 import { ModuleConfig } from '../types';
 import { 
     StyledMetricCard, 
-    StyledMetricName,
     StyledRow,
     StyledColumn,
     StyledLineChartWrapper,
     StyledMetricCardWrapper
  } from './style';
 import EditingMetricCard from './EditingMetricCard';
-import { JoyrideClassNames } from '@stonksfi/constants';
 
 export interface MetricCardProps extends ModuleConfig {
     metric: MetricDisplaySetting;
+    handleUpdateMetricViewMode?: (metricId: number, viewMode: METRIC_CARD_VIEW) => void;
     data?: MetricData | undefined;
     isEditing?: boolean;
     draggableDivState?: DraggableDivState;
 }
 
 const MetricCard = React.forwardRef((props: MetricCardProps, ref?: any) => {
-	const { data, metric, isEditing } = props;
+	const { data, metric, isEditing, handleUpdateMetricViewMode } = props;
     const backupRef = ref ?? React.createRef();
     const showEditingMetricCard = isEditing && metric.viewMode !== METRIC_CARD_VIEW.SMALL;
 
@@ -45,14 +52,21 @@ const MetricCard = React.forwardRef((props: MetricCardProps, ref?: any) => {
         { y: 3500, x: 1672713600000 }
     ];
 
+    const handleSelectMetricViewMode = (value: any) => {
+        setMetricViewMode(value as METRIC_CARD_VIEW);
+        if (handleUpdateMetricViewMode) {
+            handleUpdateMetricViewMode(metric.id, value as METRIC_CARD_VIEW);
+        }
+    }
+
     let normalMetricCard;
     switch (metricViewMode) {
         case METRIC_CARD_VIEW.SMALL:
             normalMetricCard = (
                 <>
-                <StyledMetricName>
-                    {metric.name}
-                </StyledMetricName>
+                <StyledRow>
+                    <MetricTitle metric={metric}/>
+                </StyledRow>
                 <CompareMetric metric={metric} data={data}/>
             </>
         );
@@ -61,9 +75,16 @@ const MetricCard = React.forwardRef((props: MetricCardProps, ref?: any) => {
         case METRIC_CARD_VIEW.CHART:
             normalMetricCard = (
                     <>
-                        <StyledMetricName>
-                            {metric.name}
-                        </StyledMetricName>
+                        <StyledRow>
+                            <MetricTitle metric={metric}/>
+                            <Dropdown 
+                                placeholder='View'
+                                options={METRIC_CARD_VIEW_DROPDOWN_LIST}
+                                defaultSelected={metricViewMode}
+                                onSelect={handleSelectMetricViewMode}
+                                type='outline'
+                            />
+                        </StyledRow>
                         <CompareMetric metric={metric} data={data} borderBottom/>
                         <StyledLineChartWrapper ref={chartRef}>
                             <LineChart data={testData} showLineChartOnly showDummy={isEditing} ref={chartRef}/>
@@ -75,9 +96,16 @@ const MetricCard = React.forwardRef((props: MetricCardProps, ref?: any) => {
         case METRIC_CARD_VIEW.CARD_CHART:
             normalMetricCard = (
                 <>
-                    <StyledMetricName>
-                        {metric.name}
-                    </StyledMetricName>
+                    <StyledRow>
+                        <MetricTitle metric={metric}/>
+                        <Dropdown 
+                            placeholder='View'
+                            options={METRIC_CARD_VIEW_DROPDOWN_LIST}
+                            defaultSelected={metricViewMode}
+                            onSelect={handleSelectMetricViewMode}
+                            type='outline'
+                        />
+                    </StyledRow>
                         <StyledRow>
                             <CompareMetric metric={metric} data={data}/>
                             {/* Hide extra metrics when editing layout */}
@@ -103,14 +131,16 @@ const MetricCard = React.forwardRef((props: MetricCardProps, ref?: any) => {
         default: // METRIC_CARD_VIEW.DEFAULT
             normalMetricCard = (
                 <>
-                    <StyledMetricName className={JoyrideClassNames.METRIC_CARD_TITLE}>
-                        {metric.name}
-                        &nbsp;
-                        <IconTooltip 
-                            icon="questionMark" 
-                            content={metric.description}
+                    <StyledRow>
+                        <MetricTitle metric={metric}/>
+                        <Dropdown 
+                            placeholder='View'
+                            options={METRIC_CARD_VIEW_DROPDOWN_LIST}
+                            defaultSelected={metricViewMode}
+                            onSelect={handleSelectMetricViewMode}
+                            type='outline'
                         />
-                    </StyledMetricName>
+                    </StyledRow>
                     <CompareMetric metric={metric} data={data} borderBottom/>
                     <FutureMetric metric={metric} data={data}/>
                     <NewsSourceMetric metric={metric} data={data}/>

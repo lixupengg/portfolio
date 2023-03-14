@@ -22,6 +22,12 @@ const Nav = () => {
 			>
 				<span>Playground</span>
 			</StyledNavButton>
+			<StyledNavButton
+				selected={history.location.pathname === '/alerts'}
+				onClick={() => handleChangePage('/alerts')}
+			>
+				<span>Alerts</span>
+			</StyledNavButton>
 		</StyledNav>
 	);
 };

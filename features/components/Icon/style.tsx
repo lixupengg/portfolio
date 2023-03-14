@@ -20,7 +20,7 @@ export const StyledIcon = styled('span', {
 			},
 
 			large: {
-				fontSize: '$subtitle32',
+				fontSize: '$subtitle40',
 			},
 		},
 
@@ -44,7 +44,7 @@ export const StyledIcon = styled('span', {
 				color: '$systemRed',
 			},
 			grey: {
-				color: '$grey9',
+				color: '$grey8',
 			}
 		}
 

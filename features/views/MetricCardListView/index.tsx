@@ -33,6 +33,19 @@ const MetricCardListView = (props: MetricCardListViewProps) => {
 		updateDashboardConfig([...newDashboardConfig]);
 	}
 
+	const handleUpdateMetricViewMode = (metricId: number, viewMode: METRIC_CARD_VIEW) => {
+		const newDashboardConfig = dashboardConfig.map((metric: MetricDisplaySetting) => {
+			if (metric.id === metricId) {
+				return {
+					...metric,
+					viewMode,
+				};
+			}
+			return metric;
+		});
+		updateDashboardConfig(newDashboardConfig);
+	}
+
 	// Hash dashboard config, force rerender if dashboard config changes
 	return (
 		<StyledMetricCardList 
@@ -64,6 +77,7 @@ const MetricCardListView = (props: MetricCardListViewProps) => {
 								}}
 								/* Only enable editing view mode when not in compact mode */
 								isEditing={isEditingConfig} 
+								handleUpdateMetricViewMode={handleUpdateMetricViewMode}
 							/>
 						</DraggableDiv>
 					</Dropzone>

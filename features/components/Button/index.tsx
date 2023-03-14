@@ -3,20 +3,26 @@ import React, { ReactNode } from 'react';
 /* Styles */
 import { StyledButton } from './styles';
 
+export type ButtonType = 'primary' | 'secondary' | 'primaryStrong'| 'secondaryStrong' 
+| 'outline' | 'outlineSecondary' | 'white' | 'black' | 'link' | 'icon';
+
+export type ButtonSize = 'auto' | 'tiny' | 'small' | 'medium' | 'large';
+
 interface ButtonProps {
 	children: ReactNode;
-	type?: 'primary' | 'secondary' | 'primaryStrong'| 'secondaryStrong' 
-		| 'outline' | 'outlineSecondary' | 'white' | 'black' | 'link' | 'icon';
+	type?: ButtonType;
 	iconSize?: number;
-	onClick?: () => void;
+	onClick?: (e?: any) => void;
+	size?: ButtonSize;
 	className?: string;
 }
 
 const Button = (props: ButtonProps) => {
-	const { children, type = 'primary', onClick, iconSize, className } = props;
+	const { children, type = 'primary', onClick, iconSize, className, size = 'auto' } = props;
 	return (
 		<StyledButton 
-			type={type} 
+			type={type}
+			size={size}
 			onClick={onClick} style={iconSize ? {fontSize: iconSize} : {}}
 			className={className}
 		>

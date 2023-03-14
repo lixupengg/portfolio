@@ -1,4 +1,4 @@
-export type IconType = 'questionMark' | 'info' | 'warning' | 'error';
+export type IconType = 'questionMark' | 'minus' | 'caretDown';
 
 export interface IconProps {
     icon: IconType,
@@ -9,4 +9,5 @@ export interface IconProps {
     hasBackground?: boolean,
     changeColorOnHover?: boolean,
     onHoverColor?: 'primary' | 'secondary' | 'black' | 'white' | 'green' | 'red',
+    style?: any,
 };

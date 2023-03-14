@@ -6,6 +6,7 @@ import { history } from '@stonksfi/utils';
 /* Pages */
 import DashboardPage from './pages/DashboardPage';
 import HomePage from './pages/HomePage';
+import AlertsPage from './pages/AlertsPage';
 
 /* Styling */
 import { theme, Layout } from './styles/styling';
@@ -38,6 +39,7 @@ const BaseRouter: React.ReactNode = () => (
 		<Switch>
 			<CustomRoute exact path="/dashboard" component={DashboardPage} />
 			<CustomRoute exact path="/playground" component={StrategyPage} />
+			<CustomRoute exact path="/alerts" component={AlertsPage} />
 			<CustomRoute exact path="/" component={HomePage} />
 		</Switch>
 	</Router>

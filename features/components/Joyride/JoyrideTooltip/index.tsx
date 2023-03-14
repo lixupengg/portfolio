@@ -1,5 +1,6 @@
 import React from 'react';
 import { Tooltip, Button } from '@stonksfi/components';
+import Joyride, { TooltipRenderProps } from 'react-joyride';
 import {
     StyledTooltipBody, 
     StyledTooltipContent,
@@ -17,24 +18,32 @@ const JoyrideTooltip = ({
     closeProps,
     primaryProps,
     tooltipProps,
-    }: any) => (
+    size,
+    isLastStep
+    }: TooltipRenderProps) => (
     <StyledTooltipBody {...tooltipProps}>
       {step.title && <StyledTooltipTitle>{step.title}</StyledTooltipTitle>}
       <StyledTooltipContent>{step.content}</StyledTooltipContent>
       <StyledTooltipFooter>
         {index > 0 && (
-          <Button {...backProps} id="back" type="secondary">
-            Back
+          <Button {...backProps} type="link">
+            <span id="back">Back</span>
           </Button>
         )}
         {continuous && (
-          <Button {...primaryProps} id="next">
-            Next
+          <Button {...primaryProps}>
+            <span id="next">
+                {
+                    isLastStep ? "Lets Go" 
+                    : 
+                    `Next (${index + 1}/${size})`
+                }
+            </span>
           </Button>
         )}
         {!continuous && (
-          <Button {...closeProps} id="close">
-            Close
+          <Button {...closeProps}>
+            <span id="close"> Close </span>
            </Button>
         )}
       </StyledTooltipFooter>

@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { HiMinusCircle } from 'react-icons/hi';
-import { Button, OverflowText } from '@stonksfi/components';
+import { Button, Icon, OverflowText } from '@stonksfi/components';
 import { DraggableDivState } from '@stonksfi/components/DraggableDiv/types';
 import { MetricData, MetricDisplaySetting, METRIC_CARD_VIEW } from '@stonksfi/types';
 import { 
@@ -29,7 +29,7 @@ const EditingMetricCard = (props: MetricCardProps) => {
                     iconSize={40}
                     className={DeleteButtonCss()}
                 >
-                    <HiMinusCircle style={{background: 'white'}}/>
+                    <Icon icon="minus" size="large" color="grey"/>
                 </Button> : null}
                 <StyledContentOverlay>
                     <StyledMetricName>

@@ -8,7 +8,7 @@ import {
 	StyledMetricNumberContainer,
 	StyledMetricNumber,
 	StyledMetricHistory,
-} from './styledComponents';
+} from './styles';
 import ColouredLabel from '../ColouredLabel';
 
 interface CompareMetricProps {

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Auth0Provider } from '@auth0/auth0-react';
 import { METRICS_LIST } from '@stonksfi/constants';
 import {
+	AlertsContextProvider,
 	DashboardMetaContextProvider,
 	DndContextProvider,
 	UserContextProvider
@@ -23,11 +24,13 @@ const app = (
 		}}
 	>
 		<UserContextProvider>
-			<DashboardMetaContextProvider initialDashboardConfig={METRICS_LIST}>
-				<DndContextProvider>
-					<BaseRouter />
-				</DndContextProvider>
-			</DashboardMetaContextProvider>
+			<AlertsContextProvider>
+				<DashboardMetaContextProvider initialDashboardConfig={METRICS_LIST}>
+					<DndContextProvider>
+						<BaseRouter />
+					</DndContextProvider>
+				</DashboardMetaContextProvider>
+			</AlertsContextProvider>
 		</UserContextProvider>
 	</Auth0Provider>
 );

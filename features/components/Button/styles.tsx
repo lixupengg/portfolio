@@ -8,9 +8,24 @@ export const StyledButton = styled('button', {
 	minWidth: '$buttonMinWidth',
 	display: 'flex',
 	alignItems: 'center',
-	justifyContent: 'center',
+	justifyContent: 'flex-start',
 	
 	variants: {
+		size: {
+			'auto': {},
+			'tiny': {
+				width: '100px',
+			},
+			'small': {
+				width: '200px',
+			},
+			'medium': {
+				width: '250px',
+			},
+			'large': {
+				width: '300px',
+			},
+		},
 		type: {
 			'primary': {
 				background: '$primaryColor4',
@@ -83,7 +98,7 @@ export const StyledButton = styled('button', {
 			},
 			'outlineSecondary': {
 				background: '$white',
-				color: '$secondaryColor11',
+				color: '$primaryColor12',
 				border: '1px solid $secondaryColor7',
 				'&:hover': {
 					background: '$secondaryColor8',
@@ -97,7 +112,6 @@ export const StyledButton = styled('button', {
 			'white': {
 				background: '$white',
 				color: '$grey11',
-				fontWeight: '$bold',
 				border: '1px solid $grey7',
 				'&:hover': {
 					background: '$white',

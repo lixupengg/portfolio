@@ -22,3 +22,6 @@ export { default as Tooltip } from './Tooltip';
 export { default as Icon } from './Icon';
 export { default as IconTooltip } from './IconTooltip';
 export { default as Joyride } from './Joyride';
+export { default as Dropdown } from './Dropdown';
+export { default as MetricTitle } from './MetricTitle';
+export { default as Input } from './Input';

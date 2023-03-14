@@ -30,7 +30,6 @@ export const DeleteButtonCss = css({
 	position: 'absolute',
 	top: '-$small',
 	right: '-25px',
-	color: '$grey8 !important',
 });
 
 export const StyledContentOverlay = styled('div', {
