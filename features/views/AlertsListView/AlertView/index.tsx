@@ -7,7 +7,7 @@ import { StyledAlertWrapper, StyledMetricsLabels } from './style';
 
 interface AlertProps {
 	alert: Alert;
-	alertBeingEdited: Alert;
+	alertBeingEdited: Alert | null;
 	updateAlertBeingEdited: (alert: Alert) => void;
 }
 
@@ -24,18 +24,19 @@ const AlertView = (props: AlertProps) => {
 			</div>
 
 			<StyledMetricsLabels>
+				<p>Metrics Tracked:&nbsp;</p>
 				{
 					// Remove duplicate metric names
 					alert.rules.filter((rule: AlertRule, index: number, self: AlertRule[]) => {
 						return index === self.findIndex((t: AlertRule) => (
-							t.metric.name === rule.metric.name
+							t.metric?.name === rule.metric?.name
 						));
 					}).
 					map((rule: AlertRule) => {
 						return (
 							<>
 							<ColouredLabel
-								label={rule.metric.name}
+								label={rule.metric?.name}
 								type='secondary'
 							/>&nbsp;
 							</>

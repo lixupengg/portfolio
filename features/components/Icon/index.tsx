@@ -2,6 +2,7 @@ import React from 'react';
 import { AiFillQuestionCircle } from 'react-icons/ai';
 import { HiMinusCircle } from 'react-icons/hi';
 import { RxCaretDown } from 'react-icons/rx';
+import { FiPlusSquare } from 'react-icons/fi';
 
 /* Styles */
 import { StyledIcon } from './style';
@@ -19,6 +20,9 @@ const Icon = (props: IconProps) => {
 		case 'minus':
 			iconElement = <HiMinusCircle/>;
 			break;
+		case 'plus': 
+			iconElement = <FiPlusSquare/>;
+			break;
 		case 'caretDown':
 			iconElement = <RxCaretDown/>;
 			break;
@@ -27,6 +31,8 @@ const Icon = (props: IconProps) => {
 			break;
 	}
 
+	const isClickable = onClick !== undefined;
+
 	return (
 		<StyledIcon
 			className={className}
@@ -34,6 +40,7 @@ const Icon = (props: IconProps) => {
 			size={size}
 			onClick={onClick}
 			style={style}
+			clickable={isClickable}
 		>
 			{iconElement}
 		</StyledIcon>

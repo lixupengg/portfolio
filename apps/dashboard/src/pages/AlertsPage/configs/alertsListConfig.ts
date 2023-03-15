@@ -4,6 +4,6 @@ export const alertsListConfig: AlertsListProps = {
 	name: 'Alert Card List',
 	alertsDataRequest: {
 		url: 'https://stonksfi-backend.herokuapp.com/metrics',
-		method: 'get' as const,
-	},
+		method: 'get' as const
+	}
 };

@@ -10,6 +10,7 @@ export const CONNECTOR_OPTIONS: { label: string; value: string }[] = [
 ];
 
 export type OPERATOR_TYPE = '>=' | '>' | '<=' | '<' | '==' | '!=' | 'changes' | 'increases' | 'decreases';
+export type CONNECTOR_TYPE = 'and' | 'or';
 
 export const OPERATOR_OPTIONS: { label: string; value: string }[] = [
     {

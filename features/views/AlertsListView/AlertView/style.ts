@@ -1,9 +1,8 @@
 import { styled, css } from '@stitches/react';
 
 export const StyledAlertWrapper = styled('div', {
-	background: '$primaryColor1',
+	background: '$primaryColor3',
 	borderRadius: '$tiny',
-	boxShadow: '$large',
 	height: 'calc($cardHeight / 2)',
 	display: 'flex',
 	flexDirection: 'column',
@@ -32,4 +31,5 @@ export const StyledMetricsLabels = styled('div', {
 	paddingTop: '$tiny',
 	display: 'flex',
 	flexDirection: 'row',
+	alignItems: 'center',
 });

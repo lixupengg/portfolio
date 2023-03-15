@@ -33,6 +33,7 @@ export type ModuleElementDisplaySetting = {
     moduleConfig?: ModuleConfig;
     
     /* Styling properties */
+    shadow?: 'small' | 'medium' | 'large';
     rowGap?: number;
     width?: number;
     height?: number;

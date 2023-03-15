@@ -32,7 +32,6 @@ export const ALERTS: Alert[] = [
 		  metric: METRICS_LIST[1],
 		  operator: 'changes',
 		  value: 2,
-		  connector: 'or'
 		}
 	  ]
 	},
@@ -66,7 +65,6 @@ export const ALERTS: Alert[] = [
 		  metric: METRICS_LIST[2],
 		  operator: '!=',
 		  value: 0,
-		  connector: 'or'
 		}
 	  ]
 	},
@@ -100,7 +98,6 @@ export const ALERTS: Alert[] = [
 		  metric: METRICS_LIST[3],
 		  operator: 'changes',
 		  value: 1,
-		  connector: 'or'
 		}
 	  ]
 	},
@@ -134,7 +131,6 @@ export const ALERTS: Alert[] = [
 		  metric: METRICS_LIST[4],
 		  operator: '!=',
 		  value: 0,
-		  connector: 'or'
 		}
 	  ]
 	},

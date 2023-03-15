@@ -96,6 +96,10 @@ html {
 	font-size: 62.5%; //1rem =10px
 }
 
+::-webkit-scrollbar {
+	width: 6px !important;
+}
+
 body {
 	box-sizing: border-box;
 	width: 100%;
@@ -121,9 +125,9 @@ h1 {
 
 h2 {
 	font-size: 20px;
-	font-weight: 500;
+	font-weight: 600;
 	line-height: 30px;
-	color: #067a6f;
+	color: $primaryColor12;
 }
 
 h3 {
@@ -140,9 +144,9 @@ h5 {
 }
 
 h6 {
-	font-size: 14px;
-	font-weight: 500;
-	color: hsl(155 24% 9%); //Sage12
+	font-size: 12px;
+	font-weight: 700;
+	color: hsl(155 3% 43%); //Sage12
 }
 
 h1,

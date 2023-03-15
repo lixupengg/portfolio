@@ -6,8 +6,10 @@ export type AlertRule = {
     metric: MetricDisplaySetting;
     operator: OPERATOR_TYPE;
     value: number;
-    connector: 'and' | 'or';
+    connector?: 'and' | 'or';
 }
+
+export type NullableAlertRule = Partial<AlertRule>;
 
 export interface Alert {
     id: number;

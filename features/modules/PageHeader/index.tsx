@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { useUserContext } from '@stonksfi/hooks';
 import { MdLogout } from 'react-icons/md';
-import { Button, Nav } from '@stonksfi/components';
-import { StyledPageHeader, StyledPageHeaderLeft } from './style';
+import { Button, ColouredLabel, Nav } from '@stonksfi/components';
+import { LabelCss, StyledPageHeader, StyledPageHeaderLeft } from './style';
 
 interface Props {
 	title?: string;
@@ -18,7 +18,7 @@ const PageHeader = (props: Props) => {
 
 			<StyledPageHeader>
 				<StyledPageHeaderLeft>
-					<h1> stonks.fi </h1>
+					<h1> stonks.fi <ColouredLabel label='DEMO' type='green' className={LabelCss()}/></h1>
 					<Nav />
 				</StyledPageHeaderLeft>
 				{isAuthenticated ? 

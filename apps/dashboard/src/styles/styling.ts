@@ -115,7 +115,6 @@ export const themeObj: { theme: Theme } = {
 		fonts: {
 			poppins: 'Poppins, sans-serif',
 			openSans: 'Open Sans, sans-serif',
-			// roobert: 'Roobert, sans-serif'
 			roobert: 'Roobert, sans-serif'
 		},
 
@@ -154,7 +153,10 @@ export const themeObj: { theme: Theme } = {
 		shadows: {
 			small: '0 0 4px rgba(0, 0, 0, .125)',
 			medium: '0 0 12px rgba(0, 0, 0, .125)',
-			large: '0 0 24px rgba(0, 0, 0, .125)'
+			large: '0 0 24px rgba(0, 0, 0, .125)',
+			smallSide: '0 0 4px rgba(0, 0, 0, .125)',
+			mediumSide: '0 0 12px rgba(0, 0, 0, .125)',
+			largeSide: '0 0 24px rgba(0, 0, 0, .125)'
 		},
 		zIndices: {},
 		transitions: {

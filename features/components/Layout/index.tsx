@@ -49,6 +49,7 @@ const Layout = (props: Props) => {
                 return (
                     <StyledFlexElement
                         key={setting.name}
+                        shadow={setting.shadow}
                         style={{
                             width: determineWidthHeight(setting, 'width'),
                             // Max width is added additionally in the event of resize, 

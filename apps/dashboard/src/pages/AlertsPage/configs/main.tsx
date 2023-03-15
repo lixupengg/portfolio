@@ -2,7 +2,12 @@ import {
 	ModuleDisplaySetting,
 	ModuleKind
 } from '@stonksfi/components/Layout/types';
-import { PageHeader, DashboardMeta, AlertsList, AlertsEditor } from '@stonksfi/modules';
+import {
+	PageHeader,
+	DashboardMeta,
+	AlertsList,
+	AlertsEditor
+} from '@stonksfi/modules';
 import { convertPxToNumber } from '@stonksfi/utils';
 import { alertsListConfig } from './alertsListConfig';
 import { themeObj } from '../../../styles/styling';
@@ -19,14 +24,14 @@ export const mainConfig: ModuleDisplaySetting[] = [
 			{
 				name: 'PAGE_HEADER',
 				kind: ModuleKind.ELEMENT,
-				height: 100,
+				// height: 100,
 				render: <PageHeader title={'Yan Yan'} />
 			},
 			{
 				name: 'DASHBOARD_META',
 				kind: ModuleKind.ELEMENT,
-				height: 150,
-				render: <DashboardMeta />
+				// height: 80,
+				render: <DashboardMeta hideEdits/>
 			},
 			{
 				name: 'ALERTS',
@@ -38,13 +43,14 @@ export const mainConfig: ModuleDisplaySetting[] = [
 						name: 'METRIC_CARD_LIST',
 						kind: ModuleKind.ELEMENT,
 						width: 600,
-						render: <AlertsList {...alertsListConfig}/>
+						render: <AlertsList {...alertsListConfig} />
 					},
 					{
 						name: 'METRIC_CARD_LIST',
 						kind: ModuleKind.ELEMENT,
 						fillWidth: true,
-						render: <AlertsEditor {...alertsListConfig}/>
+						shadow: 'large',
+						render: <AlertsEditor {...alertsListConfig} />
 					}
 				]
 			}

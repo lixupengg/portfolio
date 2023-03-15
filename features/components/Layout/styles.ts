@@ -11,4 +11,19 @@ export const StyledFlexElement = styled('div', {
 	position: 'relative',
 	overflowY: 'auto',
 	overflowX: 'hidden',
+
+	variants: {
+		shadow: {
+			none: {},
+			small: {
+				boxShadow: '$small',
+			},
+			medium: {
+				boxShadow: '$medium',
+			},
+			large: {
+				boxShadow: '$large',
+			},
+		},
+	}
 });

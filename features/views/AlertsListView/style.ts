@@ -1,8 +1,7 @@
 import { styled, css } from '@stitches/react';
 
 export const StyledPortfolioWrapper = styled('div', {
-	borderRadius: '$tiny',
-	boxShadow: '$medium',
+	background: '$primaryColor1',
 	height: '100%',
 	display: 'flex',
 	flexDirection: 'column',

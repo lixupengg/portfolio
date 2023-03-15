@@ -36,11 +36,9 @@ const Dropdown = (props: DropdownProps) => {
 	}
 
 	React.useEffect(() => {
-		if (defaultSelected) {
-			setSelectedValue(defaultSelected);
-		}
+		setSelectedValue(defaultSelected);
 	}, [defaultSelected]);
-	
+
 	return (
 		<RsuiteDropdown 
 			title="RsuiteDropdown"

@@ -21,7 +21,7 @@ export const StyledRuleWrapper = styled('div', {
 export const StyledRule = styled('div', {
 	display: 'flex',
 	'> div': {
-		marginRight: '$medium',
+		margin: '0 $tiny',
 	},
 	variants: {
 		connector: {
@@ -35,5 +35,5 @@ export const StyledRule = styled('div', {
 });
 
 export const StyledConnectorWrapper = styled('div', {
-	width: '100%',
+	marginRight: '$small',
 });

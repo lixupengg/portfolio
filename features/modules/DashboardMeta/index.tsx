@@ -7,9 +7,12 @@ import { JoyrideClassNames } from '@stonksfi/constants';
 import MetricSelectModal from './MetricSelectModal';
 import { StyledRow, StyledTabHeader } from './style';
 
-interface Props {}
+interface Props {
+	hideEdits?: boolean;
+}
 
-const DashboardMeta = (props?: Props) => {
+const DashboardMeta = (props: Props) => {
+	const { hideEdits } = props;
 	const { dashboardConfig, updateDashboardConfig, isEditingConfig, setIsEditingConfig } = useDashboardMetaContext();
 	const [isModalOpen, setIsModalOpen] = React.useState(false);
 	const handleClose = () => setIsModalOpen(false);
@@ -18,25 +21,30 @@ const DashboardMeta = (props?: Props) => {
 			<StyledTabHeader>
 				<p> US Equities</p>
 			</StyledTabHeader>
-			<StyledRow>
-				<Button 
-					type='white' 
-					onClick={() => setIsModalOpen(true)}
-					className={JoyrideClassNames.DASHBOARD_ACTIONABLES}
-				>
-					<AiOutlinePlus/>&nbsp;&nbsp;Add Metrics
-				</Button>
-				{
-					isEditingConfig ? 
-					<Button type='primary' onClick={() => setIsEditingConfig(false)}>
-						Done
-					</Button>
-					:
-					<Button type='primaryStrong' onClick={() => setIsEditingConfig(true)}>
-						<IoMdSettings/>&nbsp;&nbsp;Edit Charts
-					</Button>
-				}
-			</StyledRow>
+			{
+				!hideEdits 
+					? 
+					<StyledRow>
+						<Button 
+							type='white' 
+							onClick={() => setIsModalOpen(true)}
+							className={JoyrideClassNames.DASHBOARD_ACTIONABLES}
+						>
+							<AiOutlinePlus/>&nbsp;&nbsp;Add Metrics
+						</Button>
+						{
+							isEditingConfig ? 
+							<Button type='primary' onClick={() => setIsEditingConfig(false)}>
+								Done
+							</Button>
+							:
+							<Button type='primaryStrong' onClick={() => setIsEditingConfig(true)}>
+								<IoMdSettings/>&nbsp;&nbsp;Edit Charts
+							</Button>
+						}
+					</StyledRow> 
+					: null
+			}
 			<MetricSelectModal 
 				isModalOpen={isModalOpen} 
 				onClose={handleClose} 

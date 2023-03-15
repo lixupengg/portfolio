@@ -1,4 +1,4 @@
-import { styled } from '@stitches/react';
+import { styled, css } from '@stitches/react';
 
 export const StyledPageHeader = styled('div', {
 	display: 'flex',
@@ -19,5 +19,12 @@ export const StyledPageHeaderLeft = styled('div', {
 	'h1': {
 		marginRight: '$large',
 		marginBottom: '$tiny',
+		position: 'relative',
 	}
 })
+
+export const LabelCss = css({
+	position: 'absolute',
+	top: 10,
+	right: -45,
+});

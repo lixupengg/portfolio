@@ -26,10 +26,10 @@ export const StyledIcon = styled('span', {
 
 		color: {
 			primary: {
-				color: '$primary9',
+				color: '$primaryColor9',
 			},
 			secondary: {
-				color: '$secondary9',
+				color: '$secondaryColor9',
 			},
 			black: {
 				color: '$black',
@@ -45,7 +45,17 @@ export const StyledIcon = styled('span', {
 			},
 			grey: {
 				color: '$grey8',
-			}
+			},
+			greyDark: {
+				color: '$grey9',
+			},
+		},
+
+		clickable: {
+			true: {
+				cursor: 'pointer',
+			},
+			false: {},
 		}
 
 	},
