@@ -31,7 +31,7 @@ export const mainConfig: ModuleDisplaySetting[] = [
 				name: 'DASHBOARD_META',
 				kind: ModuleKind.ELEMENT,
 				// height: 80,
-				render: <DashboardMeta hideEdits/>
+				render: <DashboardMeta hideEdits />
 			},
 			{
 				name: 'ALERTS',
