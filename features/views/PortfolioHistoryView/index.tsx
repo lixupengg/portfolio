@@ -10,14 +10,14 @@ interface Props {
 
 const data: any = [
 	{
-		stockName: 'Cash',
-		value: '$157.77',
+		stockName: 'USD',
+		value: '$688.00',
 		profitLoss: '-',
 	},
 	{
 		stockName: 'AAPL',
-		value: '$502.33',
-		profitLoss: 212.2,
+		value: '$532.88',
+		profitLoss: 220.88,
 	},
 ];
 
@@ -44,7 +44,7 @@ const PortfolioHistoryView = (props: Props) => {
 		<StyledPortfolioWrapper>
 			<h6> PORTFOLIO VALUE </h6>
 			<StyledPortfolioNumber>
-				$157.77
+				$1220.88
 			</StyledPortfolioNumber>
 			<StyledTableWrapper>
 				<Table data={data} columns={columns} />

@@ -30,8 +30,14 @@ const HomePage = () => {
 					<Button type="primaryStrong" onClick={loginWithRedirect}>
 						Login
 					</Button>
-					<Button type="primaryStrong" onClick={() => loginWithRedirect(
-						{ authorizationParams: {screen_hint: 'signup'} })}>
+					<Button
+						type="primaryStrong"
+						onClick={() =>
+							loginWithRedirect({
+								authorizationParams: { screen_hint: 'signup' }
+							})
+						}
+					>
 						Sign Up
 					</Button>
 				</StyledRow>

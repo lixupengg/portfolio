@@ -4,7 +4,11 @@ import {
 } from '@stonksfi/components/Layout/types';
 import { PageHeader, DashboardMeta, MetricCardList } from '@stonksfi/modules';
 import { convertPxToNumber } from '@stonksfi/utils';
-import { StockChartView, PortfolioHistoryView, TradeExecutionView } from '@stonksfi/views';
+import {
+	StockChartView,
+	PortfolioHistoryView,
+	TradeExecutionView
+} from '@stonksfi/views';
 import { metricCardListConfig } from './metricCardListConfig';
 import { themeObj } from '../../../styles/styling';
 
@@ -58,7 +62,7 @@ export const mainConfig: ModuleDisplaySetting[] = [
 								paddingRight: convertPxToNumber(theme.space.medium),
 								paddingBottom: convertPxToNumber(theme.space.medium),
 								render: <PortfolioHistoryView />
-							},
+							}
 						]
 					},
 					{

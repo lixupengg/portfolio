@@ -16,7 +16,7 @@
 			text-transform: uppercase;
 			font-family: 'Roobert', sans-serif;
 			font-size: 12px !important;
-			font-weight: 500 !important;
+			font-weight: 700 !important;
 		}
 	}
 
@@ -28,9 +28,6 @@
 	// body section
 	.rs-table-body-row-wrapper {
 		.rs-table-body-wheel-area {
-			margin-top: 1rem;
-			// background: $sage1;
-			// should be rowheight - 10px
 			.rs-table-row {
 				&:nth-child(2n) {
 					.rs-table-cell-content {
