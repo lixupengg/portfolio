@@ -35,7 +35,7 @@ export const StyledLabel = styled('div', {
 				color: 'white'
 			},
 			secondary: {
-				background: '$secondaryColor10',
+				background: '$secondaryColor9',
 				color: 'white',
 			}
 		}

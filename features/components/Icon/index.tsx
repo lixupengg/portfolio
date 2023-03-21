@@ -1,5 +1,6 @@
 import React from 'react';
 import { AiFillQuestionCircle } from 'react-icons/ai';
+import { GoArrowDown, GoArrowUp } from 'react-icons/go';
 import { HiMinusCircle } from 'react-icons/hi';
 import { RxCaretDown } from 'react-icons/rx';
 import { FiPlusSquare } from 'react-icons/fi';
@@ -25,6 +26,12 @@ const Icon = (props: IconProps) => {
 			break;
 		case 'caretDown':
 			iconElement = <RxCaretDown/>;
+			break;
+		case 'arrowIncrease':
+			iconElement = <GoArrowUp/>;
+			break;
+		case 'arrowDecrease':
+			iconElement = <GoArrowDown/>;
 			break;
 		default:
 			iconElement = <AiFillQuestionCircle/>;

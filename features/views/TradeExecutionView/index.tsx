@@ -3,7 +3,7 @@ import { useUserContext } from '@stonksfi/hooks';
 import { MdLogout } from 'react-icons/md';
 import { Button, ColouredLabel } from '@stonksfi/components';
 import { StyledPortfolioWrapper, StyledButtonRow, LastButtonCss,
-	StyledDate, StyledPortfolioNumber, StyledPortfolioTitle } from './style';
+	StyledDate, StyledPortfolioNumber, StyledStockName } from './style';
 
 interface Props {
 }
@@ -14,11 +14,13 @@ const BacktestPortfolio = (props: Props) => {
 			<StyledDate>
 				23 Jan 2023
 			</StyledDate>
-			<StyledPortfolioTitle>
-				Current portfolio: 
-			</StyledPortfolioTitle>
+			<StyledStockName>
+				<ColouredLabel type="black" label="US"/>
+				&nbsp;
+				Apple (AAPL)
+			</StyledStockName>
 			<StyledPortfolioNumber>
-				$1000
+				$157.77
 			</StyledPortfolioNumber>
 			
 			<StyledButtonRow>

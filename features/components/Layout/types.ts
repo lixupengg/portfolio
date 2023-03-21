@@ -43,6 +43,10 @@ export type ModuleElementDisplaySetting = {
     paddingBottom?: number;
     paddingLeft?: number;
     paddingRight?: number;
+    marginTop?: number;
+    marginBottom?: number;
+    marginLeft?: number;
+    marginRight?: number;
     fillWidth?: boolean;
     fillHeight?: boolean;
     allowResize?: boolean;

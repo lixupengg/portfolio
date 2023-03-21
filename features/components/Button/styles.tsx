@@ -8,9 +8,19 @@ export const StyledButton = styled('button', {
 	minWidth: '$buttonMinWidth',
 	display: 'flex',
 	alignItems: 'center',
-	justifyContent: 'flex-start',
 	
 	variants: {
+		align: {
+			'left': {
+				justifyContent: 'flex-start',
+			},
+			'center': {
+				justifyContent: 'center',
+			},
+			'right': {
+				justifyContent: 'flex-end',
+			},
+		},
 		size: {
 			'auto': {},
 			'tiny': {

@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 
 import { MetricData, MetricDisplaySetting } from '@stonksfi/types';
+import { ColouredLabel, Icon } from '@stonksfi/components';
 import { format } from '@stonksfi/constants';
 
 /* Styles */
@@ -8,8 +9,8 @@ import {
 	StyledMetricNumberContainer,
 	StyledMetricNumber,
 	StyledMetricHistory,
+	StyledMetricHistoryText
 } from './styles';
-import ColouredLabel from '../ColouredLabel';
 
 interface CompareMetricProps {
 	data: MetricData | undefined;
@@ -30,7 +31,7 @@ const CompareMetric = (props: CompareMetricProps) => {
 
 	return (
 		<StyledMetricNumberContainer borderBottom={borderBottom}>
-			<StyledMetricNumber type={metricColor}>
+			<StyledMetricNumber color={metricColor}>
 				{format(data?.current.value, metric.formatType)}
 			</StyledMetricNumber>
 			<StyledMetricHistory>
@@ -38,7 +39,25 @@ const CompareMetric = (props: CompareMetricProps) => {
 					label="PREVIOUS"
 					type="primary"
 				/>
-				<div>{format(data?.old.value, metric.formatType)}</div>
+				<StyledMetricHistoryText color={metricColor}>
+				{
+					metricColor === 'green' ?
+						<Icon
+							icon="arrowIncrease"
+							color="green"
+							size="small"
+						/>
+					: metricColor === 'red' ?
+						<Icon
+							icon="arrowDecrease"
+							color="red"
+							size="small"
+						/>
+					: null
+
+				}
+					{format(data?.old.value, metric.formatType)}
+				</StyledMetricHistoryText>
 			</StyledMetricHistory>
 		</StyledMetricNumberContainer>
 	);

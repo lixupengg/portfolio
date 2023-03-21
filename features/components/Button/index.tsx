@@ -11,6 +11,7 @@ export type ButtonSize = 'auto' | 'tiny' | 'small' | 'medium' | 'large';
 interface ButtonProps {
 	children: ReactNode;
 	type?: ButtonType;
+	align?: 'left' | 'center' | 'right';
 	iconSize?: number;
 	onClick?: (e?: any) => void;
 	size?: ButtonSize;
@@ -18,11 +19,12 @@ interface ButtonProps {
 }
 
 const Button = (props: ButtonProps) => {
-	const { children, type = 'primary', onClick, iconSize, className, size = 'auto' } = props;
+	const { children, type = 'primary', onClick, iconSize, className, size = 'auto', align = 'center' } = props;
 	return (
 		<StyledButton 
 			type={type}
 			size={size}
+			align={align}
 			onClick={onClick} style={iconSize ? {fontSize: iconSize} : {}}
 			className={className}
 		>

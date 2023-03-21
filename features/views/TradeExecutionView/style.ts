@@ -11,9 +11,11 @@ export const StyledPortfolioWrapper = styled('div', {
 });
 
 export const StyledDate = styled('div', {
+	position: 'absolute',
+	right: '50px',
 	fontSize: '$content16',
 	color: '$grey11',
-	fontWeight: '$bold',
+	fontWeight: '$medium',
 });
 
 export const StyledPortfolioNumber = styled('div', {
@@ -22,9 +24,11 @@ export const StyledPortfolioNumber = styled('div', {
 	fontWeight: '$bold',
 });
 
-export const StyledPortfolioTitle = styled('div', {
+export const StyledStockName = styled('div', {
+	display: 'flex',
+	alignItems: 'center',
 	fontSize: '$subtitle20',
-	color: '$primaryColor11',
+	color: '$primaryColor12',
 	fontWeight: '$bold',
 });
 

@@ -22,7 +22,7 @@ const PageHeader = (props: Props) => {
 					<Nav />
 				</StyledPageHeaderLeft>
 				{isAuthenticated ? 
-					<Button type='black' onClick={() => logout()}>
+					<Button type='black' onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
 						<MdLogout/>&nbsp;Logout
 					</Button>
 					: null

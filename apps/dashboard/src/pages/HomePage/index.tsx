@@ -1,12 +1,12 @@
 // Basic Imports
 import React, { useEffect } from 'react';
+import { IoIosRocket } from 'react-icons/io';
+
 import { useUserContext } from '@stonksfi/hooks';
 import { Button, Loader } from '@stonksfi/components';
-import { IoIosRocket } from 'react-icons/io';
+
 import DashboardPage from '../DashboardPage';
 import { StyledHomePageWrapper, StyledRow, StyledStonks } from './styles';
-
-/* Components */
 
 const HomePage = () => {
 	const { loginWithRedirect, isAuthenticated, isLoading } = useUserContext();
@@ -30,7 +30,8 @@ const HomePage = () => {
 					<Button type="primaryStrong" onClick={loginWithRedirect}>
 						Login
 					</Button>
-					<Button type="primaryStrong" onClick={loginWithRedirect}>
+					<Button type="primaryStrong" onClick={() => loginWithRedirect(
+						{ authorizationParams: {screen_hint: 'signup'} })}>
 						Sign Up
 					</Button>
 				</StyledRow>

@@ -14,12 +14,14 @@ export const StyledMetricNumberContainer = styled('div', {
 });
 
 export const StyledMetricNumber = styled('div', {
+	display: 'flex',
+	alignItems: 'center',
 	fontSize: '$title54',
 	textAlign: 'center',
 	fontWeight: '$bold',
 
 	variants: {
-		type: {
+		color: {
 			'red': {
 				color: '$systemRed',
 			},
@@ -40,15 +42,24 @@ export const StyledMetricHistory = styled('div', {
 	flexDirection: 'column',
 	alignContent: 'center',
 	justifyContent: 'center',
+});
 
-	'span': {
-		color: '$primaryColor11',
-		fontSize: '$content12',
-		fontWeight: '$semibold',
-	},
-
-	'div': {
-		fontSize: '$content18',
-		fontWeight: '$medium',
+export const StyledMetricHistoryText = styled('div', {
+	marginTop: '2px',
+	fontWeight: '$bold',
+	display: 'flex',
+	alignItems: 'center',
+	variants: {
+		color: {
+			'red': {
+				color: '$systemRed',
+			},
+			'green': {
+				color: '$systemGreen',
+			},
+			'black': {
+				color: '$primaryColor12',
+			},
+		}
 	}
 });

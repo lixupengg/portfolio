@@ -5,7 +5,7 @@ import {
     FutureMetric, 
     NewsSourceMetric, 
     Dropdown, 
-    MetricTitle 
+    MetricTitle,
 } from '@stonksfi/components';
 import { DraggableDivState } from '@stonksfi/components/DraggableDiv/types';
 import { MetricData, MetricDisplaySetting, METRIC_CARD_VIEW, METRIC_CARD_VIEW_DROPDOWN_LIST } from '@stonksfi/types';

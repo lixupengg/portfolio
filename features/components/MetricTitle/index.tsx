@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react';
-import { GoArrowDown, GoArrowUp } from 'react-icons/go';
 import { MetricDisplaySetting, METRIC_CARD_VIEW } from '@stonksfi/types';
 import { IconTooltip, OverflowText } from '@stonksfi/components';
 import { JoyrideClassNames } from '@stonksfi/constants';

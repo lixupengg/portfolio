@@ -2,8 +2,8 @@ import React, { useContext, createContext } from 'react';
 import { useAuth0 } from "@auth0/auth0-react";
 
 interface UserContext {
-    loginWithRedirect: () => void;
-    logout: () => void;
+    loginWithRedirect: (mode?: any) => void;
+    logout: (config?: any) => void;
     user: any;
     isAuthenticated: boolean;
     isLoading: boolean;
@@ -11,8 +11,8 @@ interface UserContext {
 }
 
 const Context = createContext<UserContext>({
-    loginWithRedirect: () => {},
-    logout: () => {},
+    loginWithRedirect: (mode?: any) => {},
+    logout: (config?: any) => {},
     user: {},
     isAuthenticated: false,
     isLoading: false,

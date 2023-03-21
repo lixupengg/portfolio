@@ -1,4 +1,4 @@
-export type IconType = 'questionMark' | 'minus' | 'caretDown' | 'plus';
+export type IconType = 'questionMark' | 'minus' | 'caretDown' | 'plus' | 'arrowIncrease' | 'arrowDecrease';
 
 export interface IconProps {
     icon: IconType,

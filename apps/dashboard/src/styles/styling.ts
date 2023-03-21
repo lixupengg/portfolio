@@ -1,24 +1,39 @@
 import { createStitches, styled } from '@stitches/react';
-import { sage, cyan, orange, blue } from '@radix-ui/colors';
+import { sage, cyan, orange, blue, slate } from '@radix-ui/colors';
 import { Theme } from '@stonksfi/types/theme';
 
 export const themeObj: { theme: Theme } = {
 	theme: {
 		colors: {
 			/* Primary colors */
-			primaryColor1: cyan.cyan1,
-			primaryColor2: cyan.cyan2,
-			primaryColor3: cyan.cyan3,
-			primaryColor4: cyan.cyan4,
-			primaryColor5: cyan.cyan5,
-			primaryColor6: cyan.cyan6,
-			primaryColor7: cyan.cyan7,
-			primaryColor8: cyan.cyan8,
-			primaryColor9: cyan.cyan9,
-			primaryColor10: cyan.cyan10,
-			primaryColor11: cyan.cyan11,
-			primaryColor12: cyan.cyan12,
+			// Cyan
+			// primaryColor1: cyan.cyan1,
+			// primaryColor2: cyan.cyan2,
+			// primaryColor3: cyan.cyan3,
+			// primaryColor4: cyan.cyan4,
+			// primaryColor5: cyan.cyan5,
+			// primaryColor6: cyan.cyan6,
+			// primaryColor7: cyan.cyan7,
+			// primaryColor8: cyan.cyan8,
+			// primaryColor9: cyan.cyan9,
+			// primaryColor10: cyan.cyan10,
+			// primaryColor11: cyan.cyan11,
+			// primaryColor12: cyan.cyan12,
 
+			// Blue A
+			primaryColor1: '#fbfdff',
+			primaryColor2: '#f5faff',
+			primaryColor3: '#edf6ff',
+			primaryColor4: '#e1f0ff',
+			primaryColor5: '#cee7fe',
+			primaryColor6: '#b7d9f8',
+			primaryColor7: '#96c7f2',
+			primaryColor8: '#5eb0ef',
+			primaryColor9: '#635bff',
+			// primaryColor9: '#fff',
+			primaryColor10: '#0081f1',
+			primaryColor11: '#006adc',
+			primaryColor12: '#00254d',
 			// primaryColor1: '#fbfdff',
 			// primaryColor2: '#f5faff',
 			// primaryColor3: '#edf6ff',
@@ -60,18 +75,18 @@ export const themeObj: { theme: Theme } = {
 			secondaryColor12: orange.orange12,
 
 			/* Grey colors */
-			grey1: sage.sage1,
-			grey2: sage.sage2,
-			grey3: sage.sage3,
-			grey4: sage.sage4,
-			grey5: sage.sage5,
-			grey6: sage.sage6,
-			grey7: sage.sage7,
-			grey8: sage.sage8,
-			grey9: sage.sage9,
-			grey10: sage.sage10,
-			grey11: sage.sage11,
-			grey12: sage.sage12,
+			grey1: slate.slate1,
+			grey2: slate.slate2,
+			grey3: slate.slate3,
+			grey4: slate.slate4,
+			grey5: slate.slate5,
+			grey6: slate.slate6,
+			grey7: slate.slate7,
+			grey8: slate.slate8,
+			grey9: slate.slate9,
+			grey10: slate.slate10,
+			grey11: slate.slate11,
+			grey12: slate.slate12,
 
 			/* Systems colors */
 			systemOrange: '#f4aa74',
@@ -153,7 +168,7 @@ export const themeObj: { theme: Theme } = {
 		shadows: {
 			small: '0 0 4px rgba(0, 0, 0, .125)',
 			medium: '0 0 12px rgba(0, 0, 0, .125)',
-			large: '0 0 24px rgba(0, 0, 0, .125)',
+			large: '0 0 24px rgba(0, 0, 0, .125)'
 		},
 		zIndices: {},
 		transitions: {

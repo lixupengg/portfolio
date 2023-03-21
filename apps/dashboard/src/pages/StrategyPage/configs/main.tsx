@@ -4,7 +4,7 @@ import {
 } from '@stonksfi/components/Layout/types';
 import { PageHeader, DashboardMeta, MetricCardList } from '@stonksfi/modules';
 import { convertPxToNumber } from '@stonksfi/utils';
-import { StockChartView, BacktestPortfolioView } from '@stonksfi/views';
+import { StockChartView, PortfolioHistoryView, TradeExecutionView } from '@stonksfi/views';
 import { metricCardListConfig } from './metricCardListConfig';
 import { themeObj } from '../../../styles/styling';
 
@@ -39,25 +39,33 @@ export const mainConfig: ModuleDisplaySetting[] = [
 						name: 'PORTFOLIO_AND_METRICS',
 						direction: 'column',
 						kind: ModuleKind.CONTAINER,
-						width: 600,
+						width: 450,
 						children: [
 							{
-								name: 'BACKTEST_PORTFOLIO_VIEW',
+								name: 'TRADE_EXECUTION_VIEW',
 								kind: ModuleKind.ELEMENT,
 								paddingLeft: convertPxToNumber(theme.space.medium),
 								paddingRight: convertPxToNumber(theme.space.medium),
 								paddingBottom: convertPxToNumber(theme.space.medium),
-								height: 250,
-								render: <BacktestPortfolioView />
+								height: 200,
+								render: <TradeExecutionView />
 							},
 							{
-								name: 'METRIC_CARD_LIST',
-								paddingLeft: convertPxToNumber(theme.space.medium),
-								fillHeight: true,
+								name: 'PORTFOLIO_HISTORY_VIEW',
 								kind: ModuleKind.ELEMENT,
-								render: <MetricCardList {...metricCardListConfig} />
-							}
+								fillHeight: true,
+								paddingLeft: convertPxToNumber(theme.space.medium),
+								paddingRight: convertPxToNumber(theme.space.medium),
+								paddingBottom: convertPxToNumber(theme.space.medium),
+								render: <PortfolioHistoryView />
+							},
 						]
+					},
+					{
+						name: 'METRIC_CARD_LIST',
+						kind: ModuleKind.ELEMENT,
+						width: 460,
+						render: <MetricCardList {...metricCardListConfig} />
 					},
 					{
 						name: 'STOCK_CHART',

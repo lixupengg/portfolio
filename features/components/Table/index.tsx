@@ -6,19 +6,21 @@ import styles from './index.module.scss';
 import './tableReset.scss';
 import 'rsuite/dist/rsuite.min.css';
 import { TableProps, Column } from './types';
+import GreenRedCell from './TableCells/GreenRedCell';
 
 const CustomersTable = (props: TableProps) => {
 	const { columns, data } = props;
 	return (
 		<section className={styles.campaignTableWrapper}>
 			<Table
-				height={400}
 				id="campaignTable"
 				data={data}
 				hover={false}
+				autoHeight
 				onRowClick={(data: any) => {
 					console.log(data);
 				}}
+				bordered
 			>
 				{
 					columns.map((col: Column) => {
@@ -28,7 +30,12 @@ const CustomersTable = (props: TableProps) => {
 							align="left"
 						>
 							<Table.HeaderCell>{col.name}</Table.HeaderCell>
-							<Table.Cell dataKey={col.dataKey} />
+							{
+								col.dataKey === 'profitLoss' ?
+								<GreenRedCell dataKey={col.dataKey} />
+								:
+								<Table.Cell dataKey={col.dataKey} />
+							}
 						</Table.Column>);
 					})
 				}

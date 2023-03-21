@@ -50,7 +50,7 @@ const Dropdown = (props: DropdownProps) => {
 							${suffix || ''}`
 						: placeholder
 					}
-					<Icon icon="caretDown" style={{ marginLeft: 'auto' }}/>
+					<Icon icon="caretDown" style={{ marginLeft: 'auto' }} color="greyDark"/>
 				</Button>
 			}
 			activeKey={selectedValue}
