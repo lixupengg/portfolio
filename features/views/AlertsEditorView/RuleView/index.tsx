@@ -12,15 +12,15 @@ interface AlertRuleProps {
 	handleUpdateRule: (rule: AlertRule, index: number) => void;
 	handleCreateRule: (createIndex: number) => void;
 	handleDeleteRule: (rule: AlertRule) => void;
-	dashboardConfig: MetricDisplaySetting[];
+	metricsMeta: MetricDisplaySetting[];
 	isLastRule?: boolean;
 }
 
 const RuleView = (props: AlertRuleProps) => {
 	const { rule, metricOptions, handleUpdateRule, handleCreateRule, handleDeleteRule, 
-		index, isLastRule, dashboardConfig } = props;
+		index, isLastRule, metricsMeta } = props;
 	const handleSelectMetric = (value: string | number, _label: string) => {
-		const newMetric = dashboardConfig.find((metric: MetricDisplaySetting) => metric.name === value);
+		const newMetric = metricsMeta.find((metric: MetricDisplaySetting) => metric.name === value);
 		const newRule = {
 			...rule,
 			metric: newMetric || rule.metric,

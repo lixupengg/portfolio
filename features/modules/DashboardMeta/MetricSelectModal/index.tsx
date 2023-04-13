@@ -14,13 +14,13 @@ import {
 interface MetricSelectModalProps {
 	isModalOpen: boolean;
 	onClose: () => void;
-	dashboardConfig: MetricDisplaySetting[];
-	updateDashboardConfig: (config: MetricDisplaySetting[]) => void;
+	metricsMeta: MetricDisplaySetting[];
+	updateMetricsMeta: (config: MetricDisplaySetting[]) => void;
 }
 
 const MetricSelectModal = (props: MetricSelectModalProps) => {
-	const { isModalOpen, onClose, dashboardConfig, updateDashboardConfig } = props;
-	const [ selectedMetrics, setSelectedMetrics ] = React.useState<MetricDisplaySetting[]>(dashboardConfig);
+	const { isModalOpen, onClose, metricsMeta, updateMetricsMeta } = props;
+	const [ selectedMetrics, setSelectedMetrics ] = React.useState<MetricDisplaySetting[]>(metricsMeta);
 	const [ lastSelectedMetricId, setLastSelectedMetricId ] = React.useState<number>(-1);
 	const handleSelectMetric = (metric: MetricDisplaySetting) => {
 		setLastSelectedMetricId(metric.id);
@@ -35,13 +35,13 @@ const MetricSelectModal = (props: MetricSelectModalProps) => {
 	}
 
 	const handleSave = () => {
-		updateDashboardConfig(selectedMetrics);
+		updateMetricsMeta(selectedMetrics);
 		onClose();
 	}
 
 	React.useEffect(() => {
-		setSelectedMetrics(dashboardConfig);
-	}, [dashboardConfig, isModalOpen]);
+		setSelectedMetrics(metricsMeta);
+	}, [metricsMeta, isModalOpen]);
 
 	return (
 			<Modal 

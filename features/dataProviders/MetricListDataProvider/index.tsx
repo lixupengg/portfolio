@@ -12,18 +12,18 @@ export interface MetricListDataProviderProps {
 
 export interface MetricListDataProviderState {
   metricResponseData: RequestResponse<MetricData[]>;
-  dashboardConfig: MetricDisplaySetting[];
+  metricsMeta: MetricDisplaySetting[];
   isEditingConfig: boolean;
 }
 
 const MetricListDataProvider = (props: MetricListDataProviderProps) => {
     const { children, metricDataRequest, isMock } = props;
-    const { dashboardConfig, isEditingConfig, updateDashboardConfig } = useDashboardMetaContext();
+    const { metricsMeta, isEditingConfig, updateMetricsMeta } = useDashboardMetaContext();
     const metricResponseData = useRequest({
       ...metricDataRequest,
       params: {
         ...metricDataRequest.params,
-        metricIds: dashboardConfig?.map((metric) => metric.id),
+        metricIds: metricsMeta?.map((metric) => metric.id),
       },
     });
   /* ======================================== MOCK DATA ======================================== */
@@ -34,16 +34,16 @@ const MetricListDataProvider = (props: MetricListDataProviderProps) => {
           error: null,
           status: RequestStatus.SUCCESS,
         },
-        dashboardConfig,
+        metricsMeta,
         isEditingConfig,
-        updateDashboardConfig,
+        updateMetricsMeta,
       };
 
       return React.cloneElement(children, {...MOCK_DATA})
     }
     /* ========================================================================================= */
 
-    return React.cloneElement(children, { metricResponseData, isEditingConfig, dashboardConfig, updateDashboardConfig })
+    return React.cloneElement(children, { metricResponseData, isEditingConfig, metricsMeta, updateMetricsMeta })
 }
 
 export default MetricListDataProvider;

@@ -4,15 +4,15 @@ import { METRICS_LIST } from '@stonksfi/constants';
 import { useRequest } from '../useRequest';
 
 interface DashboardMetaContext {
-	dashboardConfig: MetricDisplaySetting[];
-	updateDashboardConfig: (config: MetricDisplaySetting[]) => void;
+	metricsMeta: MetricDisplaySetting[];
+	updateMetricsMeta: (config: MetricDisplaySetting[]) => void;
 	isEditingConfig: boolean;
 	setIsEditingConfig: (isEditingConfig: boolean) => void;
 }
 
 const Context = createContext<DashboardMetaContext>({
-	dashboardConfig: [],
-	updateDashboardConfig: () => {},
+	metricsMeta: [],
+	updateMetricsMeta: () => {},
 	isEditingConfig: false,
 	setIsEditingConfig: () => {},
 });
@@ -20,11 +20,11 @@ const Context = createContext<DashboardMetaContext>({
 export const useDashboardMetaContext = () => useContext(Context);
 
 export const DashboardMetaContextProvider = ({children}: any) => {
-	const [dashboardConfig, setDashboardConfig] = useState<MetricDisplaySetting[]>(METRICS_LIST);
+	const [metricsMeta, setMetricsMeta] = useState<MetricDisplaySetting[]>(METRICS_LIST);
 	const [isEditingConfig, setIsEditingConfig] = useState<boolean>(false);
-	const updateDashboardConfig = (newConfig: MetricDisplaySetting[]) => {
+	const updateMetricsMeta = (newConfig: MetricDisplaySetting[]) => {
 		// Insert BE call here
-		setDashboardConfig(newConfig);
+		setMetricsMeta(newConfig);
 	};
 	
 	const userId = 1; // probably a context hook from somewhere else~
@@ -42,14 +42,14 @@ export const DashboardMetaContextProvider = ({children}: any) => {
 
 	// React.useEffect(() => {
 	// 	if (metricDisplaySettings.status === 'success') {
-	// 		setDashboardConfig(metricDisplaySettings.data);
+	// 		setMetricsMeta(metricDisplaySettings.data);
 	// 	}
 	// }, [metricDisplaySettings.status]);
 
 	return (
 	  <Context.Provider value={{
-		dashboardConfig, 
-		updateDashboardConfig,
+		metricsMeta, 
+		updateMetricsMeta,
 		isEditingConfig,
 		setIsEditingConfig,
 	  }}>

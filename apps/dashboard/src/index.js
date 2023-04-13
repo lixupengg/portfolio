@@ -25,7 +25,7 @@ const app = (
 	>
 		<UserContextProvider>
 			<AlertsContextProvider>
-				<DashboardMetaContextProvider initialDashboardConfig={METRICS_LIST}>
+				<DashboardMetaContextProvider>
 					<DndContextProvider>
 						<BaseRouter />
 					</DndContextProvider>

@@ -15,13 +15,13 @@ export interface AlertsDataProviderState {
   updateAlerts: (alerts: Alert[]) => void;
   alertBeingEdited: Alert | null;
   updateAlertBeingEdited: (alert: Alert) => void;
-  dashboardConfig: MetricDisplaySetting[];
+  metricsMeta: MetricDisplaySetting[];
 }
 
 const AlertsDataProvider = (props: AlertsDataProviderProps) => {
     const { children, alertsDataRequest, isMock } = props;
     const { alerts, updateAlerts, alertBeingEdited, updateAlertBeingEdited } = useAlertsContext();
-    const { dashboardConfig } = useDashboardMetaContext();
+    const { metricsMeta } = useDashboardMetaContext();
     const alertResponseData = useRequest({
       ...alertsDataRequest,
       params: {
@@ -35,7 +35,7 @@ const AlertsDataProvider = (props: AlertsDataProviderProps) => {
         updateAlerts,
         alertBeingEdited,
         updateAlertBeingEdited,
-        dashboardConfig
+        metricsMeta
       };
 
       return React.cloneElement(children, {...MOCK_DATA})
@@ -43,7 +43,7 @@ const AlertsDataProvider = (props: AlertsDataProviderProps) => {
     /* ========================================================================================= */
 
     return React.cloneElement(children, {
-       alertResponseData, alerts, updateAlerts, alertBeingEdited, updateAlertBeingEdited, dashboardConfig })
+       alertResponseData, alerts, updateAlerts, alertBeingEdited, updateAlertBeingEdited, metricsMeta })
 }
 
 export default AlertsDataProvider;

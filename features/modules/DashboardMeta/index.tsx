@@ -13,7 +13,7 @@ interface Props {
 
 const DashboardMeta = (props: Props) => {
 	const { hideEdits } = props;
-	const { dashboardConfig, updateDashboardConfig, isEditingConfig, setIsEditingConfig } = useDashboardMetaContext();
+	const { metricsMeta, updateMetricsMeta, isEditingConfig, setIsEditingConfig } = useDashboardMetaContext();
 	const [isModalOpen, setIsModalOpen] = React.useState(false);
 	const handleClose = () => setIsModalOpen(false);
 	return (
@@ -48,8 +48,8 @@ const DashboardMeta = (props: Props) => {
 			<MetricSelectModal 
 				isModalOpen={isModalOpen} 
 				onClose={handleClose} 
-				dashboardConfig={dashboardConfig}
-				updateDashboardConfig={updateDashboardConfig}
+				metricsMeta={metricsMeta}
+				updateMetricsMeta={updateMetricsMeta}
 			/>
 		</>
 	);

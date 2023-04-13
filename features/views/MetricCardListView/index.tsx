@@ -8,33 +8,33 @@ import { StyledMetricCardList,
 import MetricCard from '../MetricCardView';
 
 export interface MetricCardListViewProps {
-	dashboardConfig: MetricDisplaySetting[]; // this should come from BE
-	updateDashboardConfig: (metricList: MetricDisplaySetting[]) => void;
+	metricsMeta: MetricDisplaySetting[]; // this should come from BE
+	updateMetricsMeta: (metricList: MetricDisplaySetting[]) => void;
 	metricResponseData: RequestResponse<MetricData[]>;
 	isEditingConfig: boolean;
 	isCompact?: boolean;
 }
 
 const MetricCardListView = (props: MetricCardListViewProps) => {
-	const { dashboardConfig, updateDashboardConfig, isEditingConfig, metricResponseData, isCompact } = props;
+	const { metricsMeta, updateMetricsMeta, isEditingConfig, metricResponseData, isCompact } = props;
 	const handleIsOver = (dropzoneItem: MetricDisplaySetting, sourceItem: MetricDisplaySetting) => {
 		if (dropzoneItem.id === sourceItem.id) {
 			return;
 		}
-		const newDashboardConfig = dashboardConfig.filter(
+		const newMetricsMeta = metricsMeta.filter(
 			(metricCard: MetricDisplaySetting) => !(metricCard.id === sourceItem.id)
 		);
 		/* Insert new dashboard config at the index of the dropzone item by comparing metric id */
-		const dropzoneItemIndex = dashboardConfig.findIndex(
+		const dropzoneItemIndex = metricsMeta.findIndex(
 			(metricCard: MetricDisplaySetting) => metricCard.id === dropzoneItem.id
 		);
-		newDashboardConfig.splice(dropzoneItemIndex, 0, sourceItem);
+		newMetricsMeta.splice(dropzoneItemIndex, 0, sourceItem);
 
-		updateDashboardConfig([...newDashboardConfig]);
+		updateMetricsMeta([...newMetricsMeta]);
 	}
 
 	const handleUpdateMetricViewMode = (metricId: number, viewMode: METRIC_CARD_VIEW) => {
-		const newDashboardConfig = dashboardConfig.map((metric: MetricDisplaySetting) => {
+		const newMetricsMeta = metricsMeta.map((metric: MetricDisplaySetting) => {
 			if (metric.id === metricId) {
 				return {
 					...metric,
@@ -43,16 +43,16 @@ const MetricCardListView = (props: MetricCardListViewProps) => {
 			}
 			return metric;
 		});
-		updateDashboardConfig(newDashboardConfig);
+		updateMetricsMeta(newMetricsMeta);
 	}
 
 	// Hash dashboard config, force rerender if dashboard config changes
 	return (
 		<StyledMetricCardList 
-			key={JSON.stringify(dashboardConfig)}
+			key={JSON.stringify(metricsMeta)}
 			isCompact={isCompact}
 		>
-			{dashboardConfig.map((metric: MetricDisplaySetting) => {
+			{metricsMeta.map((metric: MetricDisplaySetting) => {
 				return (
 					<Dropzone
 						key={metric.id}

@@ -11,8 +11,8 @@ interface AlertsEditorViewProps extends AlertsDataProviderState {}
 
 /* There are problems with using 2 instances of data providers, update pls */
 const AlertsEditorView = (props: AlertsEditorViewProps) => {
-	const { alerts, updateAlertBeingEdited, updateAlerts, alertBeingEdited, dashboardConfig } = props;
-	const METRICS_OPTIONS: DropdownItemProps[] = dashboardConfig.map((metric: MetricDisplaySetting) => {
+	const { alerts, updateAlertBeingEdited, updateAlerts, alertBeingEdited, metricsMeta } = props;
+	const METRICS_OPTIONS: DropdownItemProps[] = metricsMeta.map((metric: MetricDisplaySetting) => {
 		return {
 			label: metric.name,
 			value: metric.name,
@@ -93,7 +93,7 @@ const AlertsEditorView = (props: AlertsEditorViewProps) => {
 						handleCreateRule={handleCreateRule}
 						handleDeleteRule={handleDeleteRule}
 						isLastRule={index === alertBeingEdited.rules.length - 1}
-						dashboardConfig={dashboardConfig}
+						metricsMeta={metricsMeta}
 					/>
 				);
 			})

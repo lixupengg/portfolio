@@ -7,7 +7,7 @@ const DashboardPage = () => {
 	return (
 		<>
 			<Layout settings={mainConfig} />
-			<Joyride />
+			{/* <Joyride /> */}
 		</>
 	);
 };

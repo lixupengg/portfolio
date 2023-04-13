@@ -48,7 +48,7 @@ export const AlertsContextProvider = ({children}: any) => {
 
 	// React.useEffect(() => {
 	// 	if (metricDisplaySettings.status === 'success') {
-	// 		setDashboardConfig(metricDisplaySettings.data);
+	// 		setMetricsMeta(metricDisplaySettings.data);
 	// 	}
 	// }, [metricDisplaySettings.status]);
 
