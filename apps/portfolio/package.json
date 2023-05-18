@@ -2,7 +2,7 @@
 	"name": "portfolio",
 	"version": "1.0.0",
 	"private": false,
-	"homepage": "https://lixupengg.github.io/portfolio/",
+	"homepage": "",
 	"dependencies": {
 		"@auth0/auth0-react": "^2.0.1",
 		"@radix-ui/colors": "^0.1.7",
