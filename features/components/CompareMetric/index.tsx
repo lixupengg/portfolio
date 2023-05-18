@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react';
 
-import { MetricData, MetricDisplaySetting } from '@stonksfi/types';
-import { ColouredLabel, Icon } from '@stonksfi/components';
-import { format } from '@stonksfi/constants';
+import { MetricData, MetricDisplaySetting } from '@lixupeng/types';
+import { ColouredLabel, Icon } from '@lixupeng/components';
+import { format } from '@lixupeng/constants';
 
 /* Styles */
 import {

@@ -1,4 +1,4 @@
-import { MetricDisplaySetting, FORMAT_TYPE, METRIC_CARD_VIEW } from "@stonksfi/types";
+import { MetricDisplaySetting, FORMAT_TYPE, METRIC_CARD_VIEW } from "@lixupeng/types";
 
 export const CATEGORIES = [
   'Macro',

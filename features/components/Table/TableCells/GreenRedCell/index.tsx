@@ -1,8 +1,8 @@
 import React from 'react';
 import { Table } from 'rsuite';
 
-import { format } from '@stonksfi/constants';
-import { FORMAT_TYPE } from '@stonksfi/types';
+import { format } from '@lixupeng/constants';
+import { FORMAT_TYPE } from '@lixupeng/types';
 import { StyledColouredNumber } from './styles';
 
 interface Props {

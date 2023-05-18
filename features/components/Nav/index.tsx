@@ -1,32 +1,44 @@
 // Basic Imports
 import React from 'react';
-import { history } from '@stonksfi/utils';
-import { StyledNav, StyledNavButton } from './styles';
+import { history } from '@lixupeng/utils';
+import { StyledNav, StyledNavButton, StyledLogo } from './styles';
 
-const Nav = () => {
+interface NavProps {
+	logo: string;
+}
+
+const Nav = (props: NavProps) => {
+	const { logo } = props;
 	const handleChangePage = (newPage: string) => {
 		history.push(newPage);
 	};
 
 	return (
 		<StyledNav>
+			<StyledLogo src={logo} alt="logo"/>
 			<StyledNavButton
 				selected={history.location.pathname === '/'}
 				onClick={() => handleChangePage('/')}
 			>
-				<span>Dashboard</span>
+				<span>Home</span>
 			</StyledNavButton>
 			<StyledNavButton
-				selected={history.location.pathname === '/alerts'}
-				onClick={() => handleChangePage('/alerts')}
+				selected={history.location.pathname === '/projects'}
+				onClick={() => handleChangePage('/projects')}
 			>
-				<span>Alerts</span>
+				<span>Projects</span>
 			</StyledNavButton>
 			<StyledNavButton
-				selected={history.location.pathname === '/research'}
-				onClick={() => handleChangePage('/research')}
+				selected={history.location.pathname === '/experience'}
+				onClick={() => handleChangePage('/experience')}
 			>
-				<span>Research</span>
+				<span>Experience</span>
+			</StyledNavButton>
+			<StyledNavButton
+				selected={history.location.pathname === '/read'}
+				onClick={() => handleChangePage('/read')}
+			>
+				<span>Read</span>
 			</StyledNavButton>
 		</StyledNav>
 	);

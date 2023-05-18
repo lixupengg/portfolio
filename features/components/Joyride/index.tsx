@@ -1,6 +1,6 @@
 import React from 'react';
 import Joyride, { CallBackProps } from 'react-joyride';
-import { JoyrideClassNames } from '@stonksfi/constants';
+import { JoyrideClassNames } from '@lixupeng/constants';
 
 import JoyrideTooltip from './JoyrideTooltip';
 

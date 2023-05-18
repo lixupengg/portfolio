@@ -14,7 +14,7 @@ const Loader = (props: LoaderProps) => {
 		<>
 			{type === 'background' ? (
 				<StyledLoaderBackground>
-					<RsuiteLoader backdrop content="" vertical size="md" />
+					<RsuiteLoader backdrop content="" vertical size="lg" />
 				</StyledLoaderBackground>
 			) : (
 				<RsuiteLoader content="" vertical />

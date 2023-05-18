@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tooltip, Button } from '@stonksfi/components';
+import { Tooltip, Button } from '@lixupeng/components';
 import Joyride, { TooltipRenderProps } from 'react-joyride';
 import {
     StyledTooltipBody, 

@@ -1,0 +1,209 @@
+@import './colors.scss';
+
+/* Fonts */
+@font-face {
+	font-family: 'Roobert';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../assets/fonts/RoobertRegular.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Roobert';
+	font-style: italic;
+	font-weight: 400;
+	src: url('../assets/fonts/RoobertRegularItalic.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Roobert';
+	font-style: normal;
+	font-weight: 300;
+	src: url('../assets/fonts/RoobertLight.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Roobert';
+	font-style: italic;
+	font-weight: 300;
+	src: url('../assets/fonts/RoobertLightItalic.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Roobert';
+	font-style: normal;
+	font-weight: 500;
+	src: url('../assets/fonts/RoobertMedium.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Roobert';
+	font-style: italic;
+	font-weight: 500;
+	src: url('../assets/fonts/RoobertMediumItalic.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Roobert';
+	font-style: normal;
+	font-weight: 600;
+	src: url('../assets/fonts/RoobertSemiBold.woff') format('woff');
+}
+@font-face {
+	font-family: 'Roobert';
+	font-style: italic;
+	font-weight: 600;
+	src: url('../assets/fonts/RoobertSemiBoldItalic.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Roobert';
+	font-style: normal;
+	font-weight: 700;
+	src: url('../assets/fonts/RoobertBold.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Roobert';
+	font-style: italic;
+	font-weight: 700;
+	src: url('../assets/fonts/RoobertBoldItalic.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Roobert';
+	font-style: normal;
+	font-weight: 900;
+	src: url('../assets/fonts/RoobertHeavy.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Roobert';
+	font-style: italic;
+	font-weight: 900;
+	src: url('../assets/fonts/RoobertHeavyItalic.woff') format('woff');
+}
+
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+html {
+	font-size: 62.5%; //1rem =10px
+}
+
+// ::-webkit-scrollbar {
+// 	width: 6px !important;
+// }
+
+body {
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden !important;
+}
+
+a {
+	text-decoration: none;
+	color: inherit !important;
+}
+
+p {
+	font-size: 14px;
+	font-weight: 400;
+	color: $primaryColor12;
+	margin: 0;
+}
+
+h1 {
+	font-size: 32px;
+	color: $primaryColor1;
+}
+
+h2 {
+	font-size: 56px;
+	font-weight: 700;
+	line-height: 30px;
+	color: black;
+}
+
+h3 {
+	font-size: 20px;
+	font-weight: 500;
+	color: #067a6f;
+	line-height: 30px;
+}
+
+h4 {
+	font-size: 20px;
+	font-weight: 500;
+	color: #fff;
+}
+
+h5 {
+	font-size: 14px;
+	font-weight: 500;
+	color: hsl(155 3% 43%); //Sage11
+}
+
+h6 {
+	font-size: 12px;
+	font-weight: 700;
+	color: hsl(155 3% 43%); //Sage12
+}
+
+h1,
+h2,
+h3 {
+	font-family: 'Roobert', sans-serif;
+}
+
+h4,
+h5,
+h6,
+p {
+	font-family: 'Source Code Pro', sans-serif;
+}
+
+p {
+	font-size: 14px;
+	color: #fff;
+}
+ul,
+li {
+	list-style: none;
+}
+
+input,
+label,
+textarea {
+	font-family: 'Source Code Pro', sans-serif;
+}
+
+button {
+	padding: 0;
+	margin: 0;
+	background: none;
+	border: none;
+	font-family: 'Source Code Pro', sans-serif !important;
+
+	&:focus {
+		outline: none;
+	}
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.bx {
+	color: hsl(155 3% 43%);
+}
+
+.bx .small {
+	font-size: 10px;
+}

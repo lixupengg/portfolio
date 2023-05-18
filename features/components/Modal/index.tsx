@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { Modal as RsuiteModal, ModalProps as RsuiteModalProps } from 'rsuite';
-import { Button } from '@stonksfi/components';
+import { Button } from '@lixupeng/components';
 
 /* Styles */
 import { StyledButtonRow, StyledTitle } from './styles';

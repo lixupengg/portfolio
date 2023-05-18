@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tooltip, Icon } from '@stonksfi/components';
+import { Tooltip, Icon } from '@lixupeng/components';
 import { IconType } from '../Icon/types';
 
 interface IconTooltipProps {

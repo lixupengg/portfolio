@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { Dropdown as RsuiteDropdown } from 'rsuite';
-import { Button, Icon } from '@stonksfi/components';
+import { Button, Icon } from '@lixupeng/components';
 import { ButtonType, ButtonSize } from '../Button';
 
 export interface DropdownItemProps {

@@ -1,4 +1,4 @@
-import { FORMAT_TYPE } from "@stonksfi/types";
+import { FORMAT_TYPE } from "@lixupeng/types";
 
 export const format = (value: any, formatType: FORMAT_TYPE | undefined) => {
     if (!value) {
