@@ -1,8 +1,8 @@
 {
 	"name": "portfolio",
 	"version": "1.0.0",
-	"homepage": "http://lixupengg.github.io/portfolio",
-	"private": true,
+	"private": false,
+	"homepage": "https://lixupengg.github.io/portfolio/",
 	"dependencies": {
 		"@auth0/auth0-react": "^2.0.1",
 		"@radix-ui/colors": "^0.1.7",
