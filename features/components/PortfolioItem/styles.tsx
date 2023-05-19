@@ -52,6 +52,17 @@ export const StyledPortfolioItem = styled('div', {
 
 });
 
+export const StyledBackroundImage = styled('img', {
+	width: '100%',
+	height: '100%',
+	objectFit: 'cover',
+	position: 'absolute',
+	top: '0',
+	left: '0',
+	background : '$white',
+	zIndex: '-1',
+});
+
 export const StyledPortfolioInfo = styled('div', {
 	opacity: '0',
 	position: 'absolute',

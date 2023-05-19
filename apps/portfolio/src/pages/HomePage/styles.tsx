@@ -19,32 +19,38 @@ export const StyledHomePageWrapper = styled('div', {
 	height: '100%',
 	alignItems: 'center',
 	justifyContent: 'center',
-	background: 'url(./bg.png)',
-	backgroundSize: 'cover',
-	backgroundPosition: 'bottom',
 
 	h1: {
 		position: 'absolute',
-		opacity: 0.8,
+		opacity: 0.9,
 		zIndex: 0,
 		textAlign: 'right',
 		color: '$primaryColor1',
 		fontSize: '200px',
-		top: '20%'
-	},
-	img: {
-		position: 'absolute',
-		top: 0,
-		objectFit: 'cover',
-		zIndex: 0,
-		height: '100%'
+		top: '20%',
+
+		span: {
+			opacity: 0.8,
+		}
 	},
 
 	'@media (max-width: 1024px)': {
 		h1: {
-			fontSize: '100px'
+			fontSize: '50px',
+			opacity: 1,
+			lineHeight: '0.5',
 		}
 	}
+});
+
+export const StyledBgImage = styled('img', {
+	position: 'absolute',
+	top: 0,
+	objectFit: 'cover',
+	objectPosition: 'bottom',
+	zIndex: 0,
+	height: '100%',
+	maxWidth: '100%',
 });
 
 export const StyledRow = styled('div', {

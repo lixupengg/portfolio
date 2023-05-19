@@ -2,11 +2,15 @@ import qubo from '../../assets/projects/qubo/qubo.png';
 import hashtap from '../../assets/projects/hashtap/hashtap.png';
 import uniquirk from '../../assets/projects/uniquirk/uniquirk.png';
 import trippyy from '../../assets/projects/trippyy/trippyy.svg';
+import Notebook1 from '../../assets/notebook1.png';
+import Notebook2 from '../../assets/notebook2.png';
+import Notebook3 from '../../assets/notebook3.png';
+import Notebook4 from '../../assets/notebook4.png';
 
 export const PROJECTS = [
 	{
 		displayImg: qubo,
-		backgroundImg: "url('./notebook2.png')",
+		backgroundImg: Notebook2,
 		title: 'Qubo',
 		description: `A payment gateway to allow consumers to transact in cryptocurrencies 
         and earn cashback on their transactions.`,
@@ -20,7 +24,7 @@ export const PROJECTS = [
 	},
 	{
 		displayImg: hashtap,
-		backgroundImg: "url('./notebook3.png')",
+		backgroundImg: Notebook3,
 		title: 'Hashtap',
 		description: `A robo-advisory marketing platform that 
         serves to connect content creators with brands.`,
@@ -29,7 +33,7 @@ export const PROJECTS = [
 	},
 	{
 		displayImg: uniquirk,
-		backgroundImg: "url('./notebook4.png')",
+		backgroundImg: Notebook4,
 		title: 'UNIQUIRK',
 		description: `Developed Instagram filters to spread exposure of a local social media agency.`,
 		stack: ['Spark AR'],
@@ -37,7 +41,7 @@ export const PROJECTS = [
 	},
 	{
 		displayImg: trippyy,
-		backgroundImg: "url('./notebook1.png')",
+		backgroundImg: Notebook1,
 		title: 'Trippyy',
 		description: `A travel web application that integrates algorithms to 
         automatically suggest convenient and well-thought-out itineraries which 

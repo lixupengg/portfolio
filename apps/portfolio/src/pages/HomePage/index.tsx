@@ -4,10 +4,10 @@ import { IoIosRocket } from 'react-icons/io';
 import { Loader } from '@lixupeng/components';
 import { history } from '@lixupeng/utils';
 
-// import BgImage from '../../assets/bg.png';
+import BgImage from '../../assets/bg.png';
 import Door from '../../assets/door3.svg';
 
-import { StyledHomePageWrapper, StyledDoor, StyledDoorWrapper } from './styles';
+import { StyledHomePageWrapper, StyledDoor, StyledDoorWrapper, StyledBgImage } from './styles';
 
 const HomePage = () => {
 	const [isDoorClicked, setIsDoorClicked] = React.useState(false);
@@ -26,7 +26,7 @@ const HomePage = () => {
 	return (
 		<StyledHomePageWrapper>
 			{/* Background Image */}
-			{/* <img src={BgImage} alt="bg" /> */}
+			<StyledBgImage src={BgImage} alt="bg" />
 			{/* Door Image */}
 			<StyledDoorWrapper onClick={onDoorClick} isDoorOpen={isDoorClicked}>
 				<p>enter</p>
@@ -35,7 +35,9 @@ const HomePage = () => {
 			<h1>
 				XUPENG
 				<br />
-				LI
+				<span>
+					LI
+				</span>
 			</h1>
 			{loaderIsShown && <Loader type="inline" />}
 		</StyledHomePageWrapper>

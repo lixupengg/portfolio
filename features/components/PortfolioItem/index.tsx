@@ -1,7 +1,7 @@
 // Basic Imports
 import React from 'react';
 import { history } from '@lixupeng/utils';
-import { StyledPortfolioItem, StyledPortfolioInfo, StyledDisplayImage } from './styles';
+import { StyledPortfolioItem, StyledPortfolioInfo, StyledDisplayImage, StyledBackroundImage } from './styles';
 
 
 interface PortfolioItemProps {
@@ -17,7 +17,8 @@ interface PortfolioItemProps {
 const PortfolioItem = (props: PortfolioItemProps) => {
 	const { displayImg, backgroundImg, title, description, stack, milestones, addBackgroundToDisplayImg } = props;
 	return (
-		<StyledPortfolioItem style={{background: backgroundImg}}>
+		<StyledPortfolioItem>
+			<StyledBackroundImage src={backgroundImg} alt="experience-background" />
 			<StyledPortfolioInfo>
 				<h1>{title} <span>\\</span> </h1>
 				<p>{description}</p>

@@ -9,6 +9,12 @@ export const StyledNav = styled('div', {
 	justifyContent: 'flex-end',
 	paddingTop: '$medium',
 	paddingRight: '$large',
+
+	'@media (max-width: 1024px)': {
+		padding: '0',
+		paddingTop: '$medium',
+		justifyContent: 'space-evenly',
+	}
 });
 
 export const StyledLogo = styled('img', {
@@ -51,8 +57,21 @@ export const StyledNavButton = styled('button', {
 
 				'span': {
 					borderBottom: '1px solid $grey9',
-				}
+				},
+
+				'@media (max-width: 1024px)': {
+					background: '$white !important',
+					border: '1px solid $black',
+				},
 			},
 		},
 	},
+	'@media (max-width: 1024px)': {
+		fontSize: '$content12',
+		minWidth: '0',
+		margin: '0',
+		opacity: '1',
+		background: '$white',
+		boxShadow: '$small',
+	}
 });

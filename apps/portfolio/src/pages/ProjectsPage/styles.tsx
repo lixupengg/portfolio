@@ -102,6 +102,10 @@ export const StyledPortfolioItemsWrapper = styled('div', {
 	'@media (max-width: 1024px)': {
 		animation: 'none',
 		transform: 'scale(0.8)'
+	},
+	'@media (max-width: 700px)': {
+		animation: 'none',
+		transform: 'scale(0.6)'
 	}
 });
 
@@ -229,6 +233,7 @@ export const StyledArrow = styled('div', {
 	'@media (max-width: 1024px)': {
 		margin: '0 !important',
 		position: 'absolute',
+		animation: 'none',
 		span: {
 			animation: 'none'
 		}
@@ -263,7 +268,8 @@ export const StyledArrow = styled('div', {
 				'@media (max-width: 1024px)': {
 					right: '10%',
 					bottom: '15%',
-					background: 'rgba(255,255,255,0.4)',
+					background: '$white',
+					border: '1px solid $black',
 
 					span: {
 						border: 'none'
@@ -293,7 +299,8 @@ export const StyledArrow = styled('div', {
 				'@media (max-width: 1024px)': {
 					left: '10%',
 					bottom: '15%',
-					background: 'rgba(255,255,255,0.4)',
+					background: '$white',
+					border: '1px solid $black',
 
 					span: {
 						border: 'none'

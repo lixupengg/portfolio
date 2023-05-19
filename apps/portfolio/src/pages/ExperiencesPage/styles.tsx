@@ -14,7 +14,7 @@ export const StyledExperiencesInfo = styled('div', {
 
 	'@media (max-width: 1024px)': {
 		width: 'calc(100% - 50px)',
-		padding: '$medium'
+		paddingLeft: '0',
 	}
 });
 
@@ -25,6 +25,8 @@ export const StyledExperience = styled('div', {
 	width: '100%',
 	backgroundSize: 'cover',
 	backgroundPosition: 'center',
+	overflow: 'hidden',
+	textOverflow: 'ellipsis',
 
 	h2: {
 		textTransform: 'uppercase',
@@ -36,17 +38,17 @@ export const StyledExperience = styled('div', {
 		color: '$primaryColor12'
 	},
 
-	'@media (max-width: 1024px)': {
-		h2: {
-			fontSize: '$subtitle28'
-		}
-	},
-
 	'@media (max-width: 1525px)': {
 		h2: {
 			fontSize: '$title46'
 		}
-	}
+	},
+
+	'@media (max-width: 1024px)': {
+		h2: {
+			fontSize: '22px'
+		}
+	},
 });
 
 export const StyledExperienceLocationImg = styled('img', {
@@ -72,7 +74,7 @@ export const StyledNav = styled('div', {
 	alignItems: 'center',
 
 	'@media (max-width: 1024px)': {
-		left: '$medium'
+		left: '$small'
 	}
 });
 
@@ -98,6 +100,7 @@ export const StyledRole = styled('div', {
 	background: 'url(./highlighter.svg)',
 	backgroundSize: 'cover',
 	width: 'max-content',
+	maxWidth: '100%',
 	padding: '$tiny $small',
 	backgroundRepeat: 'no-repeat',
 	backgroundPosition: 'center',
@@ -114,7 +117,14 @@ export const StyledLocation = styled('div', {
 	p: {
 		paddingLeft: '$small',
 		color: '$white !important',
-		fontWeight: '$bold'
+		fontWeight: '$bold',
+	},
+
+	'@media (max-width: 1024px)': {
+		p: {
+			fontSize: '$content12',
+			paddingLeft: '$tiny',
+		}
 	}
 });
 
