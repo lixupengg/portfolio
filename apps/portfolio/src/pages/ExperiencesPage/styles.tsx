@@ -97,7 +97,7 @@ export const StyledNavLine = styled('div', {
 export const StyledRole = styled('div', {
 	marginTop: '$small',
 	marginBottom: '$small',
-	background: 'url(./highlighter.svg)',
+	background: `url(${`${window.location.origin}/highlighter.svg`})`,
 	backgroundSize: 'cover',
 	width: 'max-content',
 	maxWidth: '100%',
