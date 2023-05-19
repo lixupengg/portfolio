@@ -114,56 +114,42 @@ export const BOOKS = [
 		bookPhoto: TheChoice,
 		bookTitle: 'The Choice',
 		bookAuthor: 'Dr. Edith Eva Eger',
-		bookTakeaways: [
-			'To be summarized and updated!'
-		]
+		bookTakeaways: ['To be summarized and updated!']
 	},
 	{
 		bookPhoto: HackingGrowth,
 		bookTitle: 'Hacking Growth',
 		bookAuthor: 'Sean Ellis & Morgan Brown',
-		bookTakeaways: [
-			'To be summarized and updated!'
-		]
+		bookTakeaways: ['To be summarized and updated!']
 	},
 	{
 		bookPhoto: HowToBeAStoic,
 		bookTitle: 'How To Be A Stoic',
 		bookAuthor: 'Massimo Pilgliucci',
-		bookTakeaways: [
-			'To be summarized and updated!'
-		]
+		bookTakeaways: ['To be summarized and updated!']
 	},
 	{
 		bookPhoto: TheIntelligentInvestor,
 		bookTitle: 'The Intelligent Investor',
 		bookAuthor: 'Benjamin Graham',
-		bookTakeaways: [
-			'To be summarized and updated!'
-		]
+		bookTakeaways: ['To be summarized and updated!']
 	},
 	{
 		bookPhoto: TheCourageToBeDisliked,
 		bookTitle: 'The Courage To Be Disliked',
 		bookAuthor: 'Ichiro Kishimi & Fumitake Koga',
-		bookTakeaways: [
-			'To be summarized and updated!'
-		]
+		bookTakeaways: ['To be summarized and updated!']
 	},
 	{
 		bookPhoto: EgoIsTheEnemy,
 		bookTitle: 'Ego Is The Enemy',
 		bookAuthor: 'Ryan Holiday',
-		bookTakeaways: [
-			'To be summarized and updated!'
-		]
+		bookTakeaways: ['To be summarized and updated!']
 	},
 	{
 		bookPhoto: AGentleReminder,
 		bookTitle: 'A Gentle Reminder',
 		bookAuthor: 'Bianca Sparacino',
-		bookTakeaways: [
-			'To be summarized and updated!'
-		]
+		bookTakeaways: ['To be summarized and updated!']
 	}
 ];

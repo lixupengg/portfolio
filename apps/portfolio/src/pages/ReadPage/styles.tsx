@@ -121,7 +121,17 @@ export const StyledBookDescription = styled('div', {
 	alignItems: 'center',
 
 	p: {
-		color: '$black'
+		fontWeight: '500',
+		color: '$black',
+		marginBottom: '$tiny',
+
+		'&:after': {
+			content: '""',
+			display: 'block',
+			width: '30%',
+			marginTop: '$tiny',
+			borderTop: '1px dashed $black',
+		}
 	}
 });
 
@@ -132,7 +142,7 @@ export const StyledBookDescriptionContent = styled('div', {
 	height: 'max-content',
 	display: 'flex',
 	flexDirection: 'column',
-	justifyContent: 'center',
+	justifyContent: 'center'
 });
 
 export const StyledBookDescriptionImg = styled('img', {
@@ -145,12 +155,11 @@ export const StyledBookDescriptionImg = styled('img', {
 	bottom: '-15%',
 	objectFit: 'contain',
 	objectPosition: 'bottom',
-	pointerEvents: 'none',
-	
+	pointerEvents: 'none'
 });
 
 export const StyledMangaPatternImg = styled('img', {
-	opacity: 0.5,
+	opacity: 0.2,
 	zIndex: 0,
 	overflow: 'hidden',
 	objectFit: 'contain',
@@ -158,7 +167,7 @@ export const StyledMangaPatternImg = styled('img', {
 	right: '5%',
 	top: '5%',
 	position: 'absolute',
-	pointerEvents: 'none',
+	pointerEvents: 'none'
 });
 
 export const StyledRightPanel = styled('div', {
