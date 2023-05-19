@@ -63,7 +63,7 @@ export const StyledProjectsWrapper = styled('div', {
 	display: 'flex',
 	alignItems: 'center',
 	justifyContent: 'flex-start',
-	background: 'url(./upscaledRoadBg.jpeg)',
+	background: `url(${`${window.location}/upscaledRoadBg.jpeg`})`,
 	backgroundSize: 'cover',
 	backgroundRepeat: 'repeat-x',
 	animation: `${moveInLeft} 600s linear infinite`,

@@ -130,7 +130,7 @@ export const StyledBookDescription = styled('div', {
 			display: 'block',
 			width: '30%',
 			marginTop: '$tiny',
-			borderTop: '1px dashed $black',
+			borderTop: '1px dashed $black'
 		}
 	}
 });
