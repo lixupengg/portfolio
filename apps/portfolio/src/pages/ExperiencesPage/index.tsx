@@ -33,12 +33,12 @@ const ExperiencesPage = () => {
 			);
 			const experienceSectionsArray = Array.from(experienceSections);
 			const windowHeight = window.innerHeight;
-			const currentExperience = experienceSectionsArray.reverse().find(
-				(experience: any) => {
+			const currentExperience = experienceSectionsArray
+				.reverse()
+				.find((experience: any) => {
 					const rect = experience.getBoundingClientRect();
-					return rect.top <= (0.5 * windowHeight);
-				}
-			);
+					return rect.top <= 0.5 * windowHeight;
+				});
 			const experienceNum = currentExperience?.id?.split('-')[1];
 			if (experienceNum) {
 				setActiveExperienceShowed(parseInt(experienceNum, 10));

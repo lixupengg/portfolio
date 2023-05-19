@@ -7,7 +7,12 @@ import { history } from '@lixupeng/utils';
 import BgImage from '../../assets/bg.png';
 import Door from '../../assets/door3.svg';
 
-import { StyledHomePageWrapper, StyledDoor, StyledDoorWrapper, StyledBgImage } from './styles';
+import {
+	StyledHomePageWrapper,
+	StyledDoor,
+	StyledDoorWrapper,
+	StyledBgImage
+} from './styles';
 
 const HomePage = () => {
 	const [isDoorClicked, setIsDoorClicked] = React.useState(false);
@@ -35,9 +40,7 @@ const HomePage = () => {
 			<h1>
 				XUPENG
 				<br />
-				<span>
-					LI
-				</span>
+				<span>LI</span>
 			</h1>
 			{loaderIsShown && <Loader type="inline" />}
 		</StyledHomePageWrapper>

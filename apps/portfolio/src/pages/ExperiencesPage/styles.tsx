@@ -14,7 +14,7 @@ export const StyledExperiencesInfo = styled('div', {
 
 	'@media (max-width: 1024px)': {
 		width: 'calc(100% - 50px)',
-		paddingLeft: '0',
+		paddingLeft: '0'
 	}
 });
 
@@ -48,7 +48,7 @@ export const StyledExperience = styled('div', {
 		h2: {
 			fontSize: '22px'
 		}
-	},
+	}
 });
 
 export const StyledExperienceLocationImg = styled('img', {
@@ -117,13 +117,13 @@ export const StyledLocation = styled('div', {
 	p: {
 		paddingLeft: '$small',
 		color: '$white !important',
-		fontWeight: '$bold',
+		fontWeight: '$bold'
 	},
 
 	'@media (max-width: 1024px)': {
 		p: {
 			fontSize: '$content12',
-			paddingLeft: '$tiny',
+			paddingLeft: '$tiny'
 		}
 	}
 });

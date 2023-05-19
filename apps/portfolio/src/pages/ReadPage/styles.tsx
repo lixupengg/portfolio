@@ -44,7 +44,8 @@ export const StyledTitlePatternImg = styled('img', {
 });
 export const StyledLeftPanel = styled('div', {
 	width: 'calc(60% - 18px)',
-	height: 'calc(100vh - 36px)',
+	minHeight: 'calc(100vh - 36px)',
+	height: 'max-content',
 	display: 'flex',
 	flexDirection: 'column',
 	marginBottom: '$small',
@@ -62,7 +63,7 @@ export const StyledLeftPanel = styled('div', {
 });
 
 export const StyledRow = styled('div', {
-	height: '34%',
+	height: 'calc(33vh - 30px)',
 	display: 'flex',
 	justifyContent: 'space-between'
 });
@@ -112,9 +113,12 @@ export const StyledBookDescription = styled('div', {
 	border: '2px solid $black',
 	width: '100%',
 	marginTop: '$small',
-	height: 'calc(66% - 18px)',
+	minHeight: 'calc(66vh - 18px)',
+	height: 'max-content',
 	position: 'relative',
 	overflow: 'hidden',
+	display: 'flex',
+	alignItems: 'center',
 
 	p: {
 		color: '$black'
@@ -124,14 +128,11 @@ export const StyledBookDescription = styled('div', {
 export const StyledBookDescriptionContent = styled('div', {
 	padding: '$medium',
 	width: '100%',
-	height: '100%',
+	minHeight: '100%',
+	height: 'max-content',
 	display: 'flex',
 	flexDirection: 'column',
 	justifyContent: 'center',
-	overflowY: 'auto',
-	'&::-webkit-scrollbar': {
-		width: '6px'
-	}
 });
 
 export const StyledBookDescriptionImg = styled('img', {
@@ -142,7 +143,10 @@ export const StyledBookDescriptionImg = styled('img', {
 	width: '50%',
 	left: '-5%',
 	bottom: '-15%',
-	objectFit: 'contain'
+	objectFit: 'contain',
+	objectPosition: 'bottom',
+	pointerEvents: 'none',
+	
 });
 
 export const StyledMangaPatternImg = styled('img', {
@@ -153,7 +157,8 @@ export const StyledMangaPatternImg = styled('img', {
 	width: '20%',
 	right: '5%',
 	top: '5%',
-	position: 'absolute'
+	position: 'absolute',
+	pointerEvents: 'none',
 });
 
 export const StyledRightPanel = styled('div', {

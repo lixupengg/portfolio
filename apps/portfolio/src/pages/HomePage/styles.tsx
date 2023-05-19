@@ -30,7 +30,7 @@ export const StyledHomePageWrapper = styled('div', {
 		top: '20%',
 
 		span: {
-			opacity: 0.8,
+			opacity: 0.8
 		}
 	},
 
@@ -38,7 +38,7 @@ export const StyledHomePageWrapper = styled('div', {
 		h1: {
 			fontSize: '50px',
 			opacity: 1,
-			lineHeight: '0.5',
+			lineHeight: '0.5'
 		}
 	}
 });
@@ -50,7 +50,7 @@ export const StyledBgImage = styled('img', {
 	objectPosition: 'bottom',
 	zIndex: 0,
 	height: '100%',
-	maxWidth: '100%',
+	maxWidth: '100%'
 });
 
 export const StyledRow = styled('div', {
