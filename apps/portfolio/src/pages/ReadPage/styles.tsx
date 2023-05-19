@@ -88,8 +88,9 @@ export const StyledBookImg = styled('img', {
 export const StyledBookTitle = styled('div', {
 	border: '2px solid $black',
 	width: 'calc(70% - 18px)',
-	background: 'url(./animeLines.svg)',
+	background: `url(${`${window.location.origin}/animeLines.svg`})`,
 	backgroundSize: 'cover',
+	backgroundPosition: 'center',
 	display: 'flex',
 	alignItems: 'center',
 	justifyContent: 'center',
@@ -105,7 +106,8 @@ export const StyledBookTitle = styled('div', {
 
 	p: {
 		marginTop: '$small',
-		color: '$black'
+		color: '$black',
+		textAlign: 'center'
 	}
 });
 
