@@ -11,6 +11,7 @@ import ProjectsPage from './pages/ProjectsPage';
 import GamePage from './pages/GamePage';
 import ExperiencesPage from './pages/ExperiencesPage';
 import ReadPage from './pages/ReadPage';
+import Jx2024 from './pages/jx2024';
 
 /* Styling */
 import { theme, Layout } from './styles/styling';
@@ -30,7 +31,7 @@ export const CustomRoute = (props: RouteProps) => {
 			render={(renderProps: any) => {
 				return (
 					<Layout className={`${theme}`}>
-						<Nav logo={Logo} />
+						{path !== '/and-jia-xuan-kuah-2024-vday' && <Nav logo={Logo} />}
 						<Component {...renderProps} />
 					</Layout>
 				);
@@ -47,6 +48,11 @@ const BaseRouter: React.ReactNode = () => (
 			<CustomRoute exact path="/projects" component={ProjectsPage} />
 			<CustomRoute exact path="/experience" component={ExperiencesPage} />
 			<CustomRoute exact path="/read" component={ReadPage} />
+			<CustomRoute
+				exact
+				path="/and-jia-xuan-kuah-2024-vday"
+				component={Jx2024}
+			/>
 		</Switch>
 	</Router>
 );
