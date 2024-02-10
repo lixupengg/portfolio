@@ -66,7 +66,7 @@ type Config = {
 const cfg: Record<number, Config> = {
 	1: {
 		quesToStep: 'Restart!',
-		msg: 'Hello Jia Xuan Kuah! Will you be go out with me on Valentines Day!!!! I dare you to say no!!',
+		msg: 'Hello Jia Xuan Kuah! Will you be go out with me on vday!!!! I dare you to say no!!',
 		nextSteps: [2, 3],
 		sticker: Cat1,
 		buttonType: 'yes'
@@ -74,7 +74,7 @@ const cfg: Record<number, Config> = {
 	// Initial yes
 	2: {
 		quesToStep: 'YES!!!!!',
-		msg: 'Yay!!! You are my valentine!!! Oki lets meet at 630pm on Wed :---) See you then! Hehe I love you!',
+		msg: 'Yay!!! Oki lets meet at 630pm on Wed :---) See you then! Hehe I love you!',
 		nextSteps: [1],
 		sticker: Cat2,
 		buttonType: 'yes'
