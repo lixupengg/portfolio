@@ -10,7 +10,16 @@
 		"prettier": "prettier --write --config ./.prettierrc.json \"**/*.{js,jsx,ts,tsx,scss,json}\"",
 		"eslint": "eslint --config ./.eslintrc.json \"**/*.{js,jsx,ts,tsx}\" --fix",
 		"stylelint": "stylelint \"**/*.{css,scss}\" --fix",
-		"lint": "npm-run-all eslint prettier stylelint"
+		"lint": "npm-run-all eslint prettier stylelint",
+		"start": "cd apps/portfolio && yarn start"
+	},
+	"engines": {
+		"name": "example-app",
+		"description": "a really cool app",
+		"version": "1.0.0",
+		"engines": {
+			"node": "16.14.2"
+		}
 	},
 	"dependencies": {
 		"axios": "^0.21.1",
