@@ -14,12 +14,7 @@
 		"start": "cd apps/portfolio && yarn start"
 	},
 	"engines": {
-		"name": "example-app",
-		"description": "a really cool app",
-		"version": "1.0.0",
-		"engines": {
-			"node": "16.14.2"
-		}
+		"node": "16.14.2"
 	},
 	"dependencies": {
 		"axios": "^0.21.1",
