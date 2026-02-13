@@ -62,6 +62,11 @@ export const wobble = keyframes({
 	'50%': { transform: 'rotate(3deg)' }
 });
 
+export const float = keyframes({
+	'0%, 100%': { transform: 'translateY(0)' },
+	'50%': { transform: 'translateY(-10px)' }
+});
+
 // Layout
 export const PageWrapper = styled('div', {
 	width: '100%',
@@ -471,4 +476,14 @@ export const QuizImage = styled('img', {
 			false: { opacity: 0, transform: 'scale(0.95)' }
 		}
 	}
+});
+
+export const AdventureTitle = styled('div', {
+	fontSize: 'clamp(24px, 4vw, 36px)',
+	color: '#fff',
+	textShadow: '0 2px 8px rgba(0,0,0,0.3)',
+	marginBottom: 450,
+	animation: `${float} 3s ease-in-out infinite`,
+	fontWeight: 'semibold',
+	fontStyle: 'italic'
 });

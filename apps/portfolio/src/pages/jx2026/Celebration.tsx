@@ -116,6 +116,25 @@ const Celebration: React.FC<Props> = ({ visible }) => {
 		<CelebrationWrapper visible={visible}>
 			<FilmGrain />
 
+			{/* Title text */}
+			<p
+				style={{
+					fontSize: '24px',
+					padding: '12px 24px',
+					borderRadius: '12px',
+					background:
+						'linear-gradient(to top, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.6) 100%)',
+					backdropFilter: 'blur(4px)',
+					WebkitBackdropFilter: 'blur(4px)',
+					color: '#333',
+					textShadow: '0 1px 2px rgba(0,0,0,0.1)',
+					marginBottom: '24px',
+					zIndex: 23
+				}}
+			>
+				we made it to getting the bedok HDB A A A A A!
+			</p>
+
 			{/* Film strip */}
 			<div
 				style={{

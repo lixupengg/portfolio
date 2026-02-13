@@ -9,7 +9,8 @@ import {
 	LandingTitle,
 	BeginButton,
 	MapContainer,
-	QuizOverlay
+	QuizOverlay,
+	AdventureTitle
 } from './styles';
 // @ts-ignore
 import BGMusic from '../../assets/jx2025/qot.mp3';
@@ -252,6 +253,9 @@ const Jx2026: React.FC = () => {
 
 			{/* Map */}
 			<MapContainer zoomedOut={phase === 'quiz'}>
+				<AdventureTitle>
+					Let&apos;s go on an adventure to get our HDB!
+				</AdventureTitle>
 				<LoveMap
 					completedNodes={completedNodes}
 					currentUnlocked={currentUnlocked}
