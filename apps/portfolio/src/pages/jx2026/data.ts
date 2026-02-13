@@ -144,6 +144,35 @@ export const milestones: Milestone[] = [
 		],
 		correctMessage: 'You remembered!',
 		wrongMessage: 'Nope, guess again!'
+	},
+	{
+		id: 5,
+		title: 'Our Future Together',
+		gradient: ['#A8C5A0', '#8BC34A'],
+		questions: [
+			{
+				question: 'What are you most excited about for our future?',
+				options: [
+					{ label: 'REPLACE_ME_A' },
+					{ label: 'REPLACE_ME_B' },
+					{ label: 'REPLACE_ME_C' },
+					{ label: 'REPLACE_ME_D' }
+				],
+				correctIndex: 0
+			},
+			{
+				question: 'Where do you want to travel with me next?',
+				options: [
+					{ label: 'REPLACE_ME_A' },
+					{ label: 'REPLACE_ME_B' },
+					{ label: 'REPLACE_ME_C' },
+					{ label: 'REPLACE_ME_D' }
+				],
+				correctIndex: 0
+			}
+		],
+		correctMessage: 'You know me so well!',
+		wrongMessage: 'Try once more!'
 	}
 ];
 
@@ -154,7 +183,7 @@ export const SVG_HEIGHT = 500;
 export const NODE_POSITIONS = [
 	{
 		x: 550,
-		y: 200,
+		y: 90,
 		image: Node1Image,
 		size: {
 			radius: 70,
@@ -167,7 +196,7 @@ export const NODE_POSITIONS = [
 	},
 	{
 		x: 735,
-		y: 270,
+		y: 130,
 		image: Node1Image,
 		size: {
 			radius: 60,
@@ -180,7 +209,7 @@ export const NODE_POSITIONS = [
 	},
 	{
 		x: 890,
-		y: 340,
+		y: 200,
 		image: Node1Image,
 		size: {
 			radius: 45,
@@ -192,8 +221,8 @@ export const NODE_POSITIONS = [
 		travelerOffset: { x: 55, y: -170 }
 	},
 	{
-		x: 990,
-		y: 440,
+		x: 1010,
+		y: 270,
 		image: Node1Image,
 		size: {
 			radius: 30,
@@ -203,6 +232,19 @@ export const NODE_POSITIONS = [
 			labelSize: 13
 		},
 		travelerOffset: { x: 50, y: -160 }
+	},
+	{
+		x: 920,
+		y: 340,
+		image: Node1Image,
+		size: {
+			radius: 25,
+			glowRadius: 32,
+			iconSize: 18,
+			labelOffset: 46,
+			labelSize: 13
+		},
+		travelerOffset: { x: 40, y: -140 }
 	}
 ];
 
@@ -217,7 +259,8 @@ export const SVG_PATH = (() => {
 			p[1].y
 		}, ${p[1].x} ${p[1].y}`,
 		`C ${p[1].x + 50} ${p[1].y}, ${p[2].x - 50} ${p[2].y}, ${p[2].x} ${p[2].y}`,
-		`C ${p[2].x + 50} ${p[2].y}, ${p[3].x - 50} ${p[3].y}, ${p[3].x} ${p[3].y}`
+		`C ${p[2].x + 50} ${p[2].y}, ${p[3].x - 50} ${p[3].y}, ${p[3].x} ${p[3].y}`,
+		`C ${p[3].x + 50} ${p[3].y}, ${p[4].x - 50} ${p[4].y}, ${p[4].x} ${p[4].y}`
 	].join(' ');
 })();
 

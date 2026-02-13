@@ -29,7 +29,7 @@ const LoveMap: React.FC<Props> = ({
 				left: '50%',
 				transform: 'translateX(-50%)',
 				width: '1200px',
-				height: 'auto'
+				height: '800px'
 			}}
 		>
 			<defs>
