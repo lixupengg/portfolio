@@ -153,17 +153,17 @@ export const milestones: Milestone[] = [
 				wrongMessage: 'Nope, guess again!'
 			},
 			{
-				question: "What did we do on our second Valentine's?",
+				question: 'How many dus are in blackpinks chorus',
 				ansPic: sg2,
 				options: [
-					{ label: 'REPLACE_ME_A' },
-					{ label: 'REPLACE_ME_B' },
-					{ label: 'REPLACE_ME_C' },
-					{ label: 'REPLACE_ME_D' }
+					{ label: '13' },
+					{ label: '15' },
+					{ label: '17' },
+					{ label: '19' }
 				],
-				correctIndex: 0,
-				correctMessage: 'You remembered!',
-				wrongMessage: 'Nope, guess again!'
+				correctIndex: 2,
+				correctMessage: 'hey it can be your favourite song too hehe',
+				wrongMessage: 'fake blackpink fan!!!!'
 			}
 		]
 	},
