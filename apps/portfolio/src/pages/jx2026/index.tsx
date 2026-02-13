@@ -39,19 +39,11 @@ const Jx2026: React.FC = () => {
 			if (!containerRef.current || !img.naturalWidth || !img.naturalHeight)
 				return;
 
-			const containerWidth = containerRef.current.clientWidth;
 			const containerHeight = containerRef.current.clientHeight;
 			const imageAspectRatio = img.naturalWidth / img.naturalHeight;
-			const containerAspectRatio = containerWidth / containerHeight;
 
-			let renderedHeight: number;
-			if (containerAspectRatio > imageAspectRatio) {
-				// Container is wider than image - image height matches container
-				renderedHeight = containerHeight;
-			} else {
-				// Container is taller than image - image width matches container
-				renderedHeight = containerWidth / imageAspectRatio;
-			}
+			const fixedWidth = 1440;
+			const renderedHeight = fixedWidth / imageAspectRatio;
 
 			const topOffset = containerHeight - renderedHeight;
 			// Calculate percentages relative to container
@@ -145,7 +137,7 @@ const Jx2026: React.FC = () => {
 					position: 'absolute',
 					inset: 0,
 					backgroundImage: `url(${pathBg})`,
-					backgroundSize: 'contain',
+					backgroundSize: '1440px auto',
 					backgroundPosition: 'center bottom',
 					backgroundRepeat: 'no-repeat',
 					zIndex: 0,

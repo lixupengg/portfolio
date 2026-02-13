@@ -24,11 +24,12 @@ export type Milestone = {
 export const milestones: Milestone[] = [
 	{
 		id: 1,
-		title: 'When We Met',
+		title: 'Vroom vroom to China!',
 		gradient: ['#FFF8F0', '#F4A0A0'],
 		questions: [
 			{
-				question: 'What did we eat when we first met?',
+				question:
+					'What color shirt did Jiaxuan wear on the flight back from China?',
 				options: [
 					{
 						label: 'REPLACE_ME_A',
