@@ -112,21 +112,17 @@ const QuizScreen: React.FC<Props> = ({ milestone, onComplete }) => {
 		<QuizCard style={{ background: gradientBg }}>
 			<QuizTitle>{milestone.title}</QuizTitle>
 			{/* Quiz image area - shows qnsPic during question, ansPic after correct answer */}
-			{(currentQ.qnsPic || currentQ.ansPic) && (
+			{((currentQ.qnsPic && !isCurrentQuestionCorrect) || (currentQ.ansPic && isCurrentQuestionCorrect)) && (
 				<QuizImageContainer>
-					{currentQ.qnsPic && (
-						<QuizImage
-							src={currentQ.qnsPic}
-							visible={!isCurrentQuestionCorrect}
-							alt="Question"
-						/>
-					)}
-					{currentQ.ansPic && (
-						<QuizImage
-							src={currentQ.ansPic}
-							visible={isCurrentQuestionCorrect}
-							alt="Answer"
-						/>
+					{currentQ.qnsPic && currentQ.ansPic ? (
+						<>
+							<QuizImage src={currentQ.qnsPic} visible={!isCurrentQuestionCorrect} alt="Question" />
+							<QuizImage src={currentQ.ansPic} visible={isCurrentQuestionCorrect} alt="Answer" />
+						</>
+					) : currentQ.qnsPic ? (
+						<QuizImage src={currentQ.qnsPic} visible alt="Question" />
+					) : (
+						<QuizImage src={currentQ.ansPic} visible alt="Answer" />
 					)}
 				</QuizImageContainer>
 			)}
