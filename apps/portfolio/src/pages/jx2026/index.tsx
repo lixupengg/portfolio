@@ -2,6 +2,7 @@ import React, { useState, useCallback, useEffect, useRef } from 'react';
 import LoveMap from './LoveMap';
 import QuizScreen from './QuizScreen';
 import Celebration from './Celebration';
+import FlyingBirds from './FlyingBirds';
 import { milestones } from './data';
 import {
 	PageWrapper,
@@ -253,6 +254,7 @@ const Jx2026: React.FC = () => {
 
 			{/* Map */}
 			<MapContainer zoomedOut={phase === 'quiz'}>
+				<FlyingBirds />
 				<AdventureTitle>
 					Let&apos;s go on an adventure to get our HDB!
 				</AdventureTitle>

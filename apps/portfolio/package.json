@@ -29,8 +29,8 @@
 		"three": "^0.151.3"
 	},
 	"scripts": {
-		"start": "craco start",
-		"build": "craco build",
+		"start": "NODE_OPTIONS=--openssl-legacy-provider craco start",
+		"build": "NODE_OPTIONS=--openssl-legacy-provider craco build",
 		"predeploy": "yarn build",
 		"deploy": "gh-pages -d build",
 		"prettier": "prettier --write --config ../../.prettierrc.json \"**/*.{js,jsx,ts,tsx,scss,json}\"",

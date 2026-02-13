@@ -62,6 +62,16 @@ export const wobble = keyframes({
 	'50%': { transform: 'rotate(3deg)' }
 });
 
+export const birdFly = keyframes({
+	'0%': { transform: 'translateX(100vw)' },
+	'100%': { transform: 'translateX(-100px)' }
+});
+
+export const birdWing = keyframes({
+	'0%, 100%': { transform: 'rotate(0deg)' },
+	'50%': { transform: 'rotate(20deg)' }
+});
+
 export const float = keyframes({
 	'0%, 100%': { transform: 'translateY(0)' },
 	'50%': { transform: 'translateY(-10px)' }
@@ -486,4 +496,23 @@ export const AdventureTitle = styled('div', {
 	animation: `${float} 3s ease-in-out infinite`,
 	fontWeight: 'semibold',
 	fontStyle: 'italic'
+});
+
+// Flying Birds
+export const BirdContainer = styled('div', {
+	position: 'absolute',
+	inset: 0,
+	overflow: 'hidden',
+	pointerEvents: 'none',
+	zIndex: 2
+});
+
+export const BirdWrapper = styled('div', {
+	position: 'absolute',
+	animation: `${birdFly} linear infinite`
+});
+
+export const BirdWing = styled('path', {
+	transformOrigin: '100% 100%',
+	animation: `${birdWing} 0.6s ease-in-out infinite`
 });
