@@ -35,3 +35,4 @@ yarn-error.log*
 
 faq.json
 package-lock.json
+.env*.local
