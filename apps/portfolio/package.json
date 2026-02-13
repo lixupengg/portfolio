@@ -24,6 +24,7 @@
 		"react-joyride": "^2.5.3",
 		"react-modal": "^3.14.3",
 		"react-router-dom": "^5.2.0",
+		"react-scripts": "^4.0.3",
 		"reactjs-popup": "^2.0.4",
 		"rsuite": "^5.27.0",
 		"sass": "^1.34.1",
