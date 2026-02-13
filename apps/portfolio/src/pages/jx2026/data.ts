@@ -28,7 +28,7 @@ export const milestones: Milestone[] = [
 	{
 		id: 1,
 		title: 'Vroom vroom to China!',
-		gradient: ['#FFF8F0', '#F4A0A0'],
+		gradient: ['#FFFDE7', '#FFD54F'],
 		questions: [
 			{
 				question:
@@ -61,7 +61,7 @@ export const milestones: Milestone[] = [
 	{
 		id: 2,
 		title: 'Weddings are fun!',
-		gradient: ['#F4A0A0', '#D4838A'],
+		gradient: ['#FFD54F', '#FFA000'],
 		questions: [
 			{
 				question: "What did we eat on our first Valentine's?",
@@ -90,7 +90,7 @@ export const milestones: Milestone[] = [
 	{
 		id: 3,
 		title: 'Korea is fun too!',
-		gradient: ['#D4838A', '#F5D28F'],
+		gradient: ['#FFA000', '#F5D28F'],
 		questions: [
 			{
 				question: 'What did we eat on our first anniversary?',

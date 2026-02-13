@@ -15,7 +15,7 @@ type Props = {
 	visible: boolean;
 };
 
-const COLORS = ['#F4A0A0', '#F5D28F', '#D4838A', '#A8C5A0', '#fff', '#FFF8F0'];
+const COLORS = ['#FFD54F', '#F5D28F', '#FFA000', '#A8C5A0', '#fff', '#FFFDE7'];
 
 const Celebration: React.FC<Props> = ({ visible }) => {
 	const [showFinal, setShowFinal] = useState(false);
@@ -70,7 +70,7 @@ const Celebration: React.FC<Props> = ({ visible }) => {
 					{/* Golden final frame */}
 					<FilmFrame
 						style={{
-							background: 'linear-gradient(135deg, #F5D28F 0%, #F4A0A0 100%)',
+							background: 'linear-gradient(135deg, #F5D28F 0%, #FFD54F 100%)',
 							border: '3px solid #F5D28F'
 						}}
 					>

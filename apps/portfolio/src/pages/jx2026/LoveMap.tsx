@@ -34,9 +34,9 @@ const LoveMap: React.FC<Props> = ({
 			<defs>
 				{/* Radial glow gradient for hover effect */}
 				<radialGradient id="light-glow" cx="50%" cy="50%" r="50%">
-					<stop offset="0%" stopColor="#FFF8F0" stopOpacity="0.9" />
-					<stop offset="50%" stopColor="#F4A0A0" stopOpacity="0.5" />
-					<stop offset="100%" stopColor="#F4A0A0" stopOpacity="0" />
+					<stop offset="0%" stopColor="#FFFDE7" stopOpacity="0.9" />
+					<stop offset="50%" stopColor="#FFD54F" stopOpacity="0.5" />
+					<stop offset="100%" stopColor="#FFD54F" stopOpacity="0" />
 				</radialGradient>
 
 				{/* Circular clip paths and image patterns for each node */}
@@ -70,7 +70,7 @@ const LoveMap: React.FC<Props> = ({
 			<path
 				d={SVG_PATH}
 				fill="none"
-				stroke="#E8C4C4"
+				stroke="#FFE082"
 				strokeWidth="6"
 				strokeDasharray="12 12"
 			/>
@@ -79,7 +79,7 @@ const LoveMap: React.FC<Props> = ({
 				<path
 					d={SVG_PATH}
 					fill="none"
-					stroke="#F4A0A0"
+					stroke="#FFD54F"
 					strokeWidth="6"
 					strokeDasharray={`${(heartPosition / 4) * 100}% 200%`}
 				/>
@@ -124,8 +124,8 @@ const LoveMap: React.FC<Props> = ({
 								cy={toSvgY(pos.y)}
 								r={pos.size.glowRadius}
 								fill="none"
-								stroke="#F4A0A0"
-								strokeWidth="2"
+								stroke="#FFD54F"
+								strokeWidth="0"
 								opacity="0.5"
 								style={{ animation: `${pulse} 2s ease-in-out infinite` }}
 							/>
@@ -140,19 +140,19 @@ const LoveMap: React.FC<Props> = ({
 								pos.image && unlocked
 									? `url(#node-pattern-${i})`
 									: completed
-										? '#F4A0A0'
-										: unlocked
-											? '#FFF8F0'
-											: '#ccc'
+									? '#FFD54F'
+									: unlocked
+									? '#FFFDE7'
+									: '#ccc'
 							}
-							stroke={completed ? '#D4838A' : unlocked ? '#F4A0A0' : '#aaa'}
-							strokeWidth="2.5"
+							stroke={completed ? '#FFA000' : unlocked ? '#FFD54F' : '#aaa'}
+							strokeWidth="0"
 							style={{
 								filter: !unlocked
 									? 'grayscale(100%)'
 									: isHovered
-										? 'brightness(1.1)'
-										: 'none',
+									? 'brightness(1.1)'
+									: 'none',
 								transition: 'filter 0.3s ease'
 							}}
 						/>
@@ -177,7 +177,7 @@ const LoveMap: React.FC<Props> = ({
 							y={toSvgY(pos.y) + pos.size.labelOffset}
 							textAnchor="middle"
 							fontSize={pos.size.labelSize}
-							fill={unlocked ? '#D4838A' : '#aaa'}
+							fill={unlocked ? '#FFA000' : '#aaa'}
 						>
 							{milestones[i].title}
 						</text>

@@ -1,10 +1,10 @@
 import { styled, keyframes } from '@stitches/react';
 
 // Colors
-const blush = '#F4A0A0';
+const blush = '#FFD54F';
 const gold = '#F5D28F';
-const cream = '#FFF8F0';
-const rose = '#D4838A';
+const cream = '#FFFDE7';
+const rose = '#FFA000';
 const sage = '#A8C5A0';
 
 // Keyframes
@@ -105,10 +105,10 @@ export const BeginButton = styled('button', {
 	cursor: 'pointer',
 	fontFamily: 'inherit',
 	transition: 'transform 0.2s, box-shadow 0.2s',
-	boxShadow: '0 4px 12px rgba(244,160,160,0.4)',
+	boxShadow: '0 4px 12px rgba(255,213,79,0.4)',
 	'&:hover': {
 		transform: 'translateY(-2px)',
-		boxShadow: '0 6px 20px rgba(244,160,160,0.5)'
+		boxShadow: '0 6px 20px rgba(255,213,79,0.5)'
 	}
 });
 
@@ -330,7 +330,7 @@ export const FinalFrame = styled('div', {
 	flexDirection: 'column',
 	alignItems: 'center',
 	justifyContent: 'center',
-	background: 'linear-gradient(135deg, #F5D28F 0%, #F4A0A0 100%)',
+	background: 'linear-gradient(135deg, #F5D28F 0%, #FFD54F 100%)',
 	opacity: 0,
 	transition: 'opacity 1s ease, transform 1s ease',
 	transform: 'scale(0.8)',
