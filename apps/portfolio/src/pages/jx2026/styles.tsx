@@ -63,13 +63,13 @@ export const wobble = keyframes({
 });
 
 export const birdFly = keyframes({
-	'0%': { transform: 'translateX(100vw)' },
-	'100%': { transform: 'translateX(-100px)' }
+	'0%': { transform: 'translateX(-100px)' },
+	'100%': { transform: 'translateX(100vw)' }
 });
 
 export const birdWing = keyframes({
 	'0%, 100%': { transform: 'rotate(0deg)' },
-	'50%': { transform: 'rotate(20deg)' }
+	'50%': { transform: 'rotate(-30deg)' }
 });
 
 export const float = keyframes({
@@ -509,7 +509,8 @@ export const BirdContainer = styled('div', {
 
 export const BirdWrapper = styled('div', {
 	position: 'absolute',
-	animation: `${birdFly} linear infinite`
+	animation: `${birdFly} linear infinite`,
+	animationFillMode: 'backwards'
 });
 
 export const BirdWing = styled('path', {

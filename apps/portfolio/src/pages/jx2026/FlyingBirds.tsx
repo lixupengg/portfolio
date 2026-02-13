@@ -13,37 +13,35 @@ const BirdSvg: React.FC<{ scale: number }> = ({ scale }) => (
 	<svg
 		width={40 * scale}
 		height={30 * scale}
-		viewBox="0 0 50 40"
+		viewBox="0 0 56 40"
 		fill="none"
 		xmlns="http://www.w3.org/2000/svg"
 	>
 		{/* Body outline */}
-		<path
-			d={
-				'M8 22 Q4 22 4 26 Q4 30 10 32 L18 34 Q14 30 16 28 ' +
-				'Q20 24 26 24 Q30 24 32 22'
-			}
+		<ellipse
+			cx="22"
+			cy="22"
+			rx="12"
+			ry="8"
 			stroke="#1a202c"
 			strokeWidth="2"
 			fill="none"
-			strokeLinecap="round"
-			strokeLinejoin="round"
 		/>
 		{/* Head */}
 		<circle
-			cx="38"
-			cy="16"
-			r="8"
+			cx="40"
+			cy="18"
+			r="7"
 			stroke="#1a202c"
 			strokeWidth="2"
 			fill="none"
 		/>
 		{/* Eye */}
-		<circle cx="40" cy="15" r="3" fill="#F5A623" />
-		<circle cx="41" cy="14" r="1" fill="#1a202c" />
+		<circle cx="42" cy="16" r="2.5" fill="#F5A623" />
+		<circle cx="43" cy="15" r="1" fill="#1a202c" />
 		{/* Beak */}
 		<path
-			d="M46 16 L50 18 L46 20"
+			d="M47 18 L52 20 L47 22"
 			stroke="#1a202c"
 			strokeWidth="2"
 			fill="none"
@@ -52,19 +50,20 @@ const BirdSvg: React.FC<{ scale: number }> = ({ scale }) => (
 		/>
 		{/* Wing feathers */}
 		<BirdWing
-			d="M20 22 Q12 16 6 10"
+			d="M20 20 L8 20"
 			stroke="#1a202c"
 			strokeWidth="2"
 			fill="none"
 			strokeLinecap="round"
+			style={{ transformOrigin: '20px 20px' }}
 		/>
 		<BirdWing
-			d="M22 24 Q16 20 10 16"
+			d="M20 24 L8 24"
 			stroke="#1a202c"
 			strokeWidth="2"
 			fill="none"
 			strokeLinecap="round"
-			style={{ animationDelay: '0.1s' }}
+			style={{ transformOrigin: '20px 24px', animationDelay: '0.1s' }}
 		/>
 	</svg>
 );
@@ -76,7 +75,7 @@ const FlyingBirds: React.FC = () => {
 			id: i,
 			top: `${10 + Math.random() * 10}%`,
 			duration: 15 + Math.random() * 10,
-			delay: i * 3 + Math.random() * 2,
+			delay: i * 2,
 			scale: 1.5 + Math.random() * 0.8
 		}));
 	}, []);
