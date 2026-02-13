@@ -135,14 +135,14 @@ const LoveMap: React.FC<Props> = ({
 						<circle
 							cx={pos.x}
 							cy={toSvgY(pos.y)}
-							r={pos.size.radius + 20}
+							r={pos.size.radius + 25}
 							fill="url(#light-glow)"
 							style={{
-								opacity: isClickable ? (isHovered ? 1 : 0.4) : 0,
+								opacity: isClickable ? (isHovered ? 1 : 0.7) : 0,
 								transform: isClickable
 									? isHovered
-										? 'scale(1.15)'
-										: 'scale(1)'
+										? 'scale(1.2)'
+										: 'scale(1.05)'
 									: 'scale(0.9)',
 								transformOrigin: 'center',
 								transition: 'opacity 0.3s ease, transform 0.3s ease'
@@ -209,10 +209,11 @@ const LoveMap: React.FC<Props> = ({
 						{/* Label */}
 						<text
 							x={pos.x}
-							y={toSvgY(pos.y) + pos.size.labelOffset}
+							y={toSvgY(pos.y) + pos.size.radius + 20}
 							textAnchor="middle"
 							fontSize={pos.size.labelSize}
-							fill={unlocked ? '#FFA000' : '#aaa'}
+							fill="white"
+							fontWeight="bold"
 						>
 							{milestones[i].title}
 						</text>
@@ -221,24 +222,29 @@ const LoveMap: React.FC<Props> = ({
 			})}
 
 			{/* Heart traveler */}
-			<g>
+			<g
+				style={
+					{
+						offsetPath: `path("${SVG_PATH}")`,
+						offsetDistance: `${(heartPosition / 4) * 100}%`,
+						offsetRotate: '0deg',
+						transition: 'offset-distance 1.5s ease-in-out',
+						pointerEvents: 'none',
+						// @ts-ignore
+						motionPath: `path("${SVG_PATH}")`,
+						motionDistance: `${(heartPosition / 4) * 100}%`
+					} as any
+				}
+			>
 				<image
 					href={travellerSvg}
 					width="100"
 					height="100"
-					x="-2%"
-					y="-25%"
-					style={
-						{
-							offsetPath: `path("${SVG_PATH}")`,
-							offsetDistance: `${(heartPosition / 4) * 100}%`,
-							offsetRotate: '0deg',
-							transition: 'offset-distance 1.5s ease-in-out',
-							// @ts-ignore
-							motionPath: `path("${SVG_PATH}")`,
-							motionDistance: `${(heartPosition / 4) * 100}%`
-						} as any
-					}
+					x={NODE_POSITIONS[heartPosition].travelerOffset.x}
+					y={NODE_POSITIONS[heartPosition].travelerOffset.y}
+					style={{
+						animation: `${wobble} 1.3s ease-in-out infinite`
+					}}
 				/>
 				{/* Fallback: position heart at node coordinates */}
 				{!CSS.supports?.('offset-path', `path("M 0 0")`) && (

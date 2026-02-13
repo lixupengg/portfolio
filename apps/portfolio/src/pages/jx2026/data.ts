@@ -162,7 +162,8 @@ export const NODE_POSITIONS = [
 			iconSize: 18,
 			labelOffset: 46,
 			labelSize: 13
-		}
+		},
+		travelerOffset: { x: -50, y: -50 }
 	},
 	{
 		x: 735,
@@ -174,7 +175,8 @@ export const NODE_POSITIONS = [
 			iconSize: 18,
 			labelOffset: 46,
 			labelSize: 13
-		}
+		},
+		travelerOffset: { x: 32, y: -120 }
 	},
 	{
 		x: 890,
@@ -186,7 +188,8 @@ export const NODE_POSITIONS = [
 			iconSize: 18,
 			labelOffset: 46,
 			labelSize: 13
-		}
+		},
+		travelerOffset: { x: 55, y: -170 }
 	},
 	{
 		x: 990,
@@ -198,7 +201,8 @@ export const NODE_POSITIONS = [
 			iconSize: 18,
 			labelOffset: 46,
 			labelSize: 13
-		}
+		},
+		travelerOffset: { x: 50, y: -160 }
 	}
 ];
 
