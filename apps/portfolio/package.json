@@ -4,6 +4,7 @@
 	"private": false,
 	"homepage": ".",
 	"dependencies": {
+		"@craco/craco": "^6.4.5",
 		"@auth0/auth0-react": "^2.0.1",
 		"@radix-ui/colors": "^0.1.7",
 		"@react-three/drei": "^9.65.3",
@@ -45,7 +46,6 @@
 		]
 	},
 	"devDependencies": {
-		"@craco/craco": "^6.4.5",
 		"@types/react-dnd": "^3.0.2",
 		"@types/react-helmet": "^6.1.2",
 		"@types/react-modal": "^3.12.1",
