@@ -14,6 +14,7 @@ import ExperiencesPage from './pages/ExperiencesPage';
 import ReadPage from './pages/ReadPage';
 import Jx2024 from './pages/jx2024';
 import Jx2025 from './pages/jx2025';
+import Jx2026 from './pages/jx2026';
 
 /* Styling */
 import { theme, Layout } from './styles/styling';
@@ -26,7 +27,11 @@ interface RouteProps {
 
 export const CustomRoute = (props: RouteProps) => {
 	const { path, exact, component: Component } = props;
-	const blacklistedPaths = ['/and-jia-xuan-kuah-2024-vday', '/and-jia-xuan-kuah-2025-vday'];
+	const blacklistedPaths = [
+		'/and-jia-xuan-kuah-2024-vday',
+		'/and-jia-xuan-kuah-2025-vday',
+		'/and-jia-xuan-kuah-2026-vday'
+	];
 	return (
 		<Route
 			path={path}
@@ -34,7 +39,6 @@ export const CustomRoute = (props: RouteProps) => {
 			render={(renderProps: any) => {
 				return (
 					<Layout className={`${theme}`}>
-						{!blacklistedPaths.includes(path) && <Nav logo={Logo} />}
 						<Component {...renderProps} />
 					</Layout>
 				);
@@ -60,6 +64,11 @@ const BaseRouter: React.ReactNode = () => (
 				exact
 				path="/and-jia-xuan-kuah-2025-vday"
 				component={Jx2025}
+			/>
+			<CustomRoute
+				exact
+				path="/and-jia-xuan-kuah-2026-vday"
+				component={Jx2026}
 			/>
 		</Switch>
 	</Router>

@@ -67,7 +67,10 @@ type Config = {
 	buttonType: 'yes' | 'no';
 	buttonClass?: string;
 	yesButtonClass?: string;
-	customStep?: (props: { onYes: () => void; onNo: () => void }) => React.ReactNode;
+	customStep?: (props: {
+		onYes: () => void;
+		onNo: () => void;
+	}) => React.ReactNode;
 };
 
 const cfg: Record<number, Config> = {
@@ -242,10 +245,13 @@ const FallingVideos = (props: { spawn: boolean }) => {
 				});
 				const Video = styled('img', {
 					position: 'absolute',
-					width: '100px',
 					height: '100px',
 					zIndex: 100,
 					left: `${index * 110}px`,
+					background: 'white',
+					objectFit: 'contain',
+					padding: '5px',
+					paddingBottom: '18px',
 					animation: `${fallingAnimation} ${
 						10 + Math.random() * 10
 					}s linear infinite`
@@ -431,7 +437,7 @@ const HomePage = () => {
 			onExplode();
 			playMyDestiny();
 			setSpawnFallingVideos(true);
-		}
+		};
 
 		const onNo = (noStep: number) => {
 			setCurrStep(noStep);
@@ -483,9 +489,13 @@ const HomePage = () => {
 										}}
 										key={step}
 										className={`${nextStepCfg?.buttonClass} ${config?.yesButtonClass}`}
-										style={{ pointerEvents: isKwenchanaVideoPlaying ? 'none' : 'auto', 
-											cursor: isKwenchanaVideoPlaying ? 'not-allowed' : 'pointer',
-											opacity: isKwenchanaVideoPlaying ? 0.5 : 1 }}
+										style={{
+											pointerEvents: isKwenchanaVideoPlaying ? 'none' : 'auto',
+											cursor: isKwenchanaVideoPlaying
+												? 'not-allowed'
+												: 'pointer',
+											opacity: isKwenchanaVideoPlaying ? 0.5 : 1
+										}}
 									>
 										{nextStepCfg?.quesToStep}
 									</YesButton>
@@ -496,9 +506,13 @@ const HomePage = () => {
 										}}
 										key={step}
 										className={nextStepCfg?.buttonClass}
-										style={{ pointerEvents: isKwenchanaVideoPlaying ? 'none' : 'auto', 
-											cursor: isKwenchanaVideoPlaying ? 'not-allowed' : 'pointer', 
-											opacity: isKwenchanaVideoPlaying ? 0.5 : 1 }}
+										style={{
+											pointerEvents: isKwenchanaVideoPlaying ? 'none' : 'auto',
+											cursor: isKwenchanaVideoPlaying
+												? 'not-allowed'
+												: 'pointer',
+											opacity: isKwenchanaVideoPlaying ? 0.5 : 1
+										}}
 									>
 										{nextStepCfg?.quesToStep}
 									</NoButton>
@@ -551,7 +565,7 @@ const HomePage = () => {
 				<StyledPhoto src={Peach4} alt="dog" />
 				<StyledPhoto src={Peach5} alt="dog" />
 			</StyledPhotoStrip>
-			<StyledPhotoStripRight >
+			<StyledPhotoStripRight>
 				<StyledPhoto src={Peach6} alt="dog" />
 				<StyledPhoto src={Peach7} alt="dog" />
 				<StyledPhoto src={Peach8} alt="dog" />

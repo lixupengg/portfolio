@@ -7,7 +7,6 @@ import Background from '../../assets/jx2025/background.jpg';
 
 const animationDistance = '400px';
 
-
 const animationSlow = keyframes({
 	'0%': {
 		transform: 'translate(0, 0)'
@@ -47,7 +46,7 @@ const animateButtonTranslatesInACircle = keyframes({
 	},
 	'100%': {
 		transform: `translate(${animationDistance}, 0)`
-	},
+	}
 	// '50%': {
 	// 	transform: `translate(${animationDistance}, -${animationDistance})`
 	// },
@@ -107,7 +106,7 @@ export const StyledPictureGame = styled('div', {
 	flexWrap: 'wrap',
 	justifyContent: 'center',
 	alignItems: 'center',
-	marginBottom: '10px',
+	marginBottom: '10px'
 });
 
 // Buttons
@@ -173,14 +172,13 @@ export const EscapedButtonHardClassName = css({
 
 // Images
 
-
 const animatePictureCarouselHorizontally = keyframes({
 	'0%': {
 		transform: 'translate(0, 0)'
-  },
+	},
 	'100%': {
 		transform: 'translate(0, 100%)'
-  }
+	}
 });
 
 export const StyledPhotoStrip = styled('div', {
@@ -197,7 +195,7 @@ export const StyledPhotoStrip = styled('div', {
 	alignItems: 'center',
 	gap: '10px',
 	padding: '10px',
-	background: 'black',
+	background: 'black'
 });
 
 export const StyledPhotoStripRight = styled('div', {
@@ -214,14 +212,13 @@ export const StyledPhotoStripRight = styled('div', {
 	alignItems: 'center',
 	gap: '10px',
 	padding: '10px',
-	background: 'black',
+	background: 'black'
 });
-
 
 export const StyledPhoto = styled('img', {
 	objectFit: 'cover',
 	width: '100%',
 	height: '20%',
 	border: '5px solid white',
-	background: 'white',
+	background: 'white'
 });
