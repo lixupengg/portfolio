@@ -26,9 +26,8 @@ export const correctPulse = keyframes({
 });
 
 export const filmScroll = keyframes({
-	'0%': { transform: 'translateX(100%)' },
-	'80%': { transform: 'translateX(-70%)' },
-	'100%': { transform: 'translateX(-75%)' }
+	'0%': { transform: 'translateX(-100%)' },
+	'100%': { transform: 'translateX(75%)' }
 });
 
 export const flicker = keyframes({
@@ -340,14 +339,15 @@ export const CelebrationWrapper = styled('div', {
 export const FilmStripTrack = styled('div', {
 	display: 'flex',
 	gap: '20px',
-	padding: '20px',
-	animation: `${filmScroll} 6s cubic-bezier(0.25, 0.1, 0.25, 1) forwards`,
+	padding: '0 30px',
+	height: '100%',
+	background: 'linear-gradient(135deg, #F5D28F 0%, #FFD54F 100%)',
 	willChange: 'transform'
 });
 
 export const FilmFrame = styled('div', {
-	minWidth: '200px',
-	height: '160px',
+	aspectRatio: '4 / 3',
+	height: '100%',
 	borderRadius: '8px',
 	display: 'flex',
 	flexDirection: 'column',
@@ -357,9 +357,35 @@ export const FilmFrame = styled('div', {
 	fontFamily: 'inherit',
 	fontSize: '14px',
 	border: '3px solid rgba(255,255,255,0.2)',
+	background: 'linear-gradient(135deg, #F5D28F 0%, #FFD54F 100%)',
 	flexShrink: 0,
 	position: 'relative',
-	overflow: 'hidden'
+	overflow: 'hidden',
+	padding: '0 20px',
+
+	'&::before, &::after': {
+		content: '""',
+		position: 'absolute',
+		top: '8px',
+		bottom: '8px',
+		width: '12px',
+		background: `repeating-linear-gradient(
+			to bottom,
+			#111 0px,
+			#111 8px,
+			transparent 8px,
+			transparent 16px
+		)`,
+		zIndex: 2
+	},
+
+	'&::before': {
+		left: '4px'
+	},
+
+	'&::after': {
+		right: '4px'
+	}
 });
 
 export const FilmFrameLabel = styled('span', {
@@ -391,7 +417,7 @@ export const FinalFrame = styled('div', {
 
 export const FinalMessage = styled('p', {
 	fontSize: 'clamp(18px, 3vw, 28px)',
-	color: '#fff',
+	color: 'black',
 	textAlign: 'center',
 	lineHeight: 1.6,
 	maxWidth: '600px',
@@ -432,8 +458,9 @@ export const QuizImageContainer = styled('div', {
 });
 
 export const QuizImage = styled('img', {
+	position: 'absolute',
 	inset: 0,
-	width: '100%',
+	width: '90%',
 	height: '100%',
 	objectFit: 'contain',
 	transition: 'opacity 0.5s ease, transform 0.5s ease',

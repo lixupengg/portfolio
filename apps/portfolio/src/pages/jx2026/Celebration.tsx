@@ -1,15 +1,48 @@
-import React, { useEffect, useState, useMemo } from 'react';
-import { milestones, VALENTINE_MESSAGE } from './data';
+import React, { useEffect, useState, useMemo, useRef } from 'react';
+import { VALENTINE_MESSAGE } from './data';
 import {
 	CelebrationWrapper,
 	FilmStripTrack,
 	FilmFrame,
-	FilmFrameLabel,
 	FinalFrame,
 	FinalMessage,
 	FilmGrain,
 	ConfettiParticle
 } from './styles';
+
+import china1 from '../../assets/jx2026/china1.jpg';
+import china2 from '../../assets/jx2026/china2.jpg';
+import china3 from '../../assets/jx2026/china3.jpg';
+import cruise1 from '../../assets/jx2026/cruise1.jpg';
+import cruise2 from '../../assets/jx2026/cruise2.jpg';
+import cruise3 from '../../assets/jx2026/cruise3.jpg';
+import sg1 from '../../assets/jx2026/sg1.jpg';
+import sg2 from '../../assets/jx2026/sg2.jpg';
+import sg3 from '../../assets/jx2026/sg3.jpg';
+import sg4 from '../../assets/jx2026/sg4.jpg';
+import korea1 from '../../assets/jx2026/korea1.jpg';
+import korea2 from '../../assets/jx2026/korea2.jpg';
+import korea3 from '../../assets/jx2026/korea3.jpg';
+import wedding1 from '../../assets/jx2026/wedding1.jpg';
+import wedding2 from '../../assets/jx2026/wedding2.jpg';
+
+const FILM_IMAGES = [
+	china1,
+	china2,
+	china3,
+	cruise1,
+	cruise2,
+	cruise3,
+	sg1,
+	sg2,
+	sg3,
+	sg4,
+	korea1,
+	korea2,
+	korea3,
+	wedding1,
+	wedding2
+];
 
 type Props = {
 	visible: boolean;
@@ -19,14 +52,44 @@ const COLORS = ['#FFD54F', '#F5D28F', '#FFA000', '#A8C5A0', '#fff', '#FFFDE7'];
 
 const Celebration: React.FC<Props> = ({ visible }) => {
 	const [showFinal, setShowFinal] = useState(false);
+	const trackRef = useRef<HTMLDivElement>(null);
+	const [animationStyle, setAnimationStyle] = useState<React.CSSProperties>({});
 
 	useEffect(() => {
-		if (visible) {
-			// After film strip scrolls (6s animation), show final frame
-			const timer = setTimeout(() => setShowFinal(true), 6500);
+		if (visible && trackRef.current) {
+			const trackWidth = trackRef.current.scrollWidth;
+			const containerWidth = trackRef.current.parentElement?.clientWidth || 0;
+			const endX = containerWidth;
+
+			// Start off-screen to the left
+			setAnimationStyle({
+				transform: `translateX(${-trackWidth}px)`,
+				transition: 'none'
+			});
+
+			// Trigger animation after a brief delay
+			requestAnimationFrame(() => {
+				requestAnimationFrame(() => {
+					setAnimationStyle({
+						transform: `translateX(${endX}px)`,
+						transition: 'transform 20s linear'
+					});
+				});
+			});
+
+			// Show final frame after animation completes
+			const timer = setTimeout(() => setShowFinal(true), 20500);
 			return () => clearTimeout(timer);
 		}
-		setShowFinal(false);
+
+		if (trackRef.current) {
+			const trackWidth = trackRef.current.scrollWidth;
+			setAnimationStyle({
+				transform: `translateX(${-trackWidth}px)`,
+				transition: 'none'
+			});
+			setShowFinal(false);
+		}
 		return undefined;
 	}, [visible]);
 
@@ -54,29 +117,31 @@ const Celebration: React.FC<Props> = ({ visible }) => {
 			<FilmGrain />
 
 			{/* Film strip */}
-			<div style={{ width: '100%', overflow: 'hidden', position: 'relative', zIndex: 22 }}>
-				<FilmStripTrack>
-					{milestones.map((m) => (
-						<FilmFrame
-							key={m.id}
-							style={{
-								background: `linear-gradient(135deg, ${m.gradient[0]} 0%, ${m.gradient[1]} 100%)`
-							}}
-						>
-							<span style={{ fontSize: '32px' }}>📸</span>
-							<FilmFrameLabel>{m.title}</FilmFrameLabel>
+			<div
+				style={{
+					width: '100%',
+					height: '50%',
+					overflow: 'hidden',
+					position: 'relative',
+					zIndex: 22
+				}}
+			>
+				<FilmStripTrack ref={trackRef} style={animationStyle}>
+					{FILM_IMAGES.map((src, index) => (
+						<FilmFrame key={index}>
+							<img
+								src={src}
+								alt=""
+								style={{
+									position: 'absolute',
+									inset: 0,
+									width: '100%',
+									height: '100%',
+									objectFit: 'contain'
+								}}
+							/>
 						</FilmFrame>
 					))}
-					{/* Golden final frame */}
-					<FilmFrame
-						style={{
-							background: 'linear-gradient(135deg, #F5D28F 0%, #FFD54F 100%)',
-							border: '3px solid #F5D28F'
-						}}
-					>
-						<span style={{ fontSize: '32px' }}>💛</span>
-						<FilmFrameLabel>Forever</FilmFrameLabel>
-					</FilmFrame>
 				</FilmStripTrack>
 			</div>
 

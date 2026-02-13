@@ -28,8 +28,16 @@ import peachImg9 from '../../assets/stickersImg/peachImg9.png';
 import peachImg10 from '../../assets/stickersImg/peachImg10.png';
 
 const stickerImages = [
-	peachImg1, peachImg2, peachImg3, peachImg4, peachImg5,
-	peachImg6, peachImg7, peachImg8, peachImg9, peachImg10
+	peachImg1,
+	peachImg2,
+	peachImg3,
+	peachImg4,
+	peachImg5,
+	peachImg6,
+	peachImg7,
+	peachImg8,
+	peachImg9,
+	peachImg10
 ];
 
 type Props = {
@@ -40,8 +48,12 @@ type Props = {
 const QuizScreen: React.FC<Props> = ({ milestone, onComplete }) => {
 	const [qIndex, setQIndex] = useState(0);
 	const [feedback, setFeedback] = useState('');
-	const [disabledOptions, setDisabledOptions] = useState<Set<number>>(new Set());
-	const [answerState, setAnswerState] = useState<Record<number, 'correct' | 'wrong'>>({});
+	const [disabledOptions, setDisabledOptions] = useState<Set<number>>(
+		new Set()
+	);
+	const [answerState, setAnswerState] = useState<
+		Record<number, 'correct' | 'wrong'>
+	>({});
 	const [selectedOption, setSelectedOption] = useState<number | null>(null);
 	const [milestoneComplete, setMilestoneComplete] = useState(false);
 	const [showConfetti, setShowConfetti] = useState(false);
@@ -50,8 +62,8 @@ const QuizScreen: React.FC<Props> = ({ milestone, onComplete }) => {
 
 	// Assign random stickers to each option (stable across re-renders, changes per question)
 	const optionStickers = useMemo(() => {
-		return currentQ.options.map(() =>
-			stickerImages[Math.floor(Math.random() * stickerImages.length)]
+		return currentQ.options.map(
+			() => stickerImages[Math.floor(Math.random() * stickerImages.length)]
 		);
 	}, [qIndex, milestone.id]);
 
@@ -83,7 +95,8 @@ const QuizScreen: React.FC<Props> = ({ milestone, onComplete }) => {
 		}
 	};
 
-	const isCurrentQuestionCorrect = answerState[currentQ.correctIndex] === 'correct';
+	const isCurrentQuestionCorrect =
+		answerState[currentQ.correctIndex] === 'correct';
 
 	const gradientBg = `linear-gradient(135deg, ${milestone.gradient[0]} 0%, ${milestone.gradient[1]} 100%)`;
 
@@ -97,25 +110,35 @@ const QuizScreen: React.FC<Props> = ({ milestone, onComplete }) => {
 						onComplete={() => setShowConfetti(false)}
 					/>
 				)}
-				<QuizTitle>Milestone Complete!</QuizTitle>
 				<p style={{ fontSize: '48px', margin: '16px 0' }}>🎉</p>
-				<p style={{ fontSize: '16px', marginBottom: '16px' }}>
+				<p
+					style={{
+						fontSize: '16px',
+						marginBottom: '16px',
+						padding: '10px 16px',
+						borderRadius: '10px',
+						background:
+							'linear-gradient(to top, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.6) 100%)',
+						backdropFilter: 'blur(4px)',
+						WebkitBackdropFilter: 'blur(4px)',
+						color: '#333',
+						textShadow: '0 1px 2px rgba(0,0,0,0.1)'
+					}}
+				>
 					You conquered &ldquo;{milestone.title}&rdquo;!
 				</p>
-				<BackToMapButton onClick={onComplete}>
-					Back to Map
-				</BackToMapButton>
+				<BackToMapButton onClick={onComplete}>Back to Map</BackToMapButton>
 			</QuizCard>
 		);
 	}
 
-	const showImage = (currentQ.qnsPic && !isCurrentQuestionCorrect) ||
+	const showImage =
+		(currentQ.qnsPic && !isCurrentQuestionCorrect) ||
 		(currentQ.ansPic && isCurrentQuestionCorrect);
 
 	return (
-		<QuizCard style={{ background: gradientBg }} hasImage={showImage}>
+		<QuizCard style={{ background: gradientBg }} hasImage={Boolean(showImage)}>
 			<QuizContent>
-				<QuizTitle>{milestone.title}</QuizTitle>
 				<QuestionText>
 					Q{qIndex + 1}/2: {currentQ.question}
 				</QuestionText>
@@ -126,8 +149,7 @@ const QuizScreen: React.FC<Props> = ({ milestone, onComplete }) => {
 							state={answerState[i]}
 							selected={selectedOption === i}
 							disabled={
-								disabledOptions.has(i) ||
-								!!answerState[currentQ.correctIndex]
+								disabledOptions.has(i) || !!answerState[currentQ.correctIndex]
 							}
 							onClick={() => handleAnswer(i)}
 							style={{
@@ -153,8 +175,16 @@ const QuizScreen: React.FC<Props> = ({ milestone, onComplete }) => {
 				<QuizImageContainer>
 					{currentQ.qnsPic && currentQ.ansPic ? (
 						<>
-							<QuizImage src={currentQ.qnsPic} visible={!isCurrentQuestionCorrect} alt="Question" />
-							<QuizImage src={currentQ.ansPic} visible={isCurrentQuestionCorrect} alt="Answer" />
+							<QuizImage
+								src={currentQ.qnsPic}
+								visible={!isCurrentQuestionCorrect}
+								alt="Question"
+							/>
+							<QuizImage
+								src={currentQ.ansPic}
+								visible={isCurrentQuestionCorrect}
+								alt="Answer"
+							/>
 						</>
 					) : currentQ.qnsPic ? (
 						<QuizImage src={currentQ.qnsPic} visible alt="Question" />

@@ -13,6 +13,8 @@ import sg3 from '../../assets/jx2026/sg3.jpg';
 import sg4 from '../../assets/jx2026/sg4.jpg';
 import cruise1 from '../../assets/jx2026/cruise1.jpg';
 import cruise2 from '../../assets/jx2026/cruise2.jpg';
+import cruise3 from '../../assets/jx2026/cruise3.jpg';
+import cruise4 from '../../assets/jx2026/cruise4.jpg';
 
 export type AnswerOption = {
 	label: string;
@@ -140,7 +142,7 @@ export const milestones: Milestone[] = [
 	},
 	{
 		id: 4,
-		title: 'What about Singapore adventures',
+		title: 'Singapore adventures',
 		gradient: ['#F5D28F', '#A8C5A0'],
 		questions: [
 			{
@@ -154,7 +156,7 @@ export const milestones: Milestone[] = [
 			},
 			{
 				question: 'How many dus are in blackpinks chorus',
-				ansPic: sg2,
+				ansPic: sg4,
 				options: [
 					{ label: '13' },
 					{ label: '15' },
@@ -169,34 +171,37 @@ export const milestones: Milestone[] = [
 	},
 	{
 		id: 5,
-		title: 'Our Future Together',
+		title: 'Boat!',
 		gradient: ['#A8C5A0', '#8BC34A'],
 		questions: [
 			{
-				question: 'What are you most excited about for our future?',
-				ansPic: cruise1,
+				question:
+					'How many green rocks did Andy have left before he finished the wall',
+				qnsPic: cruise3,
+				ansPic: cruise4,
 				options: [
-					{ label: 'REPLACE_ME_A' },
-					{ label: 'REPLACE_ME_B' },
-					{ label: 'REPLACE_ME_C' },
-					{ label: 'REPLACE_ME_D' }
+					{ label: '7' },
+					{ label: '8' },
+					{ label: '9' },
+					{ label: '10' }
 				],
-				correctIndex: 0,
-				correctMessage: 'You know me so well!',
-				wrongMessage: 'Try once more!'
+				correctIndex: 1,
+				correctMessage: 'Yay you are good at counting!!',
+				wrongMessage: 'He he colorblind!'
 			},
 			{
-				question: 'Where do you want to travel with me next?',
-				ansPic: cruise2,
+				question: 'How many steaks did we order in dinner?',
+				ansPic: cruise1,
 				options: [
-					{ label: 'REPLACE_ME_A' },
-					{ label: 'REPLACE_ME_B' },
-					{ label: 'REPLACE_ME_C' },
-					{ label: 'REPLACE_ME_D' }
+					{ label: '4' },
+					{ label: '5' },
+					{ label: '7' },
+					{ label: '8' }
 				],
-				correctIndex: 0,
-				correctMessage: 'You know me so well!',
-				wrongMessage: 'Try once more!'
+				correctIndex: 3,
+				correctMessage:
+					'Actually i also dont know but this number is nice hehe',
+				wrongMessage: 'We were not so weak!!!!'
 			}
 		]
 	}
@@ -262,7 +267,7 @@ export const NODE_POSITIONS = [
 	{
 		x: 920,
 		y: 340,
-		image: china1,
+		image: cruise2,
 		size: {
 			radius: 25,
 			glowRadius: 32,
@@ -293,4 +298,6 @@ export const SVG_PATH = (() => {
 export const VALENTINE_MESSAGE =
 	"Happy Valentine's Day, my love! " +
 	'Every milestone with you is a treasure. ' +
-	"Here's to many more adventures together.";
+	"Here's to many more adventures together." +
+	'This is what AI wrote he he he ^ ^ ^ ' +
+	'But yes happy 3rd vday yay!!!! I love you bdd hehe and see you tmr at 12pm at your house!! :D';

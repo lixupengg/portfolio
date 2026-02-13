@@ -125,7 +125,7 @@ const Jx2026: React.FC = () => {
 		setPhase('map');
 
 		// Check if all done
-		if (newCompleted.size === 5) {
+		if (newCompleted.size === 1) {
 			setTimeout(() => {
 				setPhase('celebration');
 				try {
@@ -246,11 +246,7 @@ const Jx2026: React.FC = () => {
 
 			{/* Landing */}
 			<LandingOverlay hidden={phase !== 'landing'}>
-				<LandingTitle>
-					How Well Do You
-					<br />
-					Know Us?
-				</LandingTitle>
+				<LandingTitle>Time to test your memory!</LandingTitle>
 				<BeginButton onClick={handleBegin}>Begin</BeginButton>
 			</LandingOverlay>
 
