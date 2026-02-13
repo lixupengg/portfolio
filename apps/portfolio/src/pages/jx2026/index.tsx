@@ -28,6 +28,11 @@ const Jx2026: React.FC = () => {
 	const [fadeStart, setFadeStart] = useState(0);
 	const [fadeEnd, setFadeEnd] = useState(5);
 	const [gradientHeight, setGradientHeight] = useState(0);
+	const [horizontalOffset, setHorizontalOffset] = useState(0);
+	const [horizontalFadeStart, setHorizontalFadeStart] = useState(0);
+	const [horizontalFadeEnd, setHorizontalFadeEnd] = useState(100);
+	const [leftEdgePercent, setLeftEdgePercent] = useState(0);
+	const [rightEdgePercent, setRightEdgePercent] = useState(100);
 	const containerRef = useRef<HTMLDivElement>(null);
 
 	// Calculate fade positions based on where the contained image starts
@@ -52,6 +57,31 @@ const Jx2026: React.FC = () => {
 			setFadeStart(startPercent);
 			setFadeEnd(startPercent + fadeHeight);
 			setGradientHeight(Math.max(0, topOffset));
+
+			// Calculate horizontal offset for screens wider than 1440px
+			const containerWidth = containerRef.current.clientWidth;
+			const leftRightOffset = Math.max(0, (containerWidth - 1440) / 2);
+			setHorizontalOffset(leftRightOffset);
+
+			// Calculate horizontal fade percentages based on where image sits
+			if (leftRightOffset > 0) {
+				// Image edge positions as percentages
+				const leftEdge = (leftRightOffset / containerWidth) * 100;
+				const rightEdge =
+					((containerWidth - leftRightOffset) / containerWidth) * 100;
+				setLeftEdgePercent(leftEdge);
+				setRightEdgePercent(rightEdge);
+
+				// Fade width is 5% of the image width (72px)
+				const fadeWidth = 72;
+				const leftFadeEnd =
+					((leftRightOffset + fadeWidth) / containerWidth) * 100;
+				const rightFadeStart =
+					((containerWidth - leftRightOffset - fadeWidth) / containerWidth) *
+					100;
+				setHorizontalFadeStart(leftFadeEnd);
+				setHorizontalFadeEnd(rightFadeStart);
+			}
 		};
 
 		img.onload = calculateFadePositions;
@@ -116,6 +146,34 @@ const Jx2026: React.FC = () => {
 
 	return (
 		<PageWrapper ref={containerRef}>
+			{/* Left side gradient fill for wide screens */}
+			{horizontalOffset > 0 && (
+				<div
+					style={{
+						position: 'absolute',
+						top: 0,
+						left: 0,
+						width: horizontalOffset + 500,
+						height: '100%',
+						background: 'rgb(90, 167, 249)',
+						zIndex: 0
+					}}
+				/>
+			)}
+			{/* Right side gradient fill for wide screens */}
+			{horizontalOffset > 0 && (
+				<div
+					style={{
+						position: 'absolute',
+						top: 0,
+						right: 0,
+						width: horizontalOffset + 500,
+						height: '100%',
+						background: 'rgb(90, 167, 249)',
+						zIndex: 0
+					}}
+				/>
+			)}
 			{/* Background gradient - covers empty space above contained image */}
 			{gradientHeight > 0 && (
 				<div
@@ -127,25 +185,53 @@ const Jx2026: React.FC = () => {
 						height: gradientHeight + 100,
 						background: `linear-gradient(to bottom,
 						rgb(173, 216, 250) 0%, rgb(90, 167, 249) 40%, rgb(90, 167, 249) 100%)`,
+						// border: '2px solid red',
+						// width: '100%',
 						zIndex: 0
 					}}
 				/>
 			)}
-			{/* Background image with top fade */}
+			{/* Background image with top and horizontal edge fades */}
 			<div
-				style={{
-					position: 'absolute',
-					inset: 0,
-					backgroundImage: `url(${pathBg})`,
-					backgroundSize: '1440px auto',
-					backgroundPosition: 'center bottom',
-					backgroundRepeat: 'no-repeat',
-					zIndex: 0,
-					maskImage: `linear-gradient(to bottom, black 0%, black ${fadeStart}%,
-						transparent ${fadeStart}%, black ${fadeEnd}%)`,
-					WebkitMaskImage: `linear-gradient(to bottom, black 0%, black ${fadeStart}%,
-						transparent ${fadeStart}%, black ${fadeEnd}%)`
-				}}
+				style={
+					{
+						position: 'absolute',
+						inset: 0,
+						backgroundImage: `url(${pathBg})`,
+						backgroundSize: '1440px auto',
+						backgroundPosition: 'center bottom',
+						backgroundRepeat: 'no-repeat',
+						zIndex: 0,
+						maskImage:
+							horizontalOffset > 0
+								? `linear-gradient(to bottom, black 0%, black ${fadeStart}%,
+							transparent ${fadeStart}%, black ${fadeEnd}%),
+							linear-gradient(to right,
+							transparent 0%,
+							transparent ${leftEdgePercent}%,
+							black ${horizontalFadeStart}%,
+							black ${horizontalFadeEnd}%,
+							transparent ${rightEdgePercent}%,
+							transparent 100%)`
+								: `linear-gradient(to bottom, black 0%, black ${fadeStart}%,
+							transparent ${fadeStart}%, black ${fadeEnd}%)`,
+						WebkitMaskImage:
+							horizontalOffset > 0
+								? `linear-gradient(to bottom, black 0%, black ${fadeStart}%,
+							transparent ${fadeStart}%, black ${fadeEnd}%),
+							linear-gradient(to right,
+							transparent 0%,
+							transparent ${leftEdgePercent}%,
+							black ${horizontalFadeStart}%,
+							black ${horizontalFadeEnd}%,
+							transparent ${rightEdgePercent}%,
+							transparent 100%)`
+								: `linear-gradient(to bottom, black 0%, black ${fadeStart}%,
+							transparent ${fadeStart}%, black ${fadeEnd}%)`,
+						maskComposite: horizontalOffset > 0 ? 'intersect' : undefined,
+						WebkitMaskComposite: horizontalOffset > 0 ? 'source-in' : undefined
+					} as React.CSSProperties
+				}
 			/>
 
 			{/* Audio elements */}
