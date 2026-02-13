@@ -1,5 +1,8 @@
 import Peach5 from '../../assets/stickersImg/peachImg5.png';
 
+// Node background images - update these paths as needed
+import Node1Image from '../../assets/jx2026/IMG_4108.JPG';
+
 export type AnswerOption = {
 	label: string;
 	image?: string; // URL or imported image path
@@ -152,6 +155,7 @@ export const NODE_POSITIONS = [
 	{
 		x: 550,
 		y: 200,
+		image: Node1Image,
 		size: {
 			radius: 70,
 			glowRadius: 90,
@@ -163,6 +167,7 @@ export const NODE_POSITIONS = [
 	{
 		x: 735,
 		y: 270,
+		image: Node1Image,
 		size: {
 			radius: 60,
 			glowRadius: 32,
@@ -174,6 +179,7 @@ export const NODE_POSITIONS = [
 	{
 		x: 890,
 		y: 340,
+		image: Node1Image,
 		size: {
 			radius: 45,
 			glowRadius: 32,
@@ -185,6 +191,7 @@ export const NODE_POSITIONS = [
 	{
 		x: 990,
 		y: 440,
+		image: Node1Image,
 		size: {
 			radius: 30,
 			glowRadius: 32,
