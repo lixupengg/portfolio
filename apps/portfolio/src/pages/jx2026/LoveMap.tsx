@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { NODE_POSITIONS, SVG_PATH, SVG_HEIGHT, milestones } from './data';
-import { pulse } from './styles';
+import { pulse, wobble } from './styles';
+import travellerSvg from '../../assets/jx2026/traveller.svg';
 
 type Props = {
 	completedNodes: Set<number>;
@@ -39,11 +40,39 @@ const LoveMap: React.FC<Props> = ({
 					<stop offset="100%" stopColor="#FFD54F" stopOpacity="0" />
 				</radialGradient>
 
-				{/* Circular clip paths and image patterns for each node */}
+				{/* Blur filter for edge fade effect */}
+				<filter id="edge-blur" x="-20%" y="-20%" width="140%" height="140%">
+					<feGaussianBlur in="SourceGraphic" stdDeviation="8" />
+				</filter>
+
+				{/* Mask for each node */}
+				{NODE_POSITIONS.map((pos, i) => (
+					<mask id={`node-fade-mask-${i}`} key={`mask-${i}`}>
+						<rect
+							x={pos.size.radius * 0.1}
+							y={pos.size.radius * 0.1}
+							width={pos.size.radius * 1.8}
+							height={pos.size.radius * 1.8}
+							rx={pos.size.radius * 0.2}
+							ry={pos.size.radius * 0.2}
+							fill="white"
+							filter="url(#edge-blur)"
+						/>
+					</mask>
+				))}
+
+				{/* Rounded rectangle clip paths and image patterns for each node */}
 				{NODE_POSITIONS.map((pos, i) => (
 					<React.Fragment key={i}>
 						<clipPath id={`node-clip-${i}`}>
-							<circle cx={pos.x} cy={toSvgY(pos.y)} r={pos.size.radius} />
+							<rect
+								x={pos.x - pos.size.radius}
+								y={toSvgY(pos.y) - pos.size.radius}
+								width={pos.size.radius * 2}
+								height={pos.size.radius * 2}
+								rx={pos.size.radius * 0.2}
+								ry={pos.size.radius * 0.2}
+							/>
 						</clipPath>
 						{pos.image && (
 							<pattern
@@ -59,6 +88,7 @@ const LoveMap: React.FC<Props> = ({
 									width={pos.size.radius * 2}
 									height={pos.size.radius * 2}
 									preserveAspectRatio="xMidYMid slice"
+									mask={`url(#node-fade-mask-${i})`}
 								/>
 							</pattern>
 						)}
@@ -91,27 +121,29 @@ const LoveMap: React.FC<Props> = ({
 				const unlocked = i <= currentUnlocked;
 				const isCurrent = i === currentUnlocked && !completed;
 				const isHovered = hoveredNode === i;
-				const showGlow = isHovered && unlocked;
+				const isClickable = unlocked && !completed;
 
 				return (
 					<g
 						key={i}
-						onClick={() =>
-							unlocked && !completed ? onNodeClick(i) : undefined
-						}
+						onClick={() => (isClickable ? onNodeClick(i) : undefined)}
 						onMouseEnter={() => setHoveredNode(i)}
 						onMouseLeave={() => setHoveredNode(null)}
-						style={{ cursor: unlocked && !completed ? 'pointer' : 'default' }}
+						style={{ cursor: isClickable ? 'pointer' : 'default' }}
 					>
-						{/* Hover glow - behind the image */}
+						{/* Glow - subtle when clickable, intensified on hover */}
 						<circle
 							cx={pos.x}
 							cy={toSvgY(pos.y)}
 							r={pos.size.radius + 20}
 							fill="url(#light-glow)"
 							style={{
-								opacity: showGlow ? 1 : 0,
-								transform: showGlow ? 'scale(1.15)' : 'scale(0.9)',
+								opacity: isClickable ? (isHovered ? 1 : 0.4) : 0,
+								transform: isClickable
+									? isHovered
+										? 'scale(1.15)'
+										: 'scale(1)'
+									: 'scale(0.9)',
 								transformOrigin: 'center',
 								transition: 'opacity 0.3s ease, transform 0.3s ease'
 							}}
@@ -131,11 +163,14 @@ const LoveMap: React.FC<Props> = ({
 							/>
 						)}
 
-						{/* Node circle with image background */}
-						<circle
-							cx={pos.x}
-							cy={toSvgY(pos.y)}
-							r={pos.size.radius}
+						{/* Node rounded rectangle with image background */}
+						<rect
+							x={pos.x - pos.size.radius}
+							y={toSvgY(pos.y) - pos.size.radius}
+							width={pos.size.radius * 2}
+							height={pos.size.radius * 2}
+							rx={pos.size.radius * 0.2}
+							ry={pos.size.radius * 0.2}
 							fill={
 								pos.image && unlocked
 									? `url(#node-pattern-${i})`
@@ -187,32 +222,34 @@ const LoveMap: React.FC<Props> = ({
 
 			{/* Heart traveler */}
 			<g>
-				<text
-					fontSize="22"
+				<image
+					href={travellerSvg}
+					width="100"
+					height="100"
+					x="-2%"
+					y="-25%"
 					style={
 						{
 							offsetPath: `path("${SVG_PATH}")`,
 							offsetDistance: `${(heartPosition / 4) * 100}%`,
+							offsetRotate: '0deg',
 							transition: 'offset-distance 1.5s ease-in-out',
 							// @ts-ignore
 							motionPath: `path("${SVG_PATH}")`,
 							motionDistance: `${(heartPosition / 4) * 100}%`
 						} as any
 					}
-				>
-					💕
-				</text>
+				/>
 				{/* Fallback: position heart at node coordinates */}
 				{!CSS.supports?.('offset-path', `path("M 0 0")`) && (
-					<text
-						x={NODE_POSITIONS[heartPosition].x}
-						y={toSvgY(NODE_POSITIONS[heartPosition].y) - 34}
-						textAnchor="middle"
-						fontSize="22"
+					<image
+						href={travellerSvg}
+						width="40"
+						height="40"
+						x={NODE_POSITIONS[heartPosition].x - 20}
+						y={toSvgY(NODE_POSITIONS[heartPosition].y) - 54}
 						style={{ transition: 'x 1.5s ease-in-out, y 1.5s ease-in-out' }}
-					>
-						💕
-					</text>
+					/>
 				)}
 			</g>
 		</svg>

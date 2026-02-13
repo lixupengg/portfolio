@@ -58,6 +58,11 @@ export const heartBeat = keyframes({
 	'45%': { transform: 'scale(1.1)' }
 });
 
+export const wobble = keyframes({
+	'0%, 100%': { transform: 'rotate(-5deg)' },
+	'50%': { transform: 'rotate(5deg)' }
+});
+
 // Layout
 export const PageWrapper = styled('div', {
 	width: '100%',
