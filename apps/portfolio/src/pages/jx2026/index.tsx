@@ -14,9 +14,9 @@ import {
 	AdventureTitle
 } from './styles';
 // @ts-ignore
-import BGMusic from '../../assets/jx2025/qot.mp3';
+import BGMusic from '../../assets/jx2026/inferno.mp4';
 // @ts-ignore
-import CelebrationMusic from '../../assets/jx2025/finale.mp3';
+import CelebrationMusic from '../../assets/jx2026/dudu.mp3';
 import pathBg from '../../assets/jx2026/path.png';
 
 type Phase = 'landing' | 'map' | 'quiz' | 'celebration';
@@ -256,7 +256,8 @@ const Jx2026: React.FC = () => {
 			<MapContainer zoomedOut={phase === 'quiz'}>
 				<FlyingBirds />
 				<AdventureTitle>
-					Let&apos;s go on an adventure to get our HDB!
+					Let&apos;s go on an adventure to <br />
+					get our HDB and unlock Vday information!
 				</AdventureTitle>
 				<LoveMap
 					completedNodes={completedNodes}

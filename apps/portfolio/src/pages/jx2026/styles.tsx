@@ -489,13 +489,22 @@ export const QuizImage = styled('img', {
 });
 
 export const AdventureTitle = styled('div', {
-	fontSize: 'clamp(24px, 4vw, 36px)',
+	fontSize: '24px',
 	color: '#fff',
-	textShadow: '0 2px 8px rgba(0,0,0,0.3)',
+	textShadow: '0 1px 2px rgba(0,0,0,0.2)',
 	marginBottom: 450,
 	animation: `${float} 3s ease-in-out infinite`,
-	fontWeight: 'semibold',
-	fontStyle: 'italic'
+	fontWeight: 500,
+	fontStyle: 'italic',
+	textAlign: 'center',
+	padding: '16px 32px',
+	background:
+		'linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.1) 100%)',
+	backdropFilter: 'blur(8px)',
+	WebkitBackdropFilter: 'blur(8px)',
+	borderRadius: '50px',
+	border: '1px solid rgba(255,255,255,0.3)',
+	boxShadow: '0 8px 32px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.4)'
 });
 
 // Flying Birds
