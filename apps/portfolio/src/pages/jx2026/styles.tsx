@@ -63,8 +63,7 @@ export const PageWrapper = styled('div', {
 	width: '100%',
 	height: '100%',
 	position: 'relative',
-	overflow: 'hidden',
-	fontFamily: "'Georgia', 'Times New Roman', serif"
+	overflow: 'hidden'
 });
 
 // Landing

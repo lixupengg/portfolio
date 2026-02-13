@@ -144,18 +144,71 @@ export const milestones: Milestone[] = [
 	}
 ];
 
+export const SVG_HEIGHT = 500;
+
+// y values are relative to bottom (distance from bottom edge)
+// size: { radius, glowRadius, iconSize, labelOffset, labelSize }
 export const NODE_POSITIONS = [
-	{ x: 100, y: 380 },
-	{ x: 280, y: 200 },
-	{ x: 460, y: 350 },
-	{ x: 640, y: 180 }
+	{
+		x: 550,
+		y: 200,
+		size: {
+			radius: 70,
+			glowRadius: 90,
+			iconSize: 18,
+			labelOffset: 46,
+			labelSize: 13
+		}
+	},
+	{
+		x: 735,
+		y: 270,
+		size: {
+			radius: 60,
+			glowRadius: 32,
+			iconSize: 18,
+			labelOffset: 46,
+			labelSize: 13
+		}
+	},
+	{
+		x: 890,
+		y: 340,
+		size: {
+			radius: 45,
+			glowRadius: 32,
+			iconSize: 18,
+			labelOffset: 46,
+			labelSize: 13
+		}
+	},
+	{
+		x: 990,
+		y: 440,
+		size: {
+			radius: 30,
+			glowRadius: 32,
+			iconSize: 18,
+			labelOffset: 46,
+			labelSize: 13
+		}
+	}
 ];
 
-export const SVG_PATH = [
-	'M 100 380 C 150 280, 230 200, 280 200',
-	'C 330 200, 400 350, 460 350',
-	'C 520 350, 580 180, 640 180'
-].join(' ');
+// Convert bottom-relative y to SVG y coordinate
+const toSvgY = (y: number) => SVG_HEIGHT - y;
+
+// Generate SVG path from node positions
+export const SVG_PATH = (() => {
+	const p = NODE_POSITIONS.map((n) => ({ x: n.x, y: toSvgY(n.y) }));
+	return [
+		`M ${p[0].x} ${p[0].y} C ${p[0].x + 50} ${p[0].y - 100}, ${p[1].x - 50} ${
+			p[1].y
+		}, ${p[1].x} ${p[1].y}`,
+		`C ${p[1].x + 50} ${p[1].y}, ${p[2].x - 50} ${p[2].y}, ${p[2].x} ${p[2].y}`,
+		`C ${p[2].x + 50} ${p[2].y}, ${p[3].x - 50} ${p[3].y}, ${p[3].x} ${p[3].y}`
+	].join(' ');
+})();
 
 export const VALENTINE_MESSAGE =
 	"Happy Valentine's Day, my love! " +
