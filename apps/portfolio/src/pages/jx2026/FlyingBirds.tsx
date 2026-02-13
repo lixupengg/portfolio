@@ -76,7 +76,7 @@ const FlyingBirds: React.FC = () => {
 			top: `${10 + Math.random() * 10}%`,
 			duration: 15 + Math.random() * 10,
 			delay: i * 2,
-			scale: 1.5 + Math.random() * 0.8
+			scale: 1.0 + Math.random() * 0.4
 		}));
 	}, []);
 
