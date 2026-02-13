@@ -176,7 +176,14 @@ export const QuizTitle = styled('h2', {
 export const QuestionText = styled('p', {
 	fontSize: '18px',
 	marginBottom: '24px',
-	lineHeight: 1.5
+	lineHeight: 1.5,
+	padding: '12px 16px',
+	borderRadius: '12px',
+	background: 'linear-gradient(to top, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.6) 100%)',
+	backdropFilter: 'blur(4px)',
+	WebkitBackdropFilter: 'blur(4px)',
+	color: '#333',
+	textShadow: '0 1px 2px rgba(0,0,0,0.1)'
 });
 
 export const AnswerGrid = styled('div', {
@@ -237,19 +244,22 @@ export const AnswerButton = styled('button', {
 });
 
 export const AnswerLabel = styled('span', {
-	position: 'relative',
+	position: 'absolute',
+	bottom: '8px',
+	left: '50%',
+	transform: 'translateX(-50%)',
 	zIndex: 1,
-	padding: '12px',
-	display: 'flex',
-	alignItems: 'flex-end',
-	justifyContent: 'center',
-	width: '100%',
-	height: '100%',
-	minHeight: '100px',
-	background:
-		'linear-gradient(to top, rgba(0,0,0,0.55) 0%, ' +
-		'rgba(0,0,0,0.1) 60%, transparent 100%)',
-	textShadow: '0 1px 4px rgba(0,0,0,0.5)'
+	padding: '6px 12px',
+	borderRadius: '8px',
+	background: 'linear-gradient(to top, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.6) 100%)',
+	backdropFilter: 'blur(4px)',
+	WebkitBackdropFilter: 'blur(4px)',
+	textShadow: '0 1px 2px rgba(0,0,0,0.2)',
+	color: '#333',
+	whiteSpace: 'nowrap',
+	maxWidth: '90%',
+	overflow: 'hidden',
+	textOverflow: 'ellipsis'
 });
 
 export const FeedbackText = styled('p', {

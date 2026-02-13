@@ -35,12 +35,11 @@ export const milestones: Milestone[] = [
 					'What color shirt did Jiaxuan wear on the flight back from China?',
 				options: [
 					{
-						label: 'REPLACE_ME_A',
-						image: Peach5
+						label: 'REPLACE_ME_A'
 					},
-					{ label: 'REPLACE_ME_B', image: Peach5 },
-					{ label: 'REPLACE_ME_C', image: Peach5 },
-					{ label: 'REPLACE_ME_D', image: Peach5 }
+					{ label: 'REPLACE_ME_B' },
+					{ label: 'REPLACE_ME_C' },
+					{ label: 'REPLACE_ME_D' }
 				],
 				correctIndex: 0
 			},
@@ -192,7 +191,7 @@ export const NODE_POSITIONS = [
 			labelOffset: 46,
 			labelSize: 13
 		},
-		travelerOffset: { x: -50, y: -50 }
+		travelerOffset: { x: -50, y: -100 }
 	},
 	{
 		x: 735,
@@ -205,7 +204,7 @@ export const NODE_POSITIONS = [
 			labelOffset: 46,
 			labelSize: 13
 		},
-		travelerOffset: { x: 32, y: -120 }
+		travelerOffset: { x: -10, y: -120 }
 	},
 	{
 		x: 890,
@@ -218,7 +217,7 @@ export const NODE_POSITIONS = [
 			labelOffset: 46,
 			labelSize: 13
 		},
-		travelerOffset: { x: 55, y: -170 }
+		travelerOffset: { x: 0, y: -100 }
 	},
 	{
 		x: 1010,
@@ -231,7 +230,7 @@ export const NODE_POSITIONS = [
 			labelOffset: 46,
 			labelSize: 13
 		},
-		travelerOffset: { x: 50, y: -160 }
+		travelerOffset: { x: 50, y: -60 }
 	},
 	{
 		x: 920,
@@ -244,7 +243,7 @@ export const NODE_POSITIONS = [
 			labelOffset: 46,
 			labelSize: 13
 		},
-		travelerOffset: { x: 40, y: -140 }
+		travelerOffset: { x: -140, y: -60 }
 	}
 ];
 

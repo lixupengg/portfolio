@@ -45,6 +45,12 @@ const LoveMap: React.FC<Props> = ({
 					<feGaussianBlur in="SourceGraphic" stdDeviation="8" />
 				</filter>
 
+				{/* Glass gradient for label background */}
+				<linearGradient id="glass-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+					<stop offset="0%" stopColor="rgba(0,0,0,0.5)" />
+					<stop offset="100%" stopColor="rgba(0,0,0,0.3)" />
+				</linearGradient>
+
 				{/* Mask for each node */}
 				{NODE_POSITIONS.map((pos, i) => (
 					<mask id={`node-fade-mask-${i}`} key={`mask-${i}`}>
@@ -206,17 +212,37 @@ const LoveMap: React.FC<Props> = ({
 							</text>
 						)}
 
-						{/* Label */}
-						<text
-							x={pos.x}
-							y={toSvgY(pos.y) + pos.size.radius + 20}
-							textAnchor="middle"
-							fontSize={pos.size.labelSize}
-							fill="white"
-							fontWeight="bold"
-						>
-							{milestones[i].title}
-						</text>
+						{/* Label with glass background */}
+						{(() => {
+							const { title } = milestones[i];
+							const textWidth = title.length * pos.size.labelSize * 0.6;
+							const padding = 16;
+							const rectWidth = textWidth + padding;
+							return (
+								<g>
+									<rect
+										x={pos.x - rectWidth / 2}
+										y={toSvgY(pos.y) + pos.size.radius + 8}
+										width={rectWidth}
+										height={24}
+										rx={12}
+										ry={12}
+										fill="url(#glass-gradient)"
+									/>
+									<text
+										x={pos.x}
+										y={toSvgY(pos.y) + pos.size.radius + 20}
+										textAnchor="middle"
+										dominantBaseline="middle"
+										fontSize={pos.size.labelSize}
+										fill="white"
+										fontWeight="bold"
+									>
+										{title}
+									</text>
+								</g>
+							);
+						})()}
 					</g>
 				);
 			})}
@@ -243,7 +269,7 @@ const LoveMap: React.FC<Props> = ({
 					x={NODE_POSITIONS[heartPosition].travelerOffset.x}
 					y={NODE_POSITIONS[heartPosition].travelerOffset.y}
 					style={{
-						animation: `${wobble} 1.3s ease-in-out infinite`
+						animation: `${wobble} 0.3s ease-in-out infinite`
 					}}
 				/>
 				{/* Fallback: position heart at node coordinates */}

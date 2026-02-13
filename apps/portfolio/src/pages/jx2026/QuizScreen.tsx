@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import ConfettiExplosion from 'react-confetti-explosion';
 import { Milestone } from './data';
 import {
@@ -11,6 +11,23 @@ import {
 	FeedbackText,
 	BackToMapButton
 } from './styles';
+
+// Import sticker images
+import peachImg1 from '../../assets/stickersImg/peachImg1.png';
+import peachImg2 from '../../assets/stickersImg/peachImg2.png';
+import peachImg3 from '../../assets/stickersImg/peachImg3.png';
+import peachImg4 from '../../assets/stickersImg/peachImg4.png';
+import peachImg5 from '../../assets/stickersImg/peachImg5.png';
+import peachImg6 from '../../assets/stickersImg/peachImg6.png';
+import peachImg7 from '../../assets/stickersImg/peachImg7.png';
+import peachImg8 from '../../assets/stickersImg/peachImg8.png';
+import peachImg9 from '../../assets/stickersImg/peachImg9.png';
+import peachImg10 from '../../assets/stickersImg/peachImg10.png';
+
+const stickerImages = [
+	peachImg1, peachImg2, peachImg3, peachImg4, peachImg5,
+	peachImg6, peachImg7, peachImg8, peachImg9, peachImg10
+];
 
 type Props = {
 	milestone: Milestone;
@@ -28,6 +45,13 @@ const QuizScreen: React.FC<Props> = ({ milestone, onComplete }) => {
 
 	const currentQ = milestone.questions[qIndex];
 
+	// Assign random stickers to each option (stable across re-renders, changes per question)
+	const optionStickers = useMemo(() => {
+		return currentQ.options.map(() =>
+			stickerImages[Math.floor(Math.random() * stickerImages.length)]
+		);
+	}, [qIndex, milestone.id]);
+
 	const handleAnswer = (optionIndex: number) => {
 		if (disabledOptions.has(optionIndex)) return;
 
@@ -36,29 +60,27 @@ const QuizScreen: React.FC<Props> = ({ milestone, onComplete }) => {
 		if (optionIndex === currentQ.correctIndex) {
 			setAnswerState({ [optionIndex]: 'correct' });
 			setFeedback(milestone.correctMessage);
-
-			if (qIndex === 0) {
-				// Auto-advance to Q2
-				setTimeout(() => {
-					setQIndex(1);
-					setFeedback('');
-					setAnswerState({});
-					setDisabledOptions(new Set());
-					setSelectedOption(null);
-				}, 1500);
-			} else {
-				// Both done
-				setTimeout(() => {
-					setMilestoneComplete(true);
-					setShowConfetti(true);
-				}, 1000);
-			}
 		} else {
 			setAnswerState((prev) => ({ ...prev, [optionIndex]: 'wrong' }));
 			setDisabledOptions((prev) => new Set(prev).add(optionIndex));
 			setFeedback(milestone.wrongMessage);
 		}
 	};
+
+	const handleNextQuestion = () => {
+		if (qIndex === 0) {
+			setQIndex(1);
+			setFeedback('');
+			setAnswerState({});
+			setDisabledOptions(new Set());
+			setSelectedOption(null);
+		} else {
+			setMilestoneComplete(true);
+			setShowConfetti(true);
+		}
+	};
+
+	const isCurrentQuestionCorrect = answerState[currentQ.correctIndex] === 'correct';
 
 	const gradientBg = `linear-gradient(135deg, ${milestone.gradient[0]} 0%, ${milestone.gradient[1]} 100%)`;
 
@@ -117,17 +139,24 @@ const QuizScreen: React.FC<Props> = ({ milestone, onComplete }) => {
 							!!answerState[currentQ.correctIndex]
 						}
 						onClick={() => handleAnswer(i)}
-						style={
-							opt.image
-								? { backgroundImage: `url(${opt.image})` }
-								: undefined
-						}
+						style={{
+							backgroundColor: '#FFD54F',
+							backgroundImage: `url(${opt.image || optionStickers[i]})`,
+							backgroundSize: 'contain',
+							backgroundRepeat: 'no-repeat',
+							backgroundPosition: 'center'
+						}}
 					>
 						<AnswerLabel>{opt.label}</AnswerLabel>
 					</AnswerButton>
 				))}
 			</AnswerGrid>
 			<FeedbackText>{feedback}</FeedbackText>
+			{isCurrentQuestionCorrect && (
+				<BackToMapButton onClick={handleNextQuestion}>
+					{qIndex === 0 ? 'Next Question' : 'Complete'}
+				</BackToMapButton>
+			)}
 		</QuizCard>
 	);
 };
