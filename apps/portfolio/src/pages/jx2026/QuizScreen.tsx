@@ -3,6 +3,7 @@ import ConfettiExplosion from 'react-confetti-explosion';
 import { Milestone } from './data';
 import {
 	QuizCard,
+	QuizContent,
 	QuizTitle,
 	QuestionText,
 	AnswerGrid,
@@ -61,11 +62,11 @@ const QuizScreen: React.FC<Props> = ({ milestone, onComplete }) => {
 
 		if (optionIndex === currentQ.correctIndex) {
 			setAnswerState({ [optionIndex]: 'correct' });
-			setFeedback(milestone.correctMessage);
+			setFeedback(currentQ.correctMessage);
 		} else {
 			setAnswerState((prev) => ({ ...prev, [optionIndex]: 'wrong' }));
 			setDisabledOptions((prev) => new Set(prev).add(optionIndex));
-			setFeedback(milestone.wrongMessage);
+			setFeedback(currentQ.wrongMessage);
 		}
 	};
 
@@ -108,11 +109,47 @@ const QuizScreen: React.FC<Props> = ({ milestone, onComplete }) => {
 		);
 	}
 
+	const showImage = (currentQ.qnsPic && !isCurrentQuestionCorrect) ||
+		(currentQ.ansPic && isCurrentQuestionCorrect);
+
 	return (
-		<QuizCard style={{ background: gradientBg }}>
-			<QuizTitle>{milestone.title}</QuizTitle>
-			{/* Quiz image area - shows qnsPic during question, ansPic after correct answer */}
-			{((currentQ.qnsPic && !isCurrentQuestionCorrect) || (currentQ.ansPic && isCurrentQuestionCorrect)) && (
+		<QuizCard style={{ background: gradientBg }} hasImage={showImage}>
+			<QuizContent>
+				<QuizTitle>{milestone.title}</QuizTitle>
+				<QuestionText>
+					Q{qIndex + 1}/2: {currentQ.question}
+				</QuestionText>
+				<AnswerGrid>
+					{currentQ.options.map((opt, i) => (
+						<AnswerButton
+							key={`${qIndex}-${i}`}
+							state={answerState[i]}
+							selected={selectedOption === i}
+							disabled={
+								disabledOptions.has(i) ||
+								!!answerState[currentQ.correctIndex]
+							}
+							onClick={() => handleAnswer(i)}
+							style={{
+								backgroundColor: '#FFD54F',
+								backgroundImage: `url(${opt.image || optionStickers[i]})`,
+								backgroundSize: 'contain',
+								backgroundRepeat: 'no-repeat',
+								backgroundPosition: 'center'
+							}}
+						>
+							<AnswerLabel>{opt.label}</AnswerLabel>
+						</AnswerButton>
+					))}
+				</AnswerGrid>
+				{feedback && <FeedbackText>{feedback}</FeedbackText>}
+				{isCurrentQuestionCorrect && (
+					<BackToMapButton onClick={handleNextQuestion}>
+						{qIndex === 0 ? 'Next Question' : 'Complete'}
+					</BackToMapButton>
+				)}
+			</QuizContent>
+			{showImage && (
 				<QuizImageContainer>
 					{currentQ.qnsPic && currentQ.ansPic ? (
 						<>
@@ -125,38 +162,6 @@ const QuizScreen: React.FC<Props> = ({ milestone, onComplete }) => {
 						<QuizImage src={currentQ.ansPic} visible alt="Answer" />
 					)}
 				</QuizImageContainer>
-			)}
-			<QuestionText>
-				Q{qIndex + 1}/2: {currentQ.question}
-			</QuestionText>
-			<AnswerGrid>
-				{currentQ.options.map((opt, i) => (
-					<AnswerButton
-						key={`${qIndex}-${i}`}
-						state={answerState[i]}
-						selected={selectedOption === i}
-						disabled={
-							disabledOptions.has(i) ||
-							!!answerState[currentQ.correctIndex]
-						}
-						onClick={() => handleAnswer(i)}
-						style={{
-							backgroundColor: '#FFD54F',
-							backgroundImage: `url(${opt.image || optionStickers[i]})`,
-							backgroundSize: 'contain',
-							backgroundRepeat: 'no-repeat',
-							backgroundPosition: 'center'
-						}}
-					>
-						<AnswerLabel>{opt.label}</AnswerLabel>
-					</AnswerButton>
-				))}
-			</AnswerGrid>
-			<FeedbackText>{feedback}</FeedbackText>
-			{isCurrentQuestionCorrect && (
-				<BackToMapButton onClick={handleNextQuestion}>
-					{qIndex === 0 ? 'Next Question' : 'Complete'}
-				</BackToMapButton>
 			)}
 		</QuizCard>
 	);

@@ -164,7 +164,28 @@ export const QuizCard = styled('div', {
 	alignItems: 'center',
 	color: '#fff',
 	textAlign: 'center',
-	boxShadow: '0 8px 40px rgba(0,0,0,0.15)'
+	boxShadow: '0 8px 40px rgba(0,0,0,0.15)',
+	overflow: 'hidden',
+
+	variants: {
+		hasImage: {
+			true: {
+				flexDirection: 'row',
+				width: 'min(90vw, 700px)',
+				padding: 0,
+				alignItems: 'stretch'
+			}
+		}
+	}
+});
+
+export const QuizContent = styled('div', {
+	flex: 1,
+	display: 'flex',
+	flexDirection: 'column',
+	alignItems: 'center',
+	padding: '40px 32px',
+	textAlign: 'center'
 });
 
 export const QuizTitle = styled('h2', {
@@ -179,7 +200,8 @@ export const QuestionText = styled('p', {
 	lineHeight: 1.5,
 	padding: '12px 16px',
 	borderRadius: '12px',
-	background: 'linear-gradient(to top, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.6) 100%)',
+	background:
+		'linear-gradient(to top, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.6) 100%)',
 	backdropFilter: 'blur(4px)',
 	WebkitBackdropFilter: 'blur(4px)',
 	color: '#333',
@@ -203,15 +225,22 @@ export const AnswerButton = styled('button', {
 	color: '#fff',
 	cursor: 'pointer',
 	fontFamily: 'inherit',
-	overflow: 'hidden',
+	overflow: 'visible',
 	position: 'relative',
 	minHeight: '100px',
+	height: 'auto',
 	backgroundSize: '250%',
 	backgroundPosition: 'center',
 	transition:
 		'transform 0.15s, box-shadow 0.15s, ' +
 		'border-color 0.2s, background 0.2s, ' +
 		'background-size 0.5s ease-out',
+	display: 'flex',
+	flexDirection: 'column',
+	justifyContent: 'flex-end',
+	alignItems: 'center',
+	paddingTop: '60px',
+	paddingBottom: '8px',
 
 	'&:hover:not(:disabled)': {
 		transform: 'translateY(-4px)',
@@ -244,45 +273,46 @@ export const AnswerButton = styled('button', {
 });
 
 export const AnswerLabel = styled('span', {
-	position: 'absolute',
-	bottom: '8px',
-	left: '50%',
-	transform: 'translateX(-50%)',
-	zIndex: 1,
 	padding: '6px 12px',
 	borderRadius: '8px',
-	background: 'linear-gradient(to top, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.6) 100%)',
+	background:
+		'linear-gradient(to top, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.6) 100%)',
 	backdropFilter: 'blur(4px)',
 	WebkitBackdropFilter: 'blur(4px)',
 	textShadow: '0 1px 2px rgba(0,0,0,0.2)',
 	color: '#333',
-	whiteSpace: 'nowrap',
 	maxWidth: '90%',
-	overflow: 'hidden',
-	textOverflow: 'ellipsis'
+	textAlign: 'center'
 });
 
 export const FeedbackText = styled('p', {
 	fontSize: '16px',
 	marginTop: '16px',
 	minHeight: '24px',
-	fontStyle: 'italic'
+	fontStyle: 'italic',
+	padding: '10px 16px',
+	borderRadius: '10px',
+	background:
+		'linear-gradient(to top, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.6) 100%)',
+	backdropFilter: 'blur(4px)',
+	WebkitBackdropFilter: 'blur(4px)',
+	color: '#333',
+	textShadow: '0 1px 2px rgba(0,0,0,0.1)'
 });
 
 export const BackToMapButton = styled('button', {
 	marginTop: '24px',
 	padding: '12px 36px',
 	fontSize: '16px',
-	background: 'rgba(255,255,255,0.25)',
+	background: '#4ade80',
 	color: '#fff',
-	border: '2px solid rgba(255,255,255,0.4)',
 	borderRadius: '24px',
 	cursor: 'pointer',
 	fontFamily: 'inherit',
 	transition: 'transform 0.15s, background 0.15s',
 	'&:hover': {
 		transform: 'translateY(-2px)',
-		background: 'rgba(255,255,255,0.35)'
+		background: '#22c55e'
 	}
 });
 
@@ -392,21 +422,20 @@ export const ConfettiParticle = styled('div', {
 });
 
 export const QuizImageContainer = styled('div', {
-	width: '100%',
-	height: '150px',
-	borderRadius: '12px',
-	marginBottom: '16px',
+	minWidth: '200px',
+	maxWidth: '300px',
 	position: 'relative',
-	overflow: 'hidden'
+	overflow: 'hidden',
+	padding: '24px',
+	borderRadius: '0 24px 24px 0',
+	flexShrink: 0
 });
 
 export const QuizImage = styled('img', {
-	position: 'absolute',
 	inset: 0,
 	width: '100%',
 	height: '100%',
-	objectFit: 'cover',
-	borderRadius: '12px',
+	objectFit: 'contain',
 	transition: 'opacity 0.5s ease, transform 0.5s ease',
 
 	variants: {

@@ -1,16 +1,16 @@
-import Peach5 from '../../assets/stickersImg/peachImg5.png';
-
-// Node background images - update these paths as needed
-import Node1Image from '../../assets/jx2026/IMG_4108.JPG';
-
 // Milestone answer images
 import china1 from '../../assets/jx2026/china1.jpg';
+import china2 from '../../assets/jx2026/china2.jpg';
+import china3 from '../../assets/jx2026/china3.jpg';
 import wedding1 from '../../assets/jx2026/wedding1.jpg';
 import wedding2 from '../../assets/jx2026/wedding2.jpg';
 import korea1 from '../../assets/jx2026/korea1.jpg';
 import korea2 from '../../assets/jx2026/korea2.jpg';
+import korea3 from '../../assets/jx2026/korea3.jpg';
 import sg1 from '../../assets/jx2026/sg1.jpg';
 import sg2 from '../../assets/jx2026/sg2.jpg';
+import sg3 from '../../assets/jx2026/sg3.jpg';
+import sg4 from '../../assets/jx2026/sg4.jpg';
 import cruise1 from '../../assets/jx2026/cruise1.jpg';
 import cruise2 from '../../assets/jx2026/cruise2.jpg';
 
@@ -26,6 +26,8 @@ export type Question = {
 	ansPic?: string; // shown after correct answer
 	options: AnswerOption[];
 	correctIndex: number;
+	correctMessage: string;
+	wrongMessage: string;
 };
 
 export type Milestone = {
@@ -33,8 +35,6 @@ export type Milestone = {
 	title: string;
 	gradient: [string, string];
 	questions: [Question, Question];
-	correctMessage: string;
-	wrongMessage: string;
 };
 
 export const milestones: Milestone[] = [
@@ -46,31 +46,33 @@ export const milestones: Milestone[] = [
 			{
 				question:
 					'What color shirt did Jiaxuan wear on the flight back from China?',
-				ansPic: china1,
+				ansPic: china3,
 				options: [
 					{
-						label: 'REPLACE_ME_A'
+						label: 'BLACK'
 					},
-					{ label: 'REPLACE_ME_B' },
-					{ label: 'REPLACE_ME_C' },
-					{ label: 'REPLACE_ME_D' }
+					{ label: 'WHITE' },
+					{ label: 'YELLOW' },
+					{ label: 'GREEN' }
 				],
-				correctIndex: 0
+				correctIndex: 3,
+				correctMessage: 'Good job dd!!',
+				wrongMessage: 'Hmm, i guess your memory isnt that good HEHE'
 			},
 			{
-				question: 'What did we do on the day we first met?',
+				question: 'What was the name of the fancy fancy flower restaurant?',
 				ansPic: china1,
 				options: [
-					{ label: 'REPLACE_ME_A' },
-					{ label: 'REPLACE_ME_B' },
-					{ label: 'REPLACE_ME_C' },
-					{ label: 'REPLACE_ME_D' }
+					{ label: 'Formacado' },
+					{ label: 'Tomacado' },
+					{ label: 'Flowercado' },
+					{ label: 'Flower Kitchen' }
 				],
-				correctIndex: 0
+				correctIndex: 1,
+				correctMessage: 'Ding ding ding!',
+				wrongMessage: 'How can you forget such a fancy restaurant!!!!'
 			}
-		],
-		correctMessage: 'You remembered!',
-		wrongMessage: 'Hmm, think again!'
+		]
 	},
 	{
 		id: 2,
@@ -78,30 +80,27 @@ export const milestones: Milestone[] = [
 		gradient: ['#FFD54F', '#FFA000'],
 		questions: [
 			{
-				question: "What did we eat on our first Valentine's?",
-				ansPic: wedding1,
+				question: 'When was koyongs wedding HEHEHE',
 				options: [
-					{ label: 'REPLACE_ME_A' },
-					{ label: 'REPLACE_ME_B' },
-					{ label: 'REPLACE_ME_C' },
-					{ label: 'REPLACE_ME_D' }
+					{ label: '10 May' },
+					{ label: '10 Apr' },
+					{ label: '8 May' },
+					{ label: '8 Apr' }
 				],
-				correctIndex: 0
+				correctIndex: 0,
+				correctMessage: 'Ding ding ding!',
+				wrongMessage: 'Orh hor i tell them!!!'
 			},
 			{
-				question: "What did we do on our first Valentine's?",
-				ansPic: wedding2,
-				options: [
-					{ label: 'REPLACE_ME_A' },
-					{ label: 'REPLACE_ME_B' },
-					{ label: 'REPLACE_ME_C' },
-					{ label: 'REPLACE_ME_D' }
-				],
-				correctIndex: 0
+				question:
+					"Did jiaxuan stand on michelle's right or left during our picture hohoho",
+				ansPic: wedding1,
+				options: [{ label: 'Left' }, { label: 'Right' }],
+				correctIndex: 0,
+				correctMessage: 'Ding ding ding!',
+				wrongMessage: 'Hey its only a 50/50 chance!!!'
 			}
-		],
-		correctMessage: 'You remembered!',
-		wrongMessage: 'Not quite~'
+		]
 	},
 	{
 		id: 3,
@@ -109,30 +108,35 @@ export const milestones: Milestone[] = [
 		gradient: ['#FFA000', '#F5D28F'],
 		questions: [
 			{
-				question: 'What did we eat on our first anniversary?',
-				ansPic: korea1,
+				question: 'How many bellygoms did we win!',
+				ansPic: korea3,
 				options: [
-					{ label: 'REPLACE_ME_A' },
-					{ label: 'REPLACE_ME_B' },
-					{ label: 'REPLACE_ME_C' },
-					{ label: 'REPLACE_ME_D' }
+					{ label: '3' },
+					{ label: '2' },
+					{ label: '1' },
+					{ label: '0' }
 				],
-				correctIndex: 0
+				correctIndex: 3,
+				correctMessage: 'Hey you dont have to rub it in.... T.T',
+				wrongMessage: 'You are right!!!!!!'
 			},
 			{
-				question: 'What did we do on our first anniversary?',
-				ansPic: korea2,
+				question: 'What is the best ice cream in the world?',
+				ansPic: korea1,
 				options: [
-					{ label: 'REPLACE_ME_A' },
-					{ label: 'REPLACE_ME_B' },
-					{ label: 'REPLACE_ME_C' },
-					{ label: 'REPLACE_ME_D' }
+					{
+						label:
+							'Ice cream that xupeng make with his future ice cream machine'
+					},
+					{ label: 'Tiger Ice Cream' }
 				],
-				correctIndex: 0
+				correctIndex: 1,
+				correctMessage:
+					'How can you like other peoples ice cream over mine!!!!',
+				wrongMessage:
+					'Good answer!!! Hey this means that i can buy ice cream machine next time right hehehe'
 			}
-		],
-		correctMessage: 'You remembered!',
-		wrongMessage: 'Try again, love!'
+		]
 	},
 	{
 		id: 4,
@@ -140,15 +144,13 @@ export const milestones: Milestone[] = [
 		gradient: ['#F5D28F', '#A8C5A0'],
 		questions: [
 			{
-				question: "What did we eat on our second Valentine's?",
-				ansPic: sg1,
-				options: [
-					{ label: 'REPLACE_ME_A' },
-					{ label: 'REPLACE_ME_B' },
-					{ label: 'REPLACE_ME_C' },
-					{ label: 'REPLACE_ME_D' }
-				],
-				correctIndex: 0
+				question: 'Where is gary?',
+				qnsPic: sg1,
+				ansPic: sg2,
+				options: [{ label: 'Singapore Zoo!!' }],
+				correctIndex: 0,
+				correctMessage: 'I forgot to post this so i wanted to use it :(',
+				wrongMessage: 'Nope, guess again!'
 			},
 			{
 				question: "What did we do on our second Valentine's?",
@@ -159,11 +161,11 @@ export const milestones: Milestone[] = [
 					{ label: 'REPLACE_ME_C' },
 					{ label: 'REPLACE_ME_D' }
 				],
-				correctIndex: 0
+				correctIndex: 0,
+				correctMessage: 'You remembered!',
+				wrongMessage: 'Nope, guess again!'
 			}
-		],
-		correctMessage: 'You remembered!',
-		wrongMessage: 'Nope, guess again!'
+		]
 	},
 	{
 		id: 5,
@@ -179,7 +181,9 @@ export const milestones: Milestone[] = [
 					{ label: 'REPLACE_ME_C' },
 					{ label: 'REPLACE_ME_D' }
 				],
-				correctIndex: 0
+				correctIndex: 0,
+				correctMessage: 'You know me so well!',
+				wrongMessage: 'Try once more!'
 			},
 			{
 				question: 'Where do you want to travel with me next?',
@@ -190,11 +194,11 @@ export const milestones: Milestone[] = [
 					{ label: 'REPLACE_ME_C' },
 					{ label: 'REPLACE_ME_D' }
 				],
-				correctIndex: 0
+				correctIndex: 0,
+				correctMessage: 'You know me so well!',
+				wrongMessage: 'Try once more!'
 			}
-		],
-		correctMessage: 'You know me so well!',
-		wrongMessage: 'Try once more!'
+		]
 	}
 ];
 
@@ -206,7 +210,7 @@ export const NODE_POSITIONS = [
 	{
 		x: 550,
 		y: 90,
-		image: Node1Image,
+		image: china2,
 		size: {
 			radius: 70,
 			glowRadius: 90,
@@ -219,7 +223,7 @@ export const NODE_POSITIONS = [
 	{
 		x: 735,
 		y: 130,
-		image: Node1Image,
+		image: wedding2,
 		size: {
 			radius: 60,
 			glowRadius: 32,
@@ -232,7 +236,7 @@ export const NODE_POSITIONS = [
 	{
 		x: 890,
 		y: 200,
-		image: Node1Image,
+		image: korea2,
 		size: {
 			radius: 45,
 			glowRadius: 32,
@@ -245,7 +249,7 @@ export const NODE_POSITIONS = [
 	{
 		x: 1010,
 		y: 270,
-		image: Node1Image,
+		image: sg3,
 		size: {
 			radius: 30,
 			glowRadius: 32,
@@ -258,7 +262,7 @@ export const NODE_POSITIONS = [
 	{
 		x: 920,
 		y: 340,
-		image: Node1Image,
+		image: china1,
 		size: {
 			radius: 25,
 			glowRadius: 32,
