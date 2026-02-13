@@ -9,7 +9,6 @@ import Logo from './assets/xplogo.svg';
 /* Pages */
 import HomePage from './pages/HomePage';
 import ProjectsPage from './pages/ProjectsPage';
-import GamePage from './pages/GamePage';
 import ExperiencesPage from './pages/ExperiencesPage';
 import ReadPage from './pages/ReadPage';
 import Jx2024 from './pages/jx2024';
@@ -51,7 +50,6 @@ const BaseRouter: React.ReactNode = () => (
 	<Router history={history}>
 		<Switch>
 			<CustomRoute exact path="/" component={HomePage} />
-			<CustomRoute exact path="/game" component={GamePage} />
 			<CustomRoute exact path="/projects" component={ProjectsPage} />
 			<CustomRoute exact path="/experience" component={ExperiencesPage} />
 			<CustomRoute exact path="/read" component={ReadPage} />

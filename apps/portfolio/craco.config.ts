@@ -36,6 +36,13 @@ module.exports = {
 				// match.loader.include = include.concat(absolutePath, schonComponents);
 				match.loader.include = include.concat(absolutePath);
 			}
+			// Fix for react-joyride ESM module compatibility with webpack 4
+			webpackConfig.module.rules.push({
+				test: /\.mjs$/,
+				include: /node_modules/,
+				type: 'javascript/auto'
+			});
+
 			return {
 				...webpackConfig
 				/**
