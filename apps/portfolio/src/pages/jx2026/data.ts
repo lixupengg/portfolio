@@ -3,6 +3,17 @@ import Peach5 from '../../assets/stickersImg/peachImg5.png';
 // Node background images - update these paths as needed
 import Node1Image from '../../assets/jx2026/IMG_4108.JPG';
 
+// Milestone answer images
+import china1 from '../../assets/jx2026/china1.jpg';
+import wedding1 from '../../assets/jx2026/wedding1.jpg';
+import wedding2 from '../../assets/jx2026/wedding2.jpg';
+import korea1 from '../../assets/jx2026/korea1.jpg';
+import korea2 from '../../assets/jx2026/korea2.jpg';
+import sg1 from '../../assets/jx2026/sg1.jpg';
+import sg2 from '../../assets/jx2026/sg2.jpg';
+import cruise1 from '../../assets/jx2026/cruise1.jpg';
+import cruise2 from '../../assets/jx2026/cruise2.jpg';
+
 export type AnswerOption = {
 	label: string;
 	image?: string; // URL or imported image path
@@ -11,6 +22,8 @@ export type AnswerOption = {
 export type Question = {
 	question: string;
 	image?: string; // URL or imported image path for the question
+	qnsPic?: string; // shown during question stage
+	ansPic?: string; // shown after correct answer
 	options: AnswerOption[];
 	correctIndex: number;
 };
@@ -33,6 +46,7 @@ export const milestones: Milestone[] = [
 			{
 				question:
 					'What color shirt did Jiaxuan wear on the flight back from China?',
+				ansPic: china1,
 				options: [
 					{
 						label: 'REPLACE_ME_A'
@@ -45,6 +59,7 @@ export const milestones: Milestone[] = [
 			},
 			{
 				question: 'What did we do on the day we first met?',
+				ansPic: china1,
 				options: [
 					{ label: 'REPLACE_ME_A' },
 					{ label: 'REPLACE_ME_B' },
@@ -64,6 +79,7 @@ export const milestones: Milestone[] = [
 		questions: [
 			{
 				question: "What did we eat on our first Valentine's?",
+				ansPic: wedding1,
 				options: [
 					{ label: 'REPLACE_ME_A' },
 					{ label: 'REPLACE_ME_B' },
@@ -74,6 +90,7 @@ export const milestones: Milestone[] = [
 			},
 			{
 				question: "What did we do on our first Valentine's?",
+				ansPic: wedding2,
 				options: [
 					{ label: 'REPLACE_ME_A' },
 					{ label: 'REPLACE_ME_B' },
@@ -93,6 +110,7 @@ export const milestones: Milestone[] = [
 		questions: [
 			{
 				question: 'What did we eat on our first anniversary?',
+				ansPic: korea1,
 				options: [
 					{ label: 'REPLACE_ME_A' },
 					{ label: 'REPLACE_ME_B' },
@@ -103,6 +121,7 @@ export const milestones: Milestone[] = [
 			},
 			{
 				question: 'What did we do on our first anniversary?',
+				ansPic: korea2,
 				options: [
 					{ label: 'REPLACE_ME_A' },
 					{ label: 'REPLACE_ME_B' },
@@ -122,6 +141,7 @@ export const milestones: Milestone[] = [
 		questions: [
 			{
 				question: "What did we eat on our second Valentine's?",
+				ansPic: sg1,
 				options: [
 					{ label: 'REPLACE_ME_A' },
 					{ label: 'REPLACE_ME_B' },
@@ -132,6 +152,7 @@ export const milestones: Milestone[] = [
 			},
 			{
 				question: "What did we do on our second Valentine's?",
+				ansPic: sg2,
 				options: [
 					{ label: 'REPLACE_ME_A' },
 					{ label: 'REPLACE_ME_B' },
@@ -151,6 +172,7 @@ export const milestones: Milestone[] = [
 		questions: [
 			{
 				question: 'What are you most excited about for our future?',
+				ansPic: cruise1,
 				options: [
 					{ label: 'REPLACE_ME_A' },
 					{ label: 'REPLACE_ME_B' },
@@ -161,6 +183,7 @@ export const milestones: Milestone[] = [
 			},
 			{
 				question: 'Where do you want to travel with me next?',
+				ansPic: cruise2,
 				options: [
 					{ label: 'REPLACE_ME_A' },
 					{ label: 'REPLACE_ME_B' },

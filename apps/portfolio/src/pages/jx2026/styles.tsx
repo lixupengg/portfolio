@@ -390,3 +390,29 @@ export const ConfettiParticle = styled('div', {
 	animation: `${confettiDrop} linear forwards`,
 	zIndex: 30
 });
+
+export const QuizImageContainer = styled('div', {
+	width: '100%',
+	height: '150px',
+	borderRadius: '12px',
+	marginBottom: '16px',
+	position: 'relative',
+	overflow: 'hidden'
+});
+
+export const QuizImage = styled('img', {
+	position: 'absolute',
+	inset: 0,
+	width: '100%',
+	height: '100%',
+	objectFit: 'cover',
+	borderRadius: '12px',
+	transition: 'opacity 0.5s ease, transform 0.5s ease',
+
+	variants: {
+		visible: {
+			true: { opacity: 1, transform: 'scale(1)' },
+			false: { opacity: 0, transform: 'scale(0.95)' }
+		}
+	}
+});

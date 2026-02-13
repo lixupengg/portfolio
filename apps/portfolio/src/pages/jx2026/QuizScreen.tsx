@@ -9,7 +9,9 @@ import {
 	AnswerButton,
 	AnswerLabel,
 	FeedbackText,
-	BackToMapButton
+	BackToMapButton,
+	QuizImageContainer,
+	QuizImage
 } from './styles';
 
 // Import sticker images
@@ -109,22 +111,25 @@ const QuizScreen: React.FC<Props> = ({ milestone, onComplete }) => {
 	return (
 		<QuizCard style={{ background: gradientBg }}>
 			<QuizTitle>{milestone.title}</QuizTitle>
-			{/* Placeholder photo area */}
-			<div
-				style={{
-					width: '100%',
-					height: '80px',
-					borderRadius: '12px',
-					background: `linear-gradient(90deg, ${milestone.gradient[0]}88, ${milestone.gradient[1]}88)`,
-					marginBottom: '16px',
-					display: 'flex',
-					alignItems: 'center',
-					justifyContent: 'center',
-					fontSize: '28px'
-				}}
-			>
-				📸
-			</div>
+			{/* Quiz image area - shows qnsPic during question, ansPic after correct answer */}
+			{(currentQ.qnsPic || currentQ.ansPic) && (
+				<QuizImageContainer>
+					{currentQ.qnsPic && (
+						<QuizImage
+							src={currentQ.qnsPic}
+							visible={!isCurrentQuestionCorrect}
+							alt="Question"
+						/>
+					)}
+					{currentQ.ansPic && (
+						<QuizImage
+							src={currentQ.ansPic}
+							visible={isCurrentQuestionCorrect}
+							alt="Answer"
+						/>
+					)}
+				</QuizImageContainer>
+			)}
 			<QuestionText>
 				Q{qIndex + 1}/2: {currentQ.question}
 			</QuestionText>
